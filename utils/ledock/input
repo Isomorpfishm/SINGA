@@ -1,0 +1,16 @@
+Receptor
+receptor_file
+
+RMSD
+rmsd
+
+Binding pocket
+MIN_X    MAX_X
+MIN_Y    MAX_Y
+MIN_Z    MAX_Z
+
+Number of binding poses
+NUM
+
+Ligands list
+ligands.list.txt

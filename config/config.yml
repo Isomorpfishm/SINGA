@@ -1,0 +1,57 @@
+autodock:
+    executable: ./autodock_vina/bin/vina
+    num_modes: 9
+    seed: 1
+
+dataset:
+    name: pl
+    path: ./dataset/crossdocked_pocket10
+    split: ./dataset/split_by_name.pt
+    
+featuriser:
+    interaction_cutoff: 4.0
+    sasa_cutoff: 4.0
+    symbol_radius_path: ./config/symbol_radius.json
+
+general:
+    MAX_INT: 2147483647
+    seed: 1
+
+pymeshSkippedComplex:
+- 4nrt
+- 1hqh
+- 1uy9
+- 4bpi
+- 6n4b
+- 5twl
+- 5hdz
+- 3bgl
+- 4mdq
+- 3rv9
+- 4j9a
+- 4ctk
+- 2y06
+- 2chz
+- 6e7w
+- 2wkt
+- 3udj
+- 5a5v
+- 1jik
+- 2a5u
+- 4ayw
+- 3dpd
+- 2bb7
+- 5myn
+- 5nkk
+- 1zkk
+- 2r3y
+- 6e7s
+- 5un1
+- 5i94
+- 6e7x
+- 1hqf
+- 4p7s
+- 2xm8
+- 6mu1
+- 1uyi
+

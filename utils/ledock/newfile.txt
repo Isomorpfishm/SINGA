@@ -1,0 +1,12609 @@
+The value of rmsd is: 2.0
+The value of num is: 20
+The value of spacing is: 10
+=================================
+9icd
+4kqo
+5qj2
+4a1w
+5k0s
+6f7t
+1a50
+2f6z
+5vlr
+2wev
+4de7
+2fj0
+5etx
+4mvw
+5aep
+4deh
+4mwx
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+5tg2
+2clv
+5jmp
+5th2
+6hoi
+2cji
+5eok
+4hgc
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4r5x
+3n87
+3bh3
+2wez
+6g93
+2c6g
+4cik
+2qo1
+4ele
+1cea
+4wbg
+4z7h
+5yto
+4o3b
+5j59
+6ugo
+6r9s
+5a3n
+6ety
+3irx
+4izy
+3ds3
+3s8x
+6g0v
+5aqf
+5jzs
+3fuh
+4yjn
+3ttj
+4c4j
+6esa
+4b95
+5owf
+5flp
+4oya
+6myn
+3tu9
+5dp6
+1rdn
+4zj8
+5z1t
+4z7q
+6eee
+1vj9
+6fzp
+2q8s
+3vhu
+2o1v
+4o12
+6f96
+3i97
+5w4s
+2ydm
+6e7s
+1qpe
+5oyd
+5yjb
+5qac
+1qiw
+3k5c
+5eva
+3uf9
+4qlv
+2rc9
+1o42
+3cfs
+5w6t
+4afe
+3jwq
+4fri
+6hx1
+4x11
+1qvt
+3dga
+4otg
+5lxb
+4qtn
+3ess
+1wdq
+6b1h
+1cbr
+3jzb
+2xfi
+5csx
+1ro7
+4anm
+6fzu
+3u4o
+6udx
+4mvy
+5b1s
+5f01
+5uw5
+2viy
+2y2k
+Waring: Missing or wrong elements: B
+6chm
+3pvu
+3nnx
+2rl5
+2h5i
+1lhg
+Waring: Missing or wrong elements: B
+4fbe
+1g3b
+6ccs
+4jfd
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4e3k
+Waring: Missing or wrong elements: B
+1pi5
+Waring: Missing or wrong elements: B
+4jib
+6ccn
+6ebw
+4jt9
+1g9a
+3ole
+3u6j
+5aly
+6cd9
+5ul1
+4zg9
+2qt5
+3oqf
+1t3t
+2x6k
+5a5z
+6b16
+2sfp
+6gvi
+5wej
+6t6a
+6lpr
+Waring: Missing or wrong elements: B
+1h00
+6hgy
+4dj7
+3bu6
+1a7c
+3kqc
+5q1h
+4iur
+5h22
+6oi9
+2er0
+1o3c
+3ccb
+2rny
+6i77
+5c4s
+3tvx
+3rxd
+5etn
+5ahj
+3iok
+4py2
+4al4
+3rpy
+3bel
+4j3e
+1bgo
+1gx0
+5csd
+5tbj
+5f4l
+3p3h
+6npe
+3udk
+4qw6
+4z8a
+5aom
+5etk
+4kww
+3r6g
+4rss
+4uix
+3vd7
+5v3x
+4msu
+6nss
+4wyz
+6gg3
+5gg4
+1w1d
+2g97
+6n0q
+5ij7
+4dfw
+3s7f
+3if7
+5opr
+5jqb
+3nam
+4o71
+1epq
+5hey
+3io7
+6g84
+2c69
+3avj
+4w57
+4zmf
+5o48
+4ty9
+3pqz
+3cqw
+1apb
+3mxy
+4dei
+2b17
+4pxm
+4qkx
+1h1d
+5bvk
+5mi5
+6qs1
+3emg
+6ode
+2xel
+4g2y
+4gk4
+2jnw
+2l84
+5eoc
+5vqt
+5eec
+Waring: Missing or wrong elements: B
+6esj
+3u3z
+1t48
+2qcm
+2wxv
+1vyw
+2j9a
+4jzb
+3way
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+Waring: Missing or wrong elements: B
+5jn9
+4z9l
+5j5x
+6s55
+4ucs
+4p4j
+2wxh
+5gr9
+5u62
+1oyn
+4gvm
+1v0p
+4u79
+1nhg
+6dcg
+3eos
+4wv6
+2pj2
+6fu4
+1u2y
+4awf
+3ft4
+3lm1
+2lsr
+5akh
+6bh8
+4tmr
+6agk
+3arb
+4cd1
+5l2w
+4wz4
+Waring: Missing or wrong elements: B
+1tnk
+5nai
+1jvp
+4an9
+5qaz
+3g2i
+4o3t
+3unz
+2ym6
+4hxz
+2aez
+2oz2
+4lbp
+5jao
+5d75
+3dpo
+2gfs
+2c90
+4prp
+4u6x
+2ksb
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+6n8y
+5uit
+3mwe
+4x3s
+4hkk
+3mt8
+6n48
+4qp7
+1w70
+6hop
+3dxg
+1yyr
+3vgc
+Waring: Missing or wrong elements: B
+5k0i
+2m0o
+5moc
+3v0p
+1o9k
+3f9y
+5gty
+5ddd
+2ao6
+5ygd
+2x7o
+4ayy
+2hd6
+4zyv
+6ovc
+2fwy
+5lch
+2v5a
+2c6c
+3i0s
+2ycm
+6asu
+4f9g
+4ec0
+5h1e
+4j52
+6dyo
+1dis
+2uw3
+3lik
+5aip
+2wic
+5ou3
+5odu
+6hkz
+4h1j
+6e6v
+2f5t
+4a4h
+4qmn
+5trf
+4pax
+3o23
+5ylt
+4zh3
+6b8u
+2b55
+4jfi
+2r6f
+3d7h
+4aro
+3fqa
+3g2n
+3krj
+5zop
+1zaf
+2b8l
+3ud9
+4mxa
+3hhu
+3mke
+Waring: Missing or wrong elements: B
+5edq
+4a9m
+4l0t
+4rqi
+4qvm
+Waring: Missing or wrong elements: B
+3qel
+3e81
+1d5j
+4bw3
+4bjb
+5qau
+3pxq
+4mro
+2w10
+5c91
+4yzn
+4mue
+3fup
+1nfs
+1mv0
+6m9l
+5hor
+2mps
+3sfc
+5j7s
+4cfm
+5idn
+5aad
+1iep
+1hqg
+4lkg
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+6cck
+4lng
+3ivq
+2fai
+6ajx
+5dtt
+4hby
+6cz4
+4ach
+5joh
+1oe7
+1a7t
+4j70
+4ok5
+4k6z
+5nu1
+2pu0
+1kll
+2i4p
+6qyo
+5dp8
+3ieo
+4pyq
+4ufy
+3rx5
+5xmp
+5wap
+5cu2
+4qmz
+3hy5
+1nlp
+1s9t
+5bwb
+3ebb
+1mau
+3cst
+Waring: Missing or wrong elements: R
+2yga
+1osv
+4i5p
+2zit
+1yt7
+5qai
+5a7y
+6q30
+Waring: Missing or wrong elements: B
+4fut
+5il1
+3qx8
+6o6f
+6i0c
+2glm
+5dlv
+4lwu
+4jmg
+2ovz
+3v0l
+5gn9
+4jlm
+1swp
+5ar7
+5jna
+3hu1
+5kbh
+5t90
+1i9m
+3gol
+5em6
+3wde
+5yzc
+5xxf
+2ddf
+5gjf
+2e95
+1b9v
+6ckl
+3sc1
+1o3p
+1kqb
+6eqa
+5lm6
+3wf7
+3zo2
+1wbo
+4qnu
+6gl3
+3usn
+3dei
+1ouy
+5ezx
+6ful
+1nu8
+4ezq
+4umu
+6m8c
+8gpb
+5j75
+4a51
+5v37
+5d1s
+2xnp
+2aow
+4eky
+1nhv
+4i5m
+1it6
+2i3z
+6j0k
+5eq0
+6nt2
+1fvt
+5tv1
+4oew
+5dht
+4xuz
+Waring: Missing or wrong elements: B
+4xue
+6ee2
+5ei8
+1bqn
+6oxw
+4wx4
+3g6g
+4aig
+3tz2
+5nmf
+5nvz
+4z0f
+6g6w
+6ooz
+4qxr
+5ml4
+2wmu
+4mm8
+4xt9
+3qup
+4yl0
+1w31
+4pp7
+3zrl
+4kxl
+4fqo
+6e6w
+1sm3
+3ips
+2o1c
+5i13
+5drq
+6i74
+1awf
+2mlm
+6e8x
+1x81
+5hpm
+5wqd
+4yzc
+4mdr
+5e7r
+3fmq
+3hzy
+1s50
+5f27
+5fqc
+Waring: Missing or wrong elements: B
+4d0x
+3u7n
+5km1
+6c2y
+5z1r
+3zos
+4klv
+1xnx
+3sw2
+3zy5
+3ftq
+2w73
+4mk9
+4eqc
+6ggv
+3e8n
+4ph4
+2xey
+1a07
+2zju
+1nq0
+3vrw
+6h4a
+3avm
+4p0a
+6evm
+4pl4
+3l5f
+5bvf
+2gmx
+2ybk
+4uyh
+3l8s
+4bfd
+5jnl
+4x9v
+6rqk
+4hmh
+4nhx
+6cdm
+3m2w
+3st6
+3o96
+5hzn
+4y67
+5q18
+3iqv
+5gvl
+5a82
+6fh6
+4ebw
+1o2x
+3fhe
+4e3i
+Waring: Missing or wrong elements: B
+6mlh
+3zhf
+2xfj
+2j4q
+2j7x
+6c5j
+4fea
+2vtq
+2iu0
+6mu1
+4igq
+6hs4
+5vjp
+5eeq
+3rk5
+6cee
+6mo7
+5ual
+4aa0
+2ay8
+3lk0
+4bbe
+3c3r
+2c6k
+4res
+5dp4
+6kzc
+3u4w
+5mw2
+5jf8
+3wig
+5svy
+5lj2
+2lbm
+5zhj
+2x6i
+5ods
+2yjq
+6dzy
+4whq
+4d1c
+3avh
+1szm
+6ob0
+4hai
+4o45
+2rjr
+6iqg
+1di8
+4a4x
+5enm
+5tg5
+Waring: Missing or wrong elements: B
+4y24
+3ds4
+5q13
+3bv2
+1fwe
+4mrh
+3eg6
+5myn
+3f9w
+1i5h
+4uct
+6czd
+4jiz
+6s8a
+3e2m
+3ook
+2bkz
+4w9g
+2vr4
+2e2b
+5m56
+5lrj
+2wo9
+6un3
+4m3e
+3dz4
+3tkh
+5aic
+4n7h
+4qw4
+4zqt
+4kod
+5mys
+2g9r
+1gi6
+3r5m
+5bvo
+4bdd
+5o5f
+4os4
+4pd5
+3g08
+5ul6
+4gvu
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+1t7f
+3lok
+6pyu
+4r0i
+1o5p
+5kqd
+4uzh
+4ie6
+2z5s
+3u8m
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+6os6
+4z8d
+2p4i
+3c7q
+4qmp
+4p4b
+5tyk
+Waring: Missing or wrong elements: B
+5nhz
+6ary
+4iqu
+6ht8
+1w84
+2v6n
+6gj5
+5v8o
+2wuu
+2pqj
+4j74
+3d7d
+3tww
+1nxy
+Waring: Missing or wrong elements: B
+4qw0
+Waring: Missing or wrong elements: B
+3vw6
+3rjc
+4e5f
+3znc
+2a4z
+2rfy
+2za3
+2gg7
+2aq9
+3s3q
+4ql8
+1rwx
+2c6e
+4tyl
+1w12
+4i60
+Waring: Missing or wrong elements: R
+4mg9
+4joh
+1aqi
+5qas
+6b1w
+2z7i
+3m94
+4rcf
+4uxh
+2lty
+5j7p
+1xhm
+2am1
+1h36
+5wo4
+5e0l
+3mxf
+1kz8
+4mq2
+5tzf
+5q1a
+5l01
+1akv
+6b2p
+3zm5
+3nlb
+2yoh
+6iyw
+2xhs
+5zwf
+5tw5
+5f1z
+4mbp
+4c6x
+5ema
+5c4o
+6hdn
+3sbi
+5kbg
+4zsj
+6g85
+6imr
+4zfi
+3bea
+4bsq
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4rvk
+4bcc
+6o21
+5db1
+4wup
+4x21
+3nw9
+6b3e
+4i6h
+6cen
+4kzl
+4qsk
+2br8
+3krx
+3w2r
+4bea
+4ask
+5wjj
+4l7c
+1xb7
+4ngt
+5l8t
+5ye7
+5o0s
+3ipe
+5xpm
+5f3g
+3rwf
+2xah
+5h8b
+4eh9
+3ard
+4el9
+4b7z
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+2ycr
+3wqm
+3ivi
+3g0f
+5dhh
+6f0y
+6gcr
+3rak
+1dxp
+3gxl
+4or0
+2fkf
+3iqj
+6akw
+3ifo
+5d1n
+4ysi
+4p90
+3fts
+3n5u
+4av0
+4o2f
+4h4b
+5tt7
+2h6q
+3h2a
+4c1f
+3pp1
+5ajz
+3tjd
+3lvp
+3u4u
+5drt
+1ftk
+3zp9
+3avk
+1kat
+4c1d
+6ayh
+5uig
+5boy
+3w2s
+5ee7
+6c6o
+2liq
+4j3d
+2ayp
+3mrt
+5tha
+4l7r
+6ckx
+3h0j
+1gqs
+2xrw
+4wz6
+4xct
+2qu2
+4lj3
+3deh
+3kr1
+2wtc
+1g6g
+4r5v
+5foo
+5icx
+4u5u
+1pxl
+3qw6
+3p3u
+3n4l
+3asl
+2oi3
+5svi
+3ck7
+2lsk
+4m5l
+5d9k
+3zjv
+Waring: Missing or wrong elements: B
+5u94
+6bbs
+3wyl
+5y7h
+2w1e
+6hah
+6dug
+2brc
+2jql
+5xpo
+4jln
+6qto
+1p01
+Waring: Missing or wrong elements: B
+3hqz
+4m6p
+4na8
+4tv3
+2am9
+4mg6
+6f5l
+5dl1
+3drp
+5mim
+4gy5
+5tpb
+6d6t
+3i0r
+1wbg
+3atm
+1akt
+5mwd
+5l8o
+4hxs
+1hv5
+1h08
+4ogn
+4p0w
+5hcx
+4wki
+4obp
+3mtw
+3lhs
+6rpg
+4xm8
+4an0
+2r7g
+6gbw
+4yuz
+3pz4
+3q6s
+1mxo
+Waring: Missing or wrong elements: B
+1mqg
+1vjd
+6hoy
+5w8h
+2brh
+4qy8
+4ge6
+1wc6
+4dh6
+1nlt
+3e9b
+Waring: Missing or wrong elements: B
+4pgb
+5ug8
+3bmy
+3ri1
+2vi5
+5zk3
+5eps
+4nat
+5khh
+3s1g
+5a3h
+4n99
+5lrk
+1pbk
+2qa8
+3cf1
+5fah
+6ahs
+6idz
+3jq7
+3lq5
+3iu8
+2bz8
+4a9i
+1p4r
+4irx
+5kxc
+3biz
+1n1v
+4c4g
+6mq3
+1mpa
+2rkn
+6b0y
+3pa5
+5nyz
+1eoj
+5t8j
+3ddb
+4exz
+3nba
+3owk
+4ksp
+2rnx
+6h14
+2yjw
+4r6t
+3gc7
+1uu7
+2poq
+3rdv
+3v6s
+6qc0
+4alv
+5mmp
+4h5e
+4lxb
+2opy
+5mnc
+3bti
+4jjm
+3duy
+2ww0
+4g0k
+2c1b
+5k5e
+4bo3
+3hhm
+5oci
+3drs
+4h3q
+3t8w
+1sm2
+2oz6
+4igr
+3o6t
+5mft
+4jv6
+6gev
+5m57
+1w8l
+2qoa
+4j0z
+4o10
+5ew9
+6o4x
+5y7w
+1k9q
+1ms0
+6mju
+3bhx
+1syo
+5e5g
+2vd4
+1l0a
+6an1
+1prm
+4ajw
+1ggd
+6rml
+2zlf
+3rtx
+2bxt
+5qcn
+2g71
+5gjd
+3bg8
+1k1p
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4o55
+4wyy
+Waring: Missing or wrong elements: B
+5uzj
+4ec4
+6dgx
+2zas
+5lzh
+5j79
+3nii
+1m5c
+6os5
+2osc
+4i0z
+3fmz
+5hkm
+3jpv
+5wic
+3ig6
+2xzq
+2y4a
+Waring: Missing or wrong elements: B
+3nsq
+6fob
+3eq9
+5xfj
+5unj
+6n19
+3oay
+6mzw
+4ktu
+4em7
+5kqf
+1n7j
+4pd7
+6qaf
+Waring: Missing or wrong elements: B
+4eyr
+2c6m
+5g1c
+3pr0
+3a3y
+5hfj
+4oz2
+2xkf
+6f3i
+2xpa
+2y07
+5ezg
+3f3a
+1czl
+3sz9
+4qw3
+Waring: Missing or wrong elements: B
+3e8u
+3ii5
+3eq8
+5jas
+5kjk
+5zwh
+3msl
+1m13
+1aw1
+4nk9
+3avg
+4rrq
+2gh6
+2y5k
+6fkp
+5qin
+6mo1
+6qmt
+6grp
+5wi1
+4dgm
+2nmb
+5h5r
+5h4j
+6dtx
+6hmt
+6b5o
+6hp9
+5jnc
+2nnv
+5v3h
+5orr
+5tca
+6dlx
+3of8
+5jid
+6d1x
+1xxe
+5tpg
+6ke0
+5lgn
+3ik3
+1qwe
+2cvd
+4y2b
+3l9l
+6i0k
+5yy6
+5ci7
+1wbt
+1tfz
+1o6i
+1vrt
+2y4s
+4tjy
+5d4a
+3dej
+1k06
+5v49
+2qve
+5j9l
+5edr
+5x4p
+2qcg
+3ffu
+4jr3
+3g5d
+1ihy
+Waring: Missing or wrong elements: R
+Waring: Missing or wrong elements: R
+Waring: Missing or wrong elements: R
+Waring: Missing or wrong elements: R
+Waring: Missing or wrong elements: R
+Waring: Missing or wrong elements: R
+Waring: Missing or wrong elements: R
+Waring: Missing or wrong elements: R
+Waring: Missing or wrong elements: R
+Waring: Missing or wrong elements: R
+4j09
+4l2x
+1r2b
+3uii
+4jff
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+1a4h
+2p2i
+2zv9
+6mjw
+5t27
+2ow6
+1wun
+6qfh
+4zh4
+5al3
+1dfo
+4wet
+6hgv
+6eeh
+3ua9
+6mmq
+4umn
+5jc1
+4cku
+6h4q
+5tdb
+5j31
+4qjr
+4bcg
+6hb5
+1dbb
+4wcu
+6bqh
+4n3r
+6ibl
+4yyl
+5ea7
+5u2e
+6e3o
+3dya
+2zof
+3jzr
+5m3a
+2kaw
+3orn
+1dwc
+4udb
+3h59
+3fc8
+3fw3
+6jid
+3wv2
+5ukk
+3lf0
+2o4p
+1s4d
+2xl2
+3vva
+5m53
+2ohk
+6bke
+6e3p
+4rt1
+4hvd
+2wcx
+4rxh
+1lv8
+3oq5
+2qcd
+5mkj
+1ulg
+5lt9
+6s9d
+1lhw
+4b12
+4nxq
+4npv
+1ms7
+6mnp
+5jsm
+2wva
+6h4z
+1sts
+6qmr
+5znl
+4d8s
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+5oax
+3bla
+3p9h
+3kba
+5tzy
+4ere
+4lv4
+4msg
+2y4m
+1c4y
+4k66
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+6agp
+6acb
+3kid
+4jt8
+2w06
+5uv1
+3kb3
+1wdr
+5yic
+4drn
+3snc
+3cwe
+5fnq
+4lke
+4rz1
+2hfp
+3wv1
+3sd5
+6dgt
+4uxl
+3hxc
+4mm9
+1a8i
+5goe
+2w6q
+5ug9
+4wpf
+6g9j
+1vjb
+1bug
+5mtv
+5oxm
+4y62
+1a09
+6qtm
+4mfe
+4ejf
+1e02
+3puk
+3rxk
+1iwq
+1t46
+4yqh
+3cd8
+4iax
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4p0v
+2of4
+3u7k
+2lto
+5dhj
+4o28
+1z5m
+2lha
+2x7s
+5jmx
+3unn
+5uis
+2yj2
+5ioy
+5k4i
+5j5t
+5e0a
+1njj
+5enj
+5l87
+3r9o
+2ghg
+6do1
+1h27
+4oem
+2w6m
+2on3
+3t1n
+6cgp
+2vnf
+6chq
+4yz9
+5nzo
+6apv
+5djp
+5ale
+5if4
+1xh8
+3wzk
+6g3c
+4jhz
+1qxz
+6c91
+4r3c
+3ful
+5nrf
+6csf
+6f29
+3tsz
+3h03
+1gvk
+4jaj
+5lm4
+3coh
+1yi3
+1err
+5teh
+4jik
+1bkj
+4j5d
+4j04
+3jqb
+4kc2
+6er4
+1hgi
+1y0x
+2xb9
+3ho9
+3kad
+5yp6
+1ouk
+4x6p
+5v9t
+2ogz
+3i7g
+2rcu
+6q2y
+Waring: Missing or wrong elements: B
+2f89
+1gi9
+5mk1
+4jjf
+4kin
+1ktt
+5q1i
+2p83
+5am1
+3pb3
+1mnc
+4gye
+4yad
+3buw
+5dd0
+6hhg
+5vdw
+4os6
+3k27
+2vpp
+2ycq
+4nga
+4m3g
+4lkm
+1v2q
+3mct
+1e00
+5cwa
+5tzx
+6rni
+5vdo
+5ktu
+1s9v
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+6b5m
+2ynd
+5w0f
+4ijq
+2yns
+1gca
+5ocj
+2x2i
+4g0a
+6s9w
+3mo5
+5u8a
+3h0y
+5hh4
+5csz
+6dhc
+3rpr
+2bq6
+4jzd
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+6nad
+3e7a
+6jjn
+4hld
+6g01
+3lxl
+6e0q
+4ytf
+3cjf
+3uo5
+1ykr
+5jr6
+6fsd
+6bqg
+5lo6
+3g8e
+3h5s
+4l4l
+6cbh
+1avp
+4b05
+1s17
+6eum
+2p99
+5fh6
+2mji
+6cq4
+5cxz
+3oap
+6o1g
+6jut
+6f8x
+4wbo
+4mwr
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+5id1
+5ekg
+4mao
+4d2t
+5v5n
+6n5f
+4zsg
+5u8f
+3dhk
+3kc0
+5t78
+6bix
+3tjh
+3g0g
+4zs0
+5av0
+2yog
+2pe0
+1cze
+1uk1
+4kmu
+5yg4
+3n23
+4um3
+3s7l
+4cts
+2qmj
+4rsp
+6en4
+3v2w
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4i73
+6dn6
+5jeo
+5l2t
+4q1c
+1xxh
+4wh7
+6rz6
+4waf
+4xbo
+6e8m
+2kp8
+2obf
+6en6
+1gja
+1m51
+5xvq
+4bae
+3sov
+3fnm
+6d1l
+4ju6
+2y9g
+5wj6
+1d8e
+4cki
+2y6o
+4x1q
+2qaf
+6dd1
+6isd
+4pct
+6ee4
+5fwr
+3nil
+3cx9
+4u7v
+5czb
+6h4u
+3rsr
+4zyx
+3ce3
+6ntb
+6i0b
+5za1
+4xy9
+4aw8
+4u6r
+3eio
+4odq
+4yt7
+1rdt
+3zt4
+1fq6
+6e4c
+6nwc
+4fxf
+1ek2
+2vle
+4b11
+3rk7
+4mi6
+5ea6
+1jwt
+3gjq
+4ea3
+1ce5
+2yj8
+3ejt
+5w5s
+3g2v
+5moq
+3t3e
+4gly
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+3k3h
+3uxm
+5afx
+5iay
+6r8i
+3ud5
+1q4w
+1ai6
+4bo7
+4l34
+2ybs
+3elj
+1b6p
+2j3q
+2rvn
+4w4y
+5yjo
+6dgo
+5td2
+5y6k
+3ksl
+3fbr
+3ujb
+1n4m
+5y9l
+2vfz
+2wyi
+3g3d
+4u2y
+4uxq
+2xvn
+2hiz
+1c7f
+6i8b
+5fbo
+2uvm
+5qtu
+5wa6
+3nzu
+1t29
+4mot
+3rtp
+3l1s
+3udp
+5dx3
+2r05
+4qr5
+4eon
+3ggw
+3qtq
+2nnq
+5ngb
+4y8d
+4x8s
+4ga3
+2hha
+6hm4
+3pkd
+1fe3
+6hq4
+4p5e
+4rn6
+3hik
+5wf7
+3vdc
+2q2y
+1q1y
+1w1y
+5fbn
+3e9h
+6ffs
+4l7u
+1dwd
+5wh6
+6n5c
+5qb0
+4rxz
+6ewe
+3dab
+6cmj
+4c7t
+5ksu
+6ej4
+5ai5
+3fgc
+1xfv
+3lhg
+4z16
+3fjz
+1unh
+3c6t
+3udm
+5dkr
+2wcg
+3ha6
+5mgx
+6ipk
+3bxz
+3dpe
+3ti3
+1q6p
+1bio
+5z4o
+4uiy
+6hk6
+3ztc
+2vd1
+1rlq
+2gz8
+3ijz
+4bdb
+2ath
+4f9v
+5zoo
+4hy9
+4cfw
+4qfs
+830c
+2z50
+4wpn
+5q0p
+6f7i
+3fqk
+5x5o
+2xk9
+2co0
+4fcm
+2r1w
+3g0d
+1i9q
+5xkm
+5l3j
+1nu1
+6m95
+5fl0
+2fm2
+1cr6
+5w6o
+2alv
+3qts
+1d3q
+3qem
+6chh
+4zij
+4qsw
+6p5w
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+2f4j
+3sni
+1rri
+1css
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+centreofmass.sh: line 112: 2019000 Segmentation fault      (core dumped) $LEDOCK input.txt
+3eys
+6j81
+3nm6
+5nkn
+4yoj
+2wj2
+4xjt
+1mqh
+2ank
+4z2i
+1a0t
+5clm
+3n51
+1vcj
+5eko
+6r0s
+3rwe
+4x7o
+6ciy
+2x52
+3h2f
+1fo3
+6mck
+5ofu
+3fcf
+5tzw
+4puz
+4wf4
+3ftw
+3lj3
+4djh
+2f01
+6q9l
+5ewh
+2w6n
+5kmh
+3dcr
+6ipi
+2bgn
+3lkz
+5ap7
+5uex
+3cm7
+2xk4
+3pxz
+4y2p
+5exx
+2er9
+4mp2
+6hkx
+4dzw
+4o5b
+3i02
+1o5b
+6r4v
+2xp6
+6ocw
+1ung
+3bwf
+3rde
+4pyx
+5jzn
+3ps6
+1i32
+4tki
+3r0i
+3v8s
+4akn
+3o9l
+5t1t
+1lt5
+4oho
+4a9u
+4p4f
+4rn0
+1q6t
+1wdy
+2g0h
+2p8s
+5ifu
+3nww
+3oj8
+1tu6
+1y8p
+1epp
+4na4
+4yk5
+3fqh
+2xxn
+2l1r
+4a4f
+5alv
+1z6j
+3ws9
+3nyn
+4rll
+6czi
+5hdu
+5mhq
+3ogp
+4q1e
+3vqs
+6ce2
+4ui3
+5e2w
+4efu
+5x9h
+4xek
+4y6m
+5hyr
+1o4m
+6h3k
+4bhf
+4kot
+1heg
+2r3l
+5djv
+5web
+4gng
+6i5p
+4xqa
+3v5g
+4y2j
+6cyd
+2qhm
+5ir1
+5w6r
+4alu
+4qn9
+1yhm
+3qtz
+5hv0
+5hjd
+2wqp
+3h9f
+3bls
+Waring: Missing or wrong elements: B
+4y7r
+5tw3
+5wqa
+1veb
+1uym
+5ehg
+2fl6
+5h0h
+3wiy
+3ncz
+4ci2
+6fcl
+5tg7
+Waring: Missing or wrong elements: B
+5w6u
+3hxe
+1ox9
+6a6w
+3u4r
+6peg
+2azb
+3iux
+3m6q
+6qaa
+2yg2
+4ui8
+4ryl
+4e96
+2yiq
+4ozl
+5u51
+4tzn
+1uh1
+6duf
+3kec
+6pno
+5uox
+6egw
+6nd3
+6enm
+2zlg
+2jj3
+3ur0
+5n8w
+6gbx
+2ybt
+3ara
+3a29
+1h25
+6qmu
+4r5y
+5ttf
+4l0s
+2h6k
+3eml
+1xoq
+5go2
+5k6s
+1c4v
+2y4k
+6e7v
+6msa
+3h5u
+5q0v
+2zyb
+5hn0
+3cf9
+3m89
+1rhm
+1sz0
+3g2u
+4l31
+2wbb
+6b5r
+3qo2
+4au8
+5vt4
+5y21
+6mm5
+3zxv
+1u9x
+6hvs
+6n17
+4tky
+3ndm
+2r5q
+5esq
+4fny
+5ylv
+5hl9
+3ovx
+5q0i
+2bts
+2vr0
+3zsw
+4mny
+4ozo
+4r5n
+4uvy
+2yc3
+4nh9
+4ca4
+4l7h
+1gni
+1ilq
+1tsl
+1j19
+4dai
+3fl8
+6hvu
+1xnz
+2h5e
+4nw2
+3fnu
+1at6
+4ow0
+6pyr
+4okp
+3tll
+5y7j
+1o4o
+6mrg
+4eny
+1iyl
+6arv
+6apw
+3rwi
+3ihz
+2bv4
+5i7u
+5n9t
+3th0
+3p23
+6r8q
+2bvx
+3kc3
+5x4q
+1bji
+5ftq
+4fod
+4ptc
+3jqa
+4eej
+1d04
+4rrn
+2brn
+6cfd
+6rsa
+Waring: Missing or wrong elements: V
+5wre
+6ugq
+6ffi
+4ayv
+1y6b
+1qxw
+4uiz
+1tok
+3nf7
+3p78
+3l0n
+3l79
+4uu5
+1eou
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+4ehg
+5xvf
+5vii
+4qmx
+2cn8
+1i8h
+3kpu
+5iu2
+1kl3
+3ad8
+4wht
+2byi
+5ff6
+4c70
+6eqm
+5f29
+6oyz
+4hxw
+2ay1
+3dm6
+2i0g
+3rw9
+1bl6
+2fyv
+6i75
+1caq
+6am8
+5f90
+5fwg
+6mo9
+4dkt
+3v2x
+5qav
+5vgo
+3rx8
+2xke
+3rhx
+1tmb
+4qqi
+3gjt
+5elv
+6qqt
+5o1e
+2vx1
+1azg
+6h7b
+4kz8
+4ayw
+3cs8
+6e86
+3vw7
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+6uyz
+2g63
+3lq4
+6nji
+5a3w
+1gfz
+1my3
+3k5f
+6ek3
+4zsl
+2vtt
+4gmc
+3lzv
+5hkb
+1bux
+3ob0
+4ie0
+2g9q
+6iji
+3fzs
+1c3e
+5w7j
+4ia0
+4j77
+2ivu
+5zma
+4h4d
+5kzq
+2ggx
+4ypf
+6mey
+3oot
+6h7d
+3efs
+3fc1
+2wib
+5dxh
+2nyr
+5uqv
+1i3z
+1y19
+5lto
+5x4n
+6erv
+1w2k
+3ggj
+4pri
+4m6q
+2m3z
+3hii
+6cjh
+5cxh
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+2ou7
+1pxj
+3c49
+6mxb
+4bgx
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+3kai
+2y1d
+3au6
+4awm
+4iu4
+Waring: Missing or wrong elements: B
+3o1d
+4tuh
+3ppj
+4rj4
+5o8t
+5v1b
+5nwd
+6gzh
+5lxc
+1oko
+6cvx
+2wi6
+2xzg
+4nuf
+5tq6
+4qls
+3ml4
+6uhu
+Waring: Missing or wrong elements: B
+5za2
+6cmr
+5axi
+6afc
+5ayf
+5ew3
+5wlg
+1zz2
+4yk6
+6poq
+3fvg
+1ybo
+6c9q
+3i06
+3wi2
+4jbl
+5t4f
+3jvk
+2ajb
+6fdq
+4qw5
+5e8z
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+6oot
+3h8c
+3qak
+4m7c
+6rvl
+Waring: Missing or wrong elements: B
+1lqf
+5cuu
+4jkt
+4wvu
+6n5h
+4awk
+2q1l
+6fa3
+4rkx
+3zlx
+5ntq
+3r04
+4mr4
+4f7l
+5n3w
+4jog
+1mto
+2jb5
+5ix1
+2mow
+5dde
+1rdl
+3cr5
+3rpv
+4o78
+5nvy
+2h9m
+5yib
+3g2s
+4jfe
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+6fr2
+4yef
+1c9d
+3wqh
+5o1c
+3luo
+4d1a
+2hqu
+5lh4
+4nmx
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+3rjm
+3g58
+2e5y
+4lh6
+4wri
+4qp9
+4psh
+5owa
+4mbj
+2v7d
+3ms2
+2qzl
+3tjc
+1uom
+4bcw
+4anv
+4uv9
+6te6
+2n0u
+4uib
+4q3q
+Waring: Missing or wrong elements: B
+5ypp
+5vwi
+1ok7
+5lax
+4k1e
+4q2k
+4orx
+4ckj
+4zx6
+5fv7
+4qpa
+3nkx
+3ttz
+4fk7
+6evq
+1f1j
+4ylu
+1ukh
+5a14
+4jfj
+4qfg
+4uhg
+4hev
+2xcs
+3waw
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+3t2p
+3qw8
+5khx
+3sqq
+6g0w
+4gtq
+4qp6
+2r3o
+5aac
+3kfn
+6g4y
+3s3v
+1xh3
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4tya
+1tsm
+5jic
+4o7c
+3chq
+4kox
+3n45
+5yji
+3h2c
+4kon
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+1g7p
+2x9f
+2hh5
+3c14
+5n16
+4lkf
+6oa3
+1v1k
+5wik
+1jr1
+3zpq
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+2xo8
+6beh
+6bky
+6ijl
+6ft4
+4aac
+6cex
+5auy
+2w2u
+2xu5
+1o49
+5tys
+4pvt
+1uef
+6gzy
+5acb
+2hm1
+1d4t
+5jah
+4qz1
+3gcv
+5j5d
+4o3a
+2a3b
+4cqg
+6hmp
+3ama
+1b39
+4yfi
+1nnu
+4gs9
+2qhc
+4as9
+5zqq
+5wbq
+4r17
+6axp
+1sw1
+4glw
+4qmq
+1v0o
+3i3d
+2xae
+6oio
+4whr
+5a5p
+4qmm
+4zro
+2in6
+4e1e
+2f6j
+4qr4
+6bhd
+5ku6
+6oz6
+3h1z
+5iy4
+4kij
+3wff
+3dx0
+4fc0
+5ap5
+4lkh
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+2cfg
+Waring: Missing or wrong elements: R
+4j0t
+2xm8
+3qyy
+2a8h
+4p7s
+5agr
+Waring: Missing or wrong elements: B
+5a54
+4qzx
+3hmm
+2qky
+3o8g
+2fsv
+4kcg
+5kew
+4mi3
+4mvn
+1xp1
+2fv5
+3m11
+2o5k
+5u5h
+5m44
+4qz7
+4g19
+5t2l
+5vfc
+6gw1
+4xbd
+6a9o
+4lnf
+1g5f
+3b9g
+6dya
+3s4q
+5zdf
+3m58
+2onb
+3f2a
+5al1
+1j7z
+3kwb
+3t2v
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4ajn
+6ntj
+5d6y
+4ym2
+4m0z
+4mf0
+5ntt
+5l44
+4x0u
+4azt
+6aa4
+4qmy
+2vj7
+3tvw
+4nyi
+1toj
+6inm
+2cv3
+1nlj
+1rwq
+1yon
+3ztd
+1wcc
+1uy7
+2jdt
+6n9h
+2v87
+4nie
+4r1v
+5aqq
+3nzs
+5w5o
+5fxr
+4ppb
+6ncp
+5c7e
+6n9p
+6izq
+4wmc
+2nn8
+4lxa
+5mwg
+5l3f
+2lh8
+5kap
+4aze
+5le1
+3g6m
+4l4m
+2w7y
+1q4k
+1fd7
+5hv1
+4j0a
+1my2
+1a85
+2o22
+3blr
+5zt1
+1u9e
+5dp5
+2ltx
+5trg
+6f6r
+5kau
+3esj
+6ny4
+2v22
+6dl9
+5ejl
+3fyk
+5l3e
+2ov4
+6qfg
+2ay4
+4fpk
+4eh5
+4p74
+5eyd
+5xp7
+5tq7
+4a7c
+5wlv
+2op9
+5c87
+4yax
+1y2c
+6cd5
+3sap
+5tcc
+4y5s
+5q0d
+5brn
+5jiq
+4g2f
+1p6e
+1mn9
+6bmi
+2z78
+4hwt
+2w0s
+1unl
+4qvv
+Waring: Missing or wrong elements: B
+3thd
+5z1d
+1lev
+5ei2
+6q9s
+6saf
+6c5t
+1ida
+5dtm
+4eqj
+4bnu
+3eyh
+4rab
+6kla
+4g31
+2bkt
+6tel
+5mfs
+1uy8
+3emh
+5fom
+Waring: Missing or wrong elements: B
+5cf5
+5m6h
+1tvr
+4p7e
+3rjw
+3ava
+4ixv
+Waring: Missing or wrong elements: B
+4d1b
+3ddq
+4u6y
+5wac
+Waring: Missing or wrong elements: B
+4ft2
+5u7o
+5ylj
+4tsx
+2jal
+5mxq
+3f3u
+4qw1
+Waring: Missing or wrong elements: B
+5ujv
+1ysi
+5n7v
+6bg5
+5ai6
+4abi
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+6cw4
+2f14
+2aay
+5v1d
+2rfn
+6me5
+1zfp
+5aeh
+5itd
+4f7j
+4lkd
+5qb2
+3zs0
+4o5g
+2wyn
+4af3
+3lpg
+4qag
+3mt7
+6dqb
+5lyy
+1jh1
+4qvq
+Waring: Missing or wrong elements: B
+5x33
+4m5m
+5ta6
+3puj
+6bod
+6h0b
+4z2h
+5e2v
+3wsy
+4nmq
+4w55
+1d7x
+4g2w
+6ajg
+2xbj
+1i72
+2e98
+5yfz
+3kr0
+1soj
+1jj9
+2rox
+2w68
+4fzc
+5v24
+5izc
+5xxk
+1oiy
+3l0e
+5gub
+5fpu
+5hdz
+6cho
+5a3u
+3frz
+4hw7
+3d1f
+2ony
+2bed
+4dpt
+2uym
+1eix
+1mx1
+5f20
+4k5m
+3o0u
+6d4w
+3k5g
+1nl6
+2h5j
+4j8r
+4f4p
+3zxh
+1bm2
+6f8u
+4ci3
+3hiv
+3wzu
+2vww
+3fkv
+Waring: Missing or wrong elements: B
+4k5z
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+1fgi
+3l7d
+1gfw
+4o7b
+5vfj
+4cy1
+1p2g
+4j81
+3odl
+5ka3
+4jg8
+1ya4
+5bq0
+2kbs
+4ea1
+4xkc
+Waring: Missing or wrong elements: M
+3ans
+2y55
+Waring: Missing or wrong elements: B
+3okh
+2hmw
+6mvx
+3q96
+6g9a
+3kah
+6hle
+5nib
+4qoc
+5aqp
+6fx1
+2xgo
+4lyn
+5aph
+4rrs
+2c4v
+6oim
+3ehn
+1b2i
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+2vtd
+5xmv
+2jdn
+2x7c
+6om4
+3w2p
+4lnb
+5vlh
+1xp6
+3iaf
+2vto
+5hvu
+4unn
+2ynn
+1qwu
+3qiy
+3avl
+4ps7
+5jy0
+3t4p
+1o2s
+1jwm
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+3u18
+5m4k
+5d6p
+1lhv
+2oc4
+1xn0
+2cma
+6b1y
+1o4g
+2y6s
+6bcy
+3av9
+6miy
+5zcu
+2wmw
+5alz
+1r5n
+5i25
+2xml
+4aza
+4yh4
+3b8r
+1c8l
+2fdd
+3vtb
+3rqw
+2j9h
+5up3
+3lrh
+3kac
+5ar5
+5usy
+4ran
+4lwi
+2ay2
+6g8l
+4emv
+4e3l
+Waring: Missing or wrong elements: B
+6r12
+5jbi
+2pre
+2zgm
+6suo
+6irt
+1r4w
+6oos
+3nuy
+3iej
+3o95
+6esn
+3gs7
+2upj
+4q1d
+3arf
+1db5
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+2woa
+5euk
+1aht
+4e90
+5om9
+3ig1
+3k83
+1abf
+6ap6
+5ye8
+2ym3
+2am2
+3t6j
+4jxv
+4gjd
+5t2y
+3fv7
+6hys
+2f2c
+3kcf
+5agj
+Waring: Missing or wrong elements: B
+1o46
+6imo
+4b8o
+3kqm
+3peq
+4jda
+6db4
+6fam
+1gpy
+4zpf
+5fqv
+6au5
+4dfb
+1br5
+6b30
+1lfo
+4y87
+1c5z
+4nrb
+2w6c
+6dq6
+5m4f
+6a06
+6iil
+6ajj
+4n98
+4qyh
+5yc8
+1gbq
+3che
+4qk4
+4imq
+6fi4
+2aeb
+Waring: Missing or wrong elements: B
+1h3h
+5m7t
+6b1c
+4obv
+3fr5
+4ojq
+4yh3
+5eay
+4azf
+5tqe
+6bhh
+3arv
+3vjt
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+1jil
+2ylo
+4fgz
+1t69
+4exh
+2qo8
+5ngr
+3b28
+5u7l
+2ke1
+4j24
+3qj0
+6ijh
+3ixk
+3lpr
+Waring: Missing or wrong elements: B
+2e9n
+5cuq
+5mw3
+4n9e
+5h15
+4r92
+5g1p
+5t54
+4bdg
+4rao
+4c72
+4pl6
+4l0i
+3q92
+2vqj
+4p00
+5a69
+4jhq
+6h8c
+1d6s
+5ywx
+6ccu
+4elb
+2w1d
+2bjm
+4eqf
+4h71
+4z88
+5n1p
+4qok
+1ga9
+Waring: Missing or wrong elements: B
+5tbn
+4ekg
+5kez
+5lxd
+6u7p
+Waring: Missing or wrong elements: B
+3eql
+5v19
+5n8j
+1way
+6hu0
+5cil
+5knu
+3azb
+5qae
+9abp
+5aqj
+1icj
+2q9y
+4zsa
+3zlo
+4odl
+3q2g
+2zz6
+1ctr
+2itp
+6nnr
+4dhr
+5eth
+4f64
+5wxf
+6b7e
+5lpr
+Waring: Missing or wrong elements: B
+5bvn
+6qae
+3t4v
+5wdw
+3k9x
+4y4g
+5uiu
+5vtb
+1vj6
+6ghp
+3ds9
+4ylk
+3efr
+2zp0
+2qlq
+6e9w
+4jwr
+2wd7
+4olc
+6eo9
+6dhu
+3ocb
+2jqk
+3l7b
+5ni5
+3snb
+4b81
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4j7i
+5yvx
+5ogl
+3fpd
+3kfa
+5ttv
+3qu0
+6bil
+6e99
+1qku
+3t07
+2rib
+6nze
+4ztq
+2o63
+5j32
+3ob1
+6mo5
+4j5p
+3ay0
+1bnm
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+5xs8
+3kdu
+6nrf
+3wcf
+6bfe
+3bm8
+3vw0
+3r8z
+1bqo
+5fum
+4y2x
+3s1h
+3ask
+5lhg
+5dcz
+2is0
+2g24
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4u0c
+1wkm
+4b2d
+4ijh
+2uw4
+5qab
+5vsc
+5ur1
+5ho8
+2z3h
+6hvw
+6szj
+3hp5
+1w83
+5o7i
+3wf6
+6bfp
+3e7o
+4zsq
+4d52
+1eve
+4bxu
+4r8y
+2ql7
+3zju
+Waring: Missing or wrong elements: B
+5u66
+5jjr
+4civ
+3ft3
+6f2n
+3db6
+1u9w
+2nnp
+5trh
+4ucv
+1tqf
+5bqh
+5dtj
+6afk
+1gt3
+3hxf
+2wot
+4pz5
+3qcx
+3fxv
+4jit
+2f9b
+3pdq
+6slg
+6iae
+3dsu
+5w38
+4i12
+4hmk
+5hn9
+3fu6
+3pn3
+5a83
+3tlh
+4gby
+5yov
+3rxl
+2y1g
+2xp4
+2wap
+6gcx
+3ch9
+3poa
+4zs3
+1vsn
+5cr7
+5xqx
+1hef
+4ah9
+1h0w
+5q1c
+2qe5
+4i4f
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4zz3
+3uwo
+3t8s
+4z2g
+1shc
+3ogq
+5qaa
+2g9v
+6bnl
+5mgl
+5alc
+3r2b
+2hny
+4fmo
+5typ
+Waring: Missing or wrong elements: B
+5n4s
+2ax6
+2xiy
+3q3t
+4qrc
+3d14
+6quw
+5fxq
+2p2h
+5ks7
+6bee
+3buo
+6p12
+4gk3
+6c3l
+4xg6
+1wtg
+4bgg
+4hnp
+3ump
+6n5g
+1idb
+4wsy
+1p7m
+2p94
+4i9c
+4m4q
+3q8d
+3mg7
+5l13
+3ftu
+1d8m
+1hkk
+4mnv
+4r5g
+3tcy
+6e2n
+5hbh
+4mlt
+6ufo
+5orl
+5try
+2g8r
+2v13
+3kqp
+2fwz
+6dqa
+4gw8
+2wp1
+3muf
+4ppa
+1t4e
+1w1p
+6f5u
+5bpp
+1v0n
+5mb1
+4qz3
+3bhb
+6n3n
+5thj
+3mp1
+3o9h
+5xw6
+1vjc
+4iho
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+1idg
+5k4l
+4zwy
+4x6x
+2aux
+5ak3
+3ow6
+5jjm
+3hxi
+2k1q
+5km5
+1tlo
+5ngs
+5ly1
+4yas
+4qir
+4gja
+1me3
+2kzu
+5h5q
+4giu
+4raq
+5tza
+1eef
+5mo2
+5faq
+1t1s
+2ydf
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+1leg
+6q6o
+4rce
+4z5w
+1efi
+1rq2
+2wxg
+2jkr
+6fut
+2wu7
+1af2
+4jg0
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+5bqs
+3nok
+2e9d
+4o7e
+6gg5
+3f8w
+5ef8
+5ue4
+5c83
+6sfj
+3koo
+2ggb
+2k2r
+2bdy
+4pry
+4n1b
+3hg1
+3ekn
+4cdr
+4li5
+5iw0
+3hec
+6d8e
+3tfv
+3oob
+4jv7
+4iuu
+4ob0
+Waring: Missing or wrong elements: B
+5iz8
+2lp8
+5di1
+1gj5
+4j0v
+5c7n
+3olg
+3qo3
+2mg5
+2w92
+3rvg
+2xup
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4ezl
+5d9l
+1zfk
+5lyh
+4jq7
+3lgp
+5abp
+5eou
+4hco
+1kf6
+4jc1
+4dhp
+3f3w
+4dcx
+4b00
+4btu
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+2rjp
+4jin
+4wf2
+3fcb
+2yac
+6qzr
+4d2v
+2ofu
+4ux4
+1onh
+3bc5
+3atl
+1jws
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4mm5
+4bo6
+3krd
+2fci
+1m6p
+3zim
+6q7w
+3ew2
+3qc9
+4qxq
+3qce
+1a08
+6oxz
+6nzm
+4bh4
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+2zdz
+3mo8
+5c1y
+6alc
+4qjp
+2yiu
+4nzn
+1avd
+4jrg
+3rin
+3ddu
+6hmx
+5ggz
+5jm4
+2n7b
+2hr6
+3rzi
+1r5g
+4clz
+4b82
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+3ion
+5zk8
+5eta
+4b4g
+5mqy
+5mlo
+3s3m
+5mxk
+6e13
+3q72
+5wbp
+3hxb
+6b41
+3q32
+1urw
+5z1c
+5ek9
+4ie4
+6f94
+1fj4
+6naf
+4k6w
+1bjr
+6cse
+5xaf
+2vj9
+4az0
+2e9a
+4pgh
+6cyb
+4ehm
+4b0j
+2xng
+4qp1
+3uvm
+4v05
+5tq8
+4xcb
+2h2d
+5jap
+6oxs
+4x3r
+2bge
+4fxy
+6fff
+6ffg
+5lgt
+3bl2
+4mha
+3l16
+1w4l
+2q7m
+2ate
+5dah
+5y6d
+6mdc
+2i7c
+4u90
+6qho
+2k7l
+6af9
+2ckm
+6c4g
+1mem
+5gvk
+5j9k
+2l1b
+2bqw
+4amw
+6g1v
+4y2s
+4ngq
+4y6s
+5unh
+6d49
+3v5j
+2hwg
+5nu3
+3srb
+1sje
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+5oje
+6ibz
+6g02
+4b9h
+1aq1
+6p10
+5laz
+5n9l
+2pv3
+4uia
+4mi9
+5t36
+5xmu
+5j19
+2rol
+4q9s
+2fxr
+6m7i
+6m7h
+3ezr
+3at1
+3hp2
+1yc5
+5he1
+1xuo
+6fzg
+3ej1
+2r3c
+2yer
+2oc7
+2w3i
+2hog
+1x7a
+3l7c
+2zvj
+3h0e
+4cpq
+2e7l
+3mbl
+1so2
+3li2
+3d67
+4z7o
+5vfn
+3wch
+4zy6
+6cw8
+4ynd
+4o43
+2y1n
+6e3n
+4kbi
+Waring: Missing or wrong elements: B
+1kwr
+4y63
+4ds1
+1me4
+4mcb
+4bjx
+1jii
+2w6p
+2xy9
+6qfu
+3sud
+2gek
+6qzb
+1jrs
+2wwj
+2r4b
+3rz9
+3gw5
+2i0y
+1gjb
+5f2f
+6mny
+6aff
+5jal
+6njh
+3wtk
+5eb2
+4zjr
+4joj
+4p72
+6r0x
+3d2t
+6h13
+5lma
+5ezh
+4f8h
+1no9
+4twc
+5l7f
+6pz4
+3wqw
+2xgm
+5yqw
+2esm
+1al8
+5lss
+2wzy
+3v5q
+3sna
+5jga
+3iaw
+2ym8
+4e49
+4b4m
+4ivs
+1s5q
+3qfv
+5ti4
+4qzw
+1a61
+3r0t
+3btj
+6n3f
+4jnc
+5owc
+5mty
+4pd9
+4wn1
+2bz5
+3tc5
+6d3x
+5eue
+3rbm
+2ggd
+4hkn
+3sw9
+2gc8
+2wik
+5myg
+5iua
+5lws
+1urc
+6uvv
+6r8r
+3in4
+6afr
+3wc7
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+2fjm
+1d1p
+5iee
+2e9o
+3qaq
+4hbv
+5yie
+5g3m
+5tku
+3g2w
+1joj
+5m6f
+3nk8
+4tz8
+2z6w
+4o62
+1r6g
+1pzo
+5d7e
+5u7k
+6ohu
+3u6a
+6efk
+6q96
+6p1d
+1at5
+5ewd
+5dpw
+5dj5
+4zam
+4usw
+5f41
+2zga
+5wkf
+2qyn
+1s64
+5w2q
+2g83
+5d2a
+1vot
+1nax
+2zbk
+1j80
+5na0
+1dzm
+1ong
+1eei
+4y2u
+1g3c
+6pvs
+4pul
+2phb
+4hhy
+4eok
+5l4e
+2xhx
+4o6e
+6nk1
+1nzq
+4e5h
+4whl
+3g72
+1oiq
+5igl
+6r7j
+5ml6
+2v10
+4w54
+6hvh
+3fa3
+2be2
+3zyb
+4zt7
+3k39
+6om2
+1ao0
+6cvd
+5yhl
+2ydv
+1r78
+1gj8
+2k4i
+3itc
+5eiw
+5c0k
+1o4h
+4fvq
+1vru
+2l7u
+5q0m
+2vhq
+3te5
+4cjn
+1qf5
+4iuv
+3l8v
+6fod
+5zbz
+3a4o
+2o64
+6bh1
+2aqb
+3mo2
+3n8n
+5ele
+5uey
+1gt4
+2y7p
+5lz2
+5a5o
+5wpb
+3rsb
+6hgz
+5n1x
+1nmk
+2uuo
+5l2m
+4klb
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+5auz
+6g0q
+6npp
+4x6y
+2er6
+5znp
+4whh
+3drr
+5drc
+5ntw
+1b9t
+3vzd
+1akr
+5t92
+3tzd
+5lt6
+5h5o
+4zcw
+1mpl
+8abp
+3a1s
+1nox
+3h2m
+5c2e
+3r9n
+4r02
+2pix
+3mxs
+Waring: Missing or wrong elements: B
+4txe
+5mwa
+5tkt
+6p7q
+5cgj
+2ohq
+5em5
+4bt9
+5lp1
+2imd
+1j4q
+4utr
+6dub
+6gub
+3fc2
+6g9b
+6avi
+4c38
+1cyn
+4h38
+2g8n
+6r4s
+4qz5
+3vqu
+1lor
+2vta
+4cq0
+1jk7
+4bfp
+5jjs
+4m5i
+1dmt
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+6br2
+6aol
+5h7h
+5zml
+2ynr
+3il6
+5am0
+3okp
+3rqf
+2zu3
+5iui
+3w54
+3r0y
+4az2
+3kry
+4whz
+1t4s
+4k9g
+5fni
+6q4q
+2xvd
+6au9
+3prz
+2ccu
+3fsj
+5aib
+5tr6
+1pxh
+4ks3
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+1xm4
+4e6c
+3r0h
+3px8
+1ke8
+6mdq
+1n0t
+1w2x
+3m9f
+3wkc
+4yzm
+4oo9
+5uch
+5szb
+3tv4
+4oon
+5xhs
+2h2g
+3qmk
+6h7j
+2vtr
+3t3d
+5sz9
+3rsv
+4xc2
+2zq1
+4o75
+4uxb
+4x63
+4x1r
+1ke7
+1fpp
+1nyy
+Waring: Missing or wrong elements: B
+5a4t
+3nw7
+6iyv
+6aeh
+6i16
+6g46
+3qd0
+2g00
+6apu
+6cb5
+5nge
+2ff2
+6drt
+5tur
+6g9n
+5lvx
+4gcj
+3p4f
+4od7
+6f3f
+5ekj
+1xom
+3g2j
+2cmf
+1xqc
+2qoh
+6aad
+4mqp
+3o6l
+6au2
+1ind
+6n3l
+6dry
+6e0r
+4u0s
+4nms
+1m9n
+5vqu
+3uwl
+5awj
+3wzq
+5i40
+3hlo
+4ycn
+3fdm
+3r92
+6c67
+2v86
+5nf6
+5lmb
+4h4m
+6afg
+4m5o
+5ddc
+1au2
+4z1n
+3lp2
+6c8x
+Waring: Missing or wrong elements: B
+1n9a
+6cd8
+5vwk
+5l72
+3zev
+5fsl
+5hlw
+2qki
+5cav
+6fmf
+3c6w
+6hzd
+3wcb
+4agd
+4cix
+4bpj
+2yq6
+4yc9
+4e5j
+5mlw
+5aei
+6ind
+5k0f
+3p4w
+1hk2
+1h26
+1osg
+3bmn
+6oac
+1ct8
+5yve
+6edl
+4b80
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+5ei4
+5bot
+2xqq
+4n9d
+2zpk
+2r3i
+2pj0
+3f3t
+2byp
+5icy
+5eml
+6hcw
+5edi
+3kl6
+5m6u
+6hks
+5unp
+1fig
+2buc
+4j0y
+3kig
+5ekn
+6gbe
+5j8i
+1mm7
+1owk
+3psl
+3qtr
+3u6w
+6gdg
+6n69
+6hmr
+2xv1
+6g9s
+4bkz
+4kn4
+4osf
+6h4p
+2krd
+3zmz
+6qft
+5mjb
+5ald
+5b5o
+4mzo
+4avu
+2r3m
+1o8b
+1yrs
+4pnk
+4wrs
+3tg5
+3p8h
+6o9x
+5tuy
+4di2
+4nyj
+1dmb
+6hdo
+5fqp
+4zy5
+6hsk
+3zc6
+1g4j
+1sre
+5tbp
+1r5h
+5q0l
+5o9h
+1kmv
+5gic
+5v5o
+6qxj
+1q6j
+2ndg
+5yco
+6dtn
+4i6q
+1slg
+4bie
+1hty
+5gsw
+4gv1
+5ly2
+5dp9
+2kmx
+6jjm
+5aag
+1bb0
+5x02
+5qan
+2b7f
+5tzh
+4ewo
+5ho7
+4mzs
+4qz2
+3hqh
+2qch
+1bmn
+5myo
+4oaz
+1r0x
+5d0j
+3ncr
+3tne
+6f3d
+3ioi
+3g9n
+3nw5
+3jyj
+5mob
+5jt2
+6cf6
+3f66
+5ih6
+4kp6
+2jjr
+5vom
+6axb
+3il5
+2k3w
+5a4e
+4rwk
+3tic
+6me2
+1ebg
+4tpm
+5lwn
+4pyn
+1utz
+5wg8
+2bba
+5l2y
+5f0h
+2r3j
+2q6c
+2fes
+6agt
+3c43
+1kvo
+5xs2
+4yv1
+5yun
+6d4q
+5afj
+3gwt
+2jk7
+3f88
+1npa
+4nk3
+5th7
+5m29
+5wzv
+6c9n
+5o1g
+3bux
+5qar
+4q15
+5ogk
+5kmf
+5c4u
+3nzc
+4oow
+4y2v
+4nnw
+3ukr
+2j9l
+5whc
+4pte
+2os9
+2aia
+4yv2
+5uwl
+3rul
+2bub
+2w17
+1dbj
+6bib
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+3d27
+3rum
+1uyg
+5lcj
+3lc5
+3nfl
+1h1p
+6h4t
+2c6o
+1mui
+1toi
+1bmk
+4d8a
+6iam
+6rfj
+3p7a
+4gfn
+3vf8
+4cff
+4uwl
+3fu5
+4n7y
+4u01
+4nb3
+5g3w
+5osd
+2o9r
+3dc2
+6ib2
+4qvx
+6bik
+5al4
+6ds0
+6huu
+5ab9
+5mos
+3skk
+Waring: Missing or wrong elements: B
+4he9
+2oj9
+5e3g
+4awg
+1p6d
+4bg6
+4b6u
+1ozv
+4dr9
+3vjk
+3cj3
+4unr
+3b78
+1ocn
+4r1e
+4i80
+6a73
+4l8m
+5o4s
+6g7f
+4led
+1rhu
+3gyn
+6p3p
+6h76
+3o6m
+6dxx
+1ugp
+3lbl
+1jlx
+5aqo
+3hdm
+1tmm
+5n2x
+1zkk
+3uol
+4ztm
+5h13
+2uw7
+3tgs
+1uxa
+5ivt
+4yab
+2g0g
+2j50
+5kw2
+4rlk
+3fhr
+5wg3
+2uw6
+6k0j
+6em7
+5ur5
+6gip
+2ay6
+5epk
+1kti
+5y48
+2wd3
+5jz9
+3pix
+4nka
+2qn1
+2i1m
+2agv
+1rww
+6joe
+4nq6
+5oxg
+6fv2
+5nhl
+5elq
+5o1i
+5dri
+2uzl
+3rxi
+6m9t
+5twz
+6npt
+5f3z
+3itu
+1h1r
+3zmh
+5wb6
+4pd6
+3dvp
+6mso
+2nxm
+4gtt
+3iqq
+5igk
+1csi
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+centreofmass.sh: line 112: 2117278 Segmentation fault      (core dumped) $LEDOCK input.txt
+5iis
+1e37
+5fdp
+3a1t
+3poz
+4rfy
+2h5d
+Waring: Missing or wrong elements: B
+2aa6
+4g8o
+5w7u
+4bde
+4wq3
+3sdi
+5gn6
+4djs
+3d32
+4l7f
+6goo
+3kjq
+5q0g
+6at0
+4k5n
+4tzq
+3e0p
+5xpp
+4ede
+6afj
+5alp
+5gx7
+3lpj
+4ikt
+3d1v
+4k6y
+1o79
+3lmp
+4h5c
+4xjr
+4qyg
+6uim
+2w71
+2yde
+4l7b
+5ybe
+5lqf
+3lbk
+4ge7
+4uwh
+6g47
+2jdo
+1ke0
+Waring: Missing or wrong elements: B
+4e3n
+Waring: Missing or wrong elements: B
+2g9u
+6o8i
+4n6y
+4wrq
+2cem
+5fbe
+6e5s
+4mr5
+1bmm
+3caj
+1nd5
+3kpv
+4eev
+1uk0
+6c28
+3rz3
+5l6i
+4mnq
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+1c2t
+6sde
+3ogm
+1jqd
+5oua
+5ixt
+6euv
+5y5t
+3lnk
+6a3n
+3s00
+2a4w
+3rwq
+4lh5
+1x7b
+6h4o
+1ywr
+5inh
+Waring: Missing or wrong elements: B
+6jsf
+1fw0
+3u15
+4gtv
+4eh6
+2wa3
+5swg
+1y3g
+1uod
+4hnn
+5adr
+4jsr
+5vdv
+2p33
+4jnm
+1u59
+4xkb
+6qfv
+2mkr
+3nwe
+6e4u
+2uw0
+4qps
+6d28
+2vd7
+3sow
+4k8a
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+3c4c
+3oeu
+5hip
+5ar0
+3gk2
+3o0e
+6buu
+4b6e
+3vyf
+4qkd
+6pf6
+2koh
+3f0r
+3r00
+5lmk
+1a3e
+3k5d
+5l26
+5bmm
+5t6f
+1axr
+6rj3
+4o76
+4ib5
+6ak5
+5a3q
+4uvb
+3w32
+5qa7
+6ami
+1nl4
+1fpy
+5ctb
+3q3b
+4du8
+6dih
+2it4
+3d9l
+4ixu
+Waring: Missing or wrong elements: B
+6r49
+3abu
+3i7b
+6p14
+4ui7
+3kpw
+4dhn
+3kwf
+2ydo
+5nvc
+4jv9
+5cls
+4mwu
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+2vxj
+4eo4
+3oct
+4u5l
+5du4
+1cqp
+5vnb
+5nuu
+5vkf
+3upz
+3u51
+3fum
+2ig0
+4zly
+5ti6
+4ycv
+4rx7
+5j3s
+5yr4
+4xg7
+4q9z
+3pa4
+4gj9
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4ydf
+5xmr
+3v4v
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4rvl
+3fh5
+1fwu
+4u0m
+3l17
+5vil
+3uoj
+3mp6
+3c10
+4bic
+4igk
+3obx
+5tx5
+1rsi
+4rcd
+2ksa
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+5nr8
+6oi8
+6hzp
+5iep
+2kfh
+5qby
+1qw7
+4oba
+5y3o
+5ggj
+6hv7
+5a2s
+1lhf
+Waring: Missing or wrong elements: B
+3sgx
+4u5j
+4kmd
+1xn2
+5w4v
+5o4t
+4ok6
+5dif
+5e2n
+3l3a
+3vrt
+6rj2
+2wtj
+6plg
+3inh
+2wzz
+5svz
+6oe3
+4hnf
+2nq7
+4k3m
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+3aw0
+5u2f
+1ld8
+2qbx
+6cco
+3pa3
+3efj
+1b42
+5fdz
+3k3b
+3tiy
+1o4e
+6nfn
+3qip
+1qaq
+4avw
+1af6
+5eh0
+1h79
+4an3
+2q11
+5jf3
+5etq
+2ha4
+2pv2
+5zee
+3rxe
+6e59
+1mj7
+4y2t
+3blt
+1g2a
+4mwe
+4ce2
+6m9c
+4h3c
+3w5t
+5yjp
+4wno
+2fah
+3p8e
+4gbz
+3rcj
+3fzc
+2ovq
+5mzg
+6fzf
+4kjv
+3co9
+5ai8
+4pre
+1wbn
+1h3b
+2w1c
+2z52
+5iv4
+4ory
+3rkb
+3neg
+1t08
+3n4c
+6rn9
+4ipf
+5v9p
+3dcs
+3lp0
+4mep
+4hdc
+4eym
+2peh
+4eg7
+1o37
+6bhi
+4gtr
+5v7i
+5hh6
+2psj
+3mle
+5wyq
+4k3r
+2c57
+3t6r
+4wf6
+5c42
+2h8h
+5ai4
+2bks
+2vvo
+5hg5
+5yvt
+3vrv
+5mt0
+5j47
+5vfd
+4ui4
+5m39
+3feg
+2fuu
+2avi
+4rxd
+6br3
+3cqu
+3wk8
+6fgq
+6i9a
+6i0x
+2jkq
+3e6k
+Waring: Missing or wrong elements: B
+4dem
+4mnw
+6bw8
+4l09
+3iet
+1oh4
+6ewk
+6mum
+6e3z
+5khj
+4wmx
+4xyf
+5l2o
+2c6n
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+2h2e
+6hu2
+3rl8
+5akk
+5wuu
+4axa
+1vyz
+2vtl
+8hvp
+5kjn
+5etv
+5xbt
+4urm
+4g9c
+2no3
+3qqu
+4d1s
+2xpc
+5ut0
+3wyk
+5nfa
+Waring: Missing or wrong elements: U
+Waring: Missing or wrong elements: U
+Waring: Missing or wrong elements: U
+Waring: Missing or wrong elements: U
+Waring: Missing or wrong elements: U
+Waring: Missing or wrong elements: U
+Waring: Missing or wrong elements: U
+Waring: Missing or wrong elements: U
+Waring: Missing or wrong elements: U
+4p4e
+5kww
+3rth
+4ppc
+4ai8
+5dhs
+4at5
+6s7k
+5e80
+6eks
+5dda
+4l33
+2g96
+5y6e
+1q6m
+3bm6
+Waring: Missing or wrong elements: B
+4yve
+4ikn
+3nnw
+6qts
+6rvf
+Waring: Missing or wrong elements: B
+1dx6
+1a1c
+2br6
+4x3i
+4q1a
+1bky
+5ick
+3ue4
+1hkj
+4x7k
+5ak0
+4aa1
+6knh
+2ow0
+1kv2
+3ern
+2jmj
+3iut
+6ilq
+4i5h
+5kde
+1ru1
+4ncg
+5tdr
+5f4r
+1w0y
+5tol
+5g1n
+3d25
+4ty8
+4mzl
+4w9e
+5k32
+6cq0
+3chr
+4zts
+4n7g
+4a2a
+1o9e
+4msl
+6eaa
+3s0o
+6bgu
+3mvh
+5zdg
+4pra
+2who
+1ze8
+3s56
+4ouj
+4m3f
+2jko
+6hx8
+5naw
+2yhy
+5nar
+3zh8
+2bmv
+6m8d
+6nrj
+5nin
+5ufo
+4o36
+1fl6
+6hth
+3dcq
+1i9l
+5v5y
+3hv6
+5he4
+4gw1
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+5jgb
+4crj
+4ie5
+1npv
+5ypy
+1pxk
+1xpc
+6mmo
+5z4h
+5ou2
+4mw0
+5h3q
+3cid
+1we2
+1uye
+6kjf
+2o9j
+4hgs
+4no6
+3udv
+4wy7
+5ove
+5m0d
+5lwe
+3odu
+3szm
+4urx
+5fqb
+Waring: Missing or wrong elements: B
+4c9w
+6eda
+6g91
+3sm1
+4btl
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+6cjj
+2jb6
+4cqf
+3dpk
+4a9n
+5v88
+5wf5
+5diq
+1uvs
+4d2w
+4hlm
+1uy9
+6f5w
+5yf1
+3mmr
+Waring: Missing or wrong elements: B
+5lzg
+3ik1
+2kce
+3t3g
+2vcb
+1rdj
+6a93
+5jrq
+5nn0
+2ncz
+4o4g
+1eb1
+6di1
+4ir6
+3ncg
+5g10
+4u45
+2qfo
+5myl
+6ea2
+1wxz
+2rm0
+2p8o
+Waring: Missing or wrong elements: V
+6axq
+5fcw
+1v79
+3kqw
+4li0
+4fyo
+6bec
+2w0z
+4pnm
+3kck
+4xpj
+3vvz
+3t03
+4rac
+4l02
+4joe
+3qcj
+2bdj
+3q6k
+3s74
+5d3s
+2cgu
+5y1y
+6cer
+1f4y
+4l0v
+4phw
+2xxw
+2ltv
+2o4h
+5hf1
+1qkn
+4yc8
+3prf
+2xp3
+3lpu
+3l08
+5kks
+5hvy
+3k7f
+4p44
+6d1u
+3uh4
+2mwo
+5fi2
+1hrn
+5tt8
+6ra1
+4nro
+2m0v
+5jq8
+5hna
+1y6a
+4amz
+3twv
+1uu9
+2hmh
+5uvc
+2ie4
+3t3i
+5fow
+6i97
+3lpt
+3aya
+5yp5
+4mm7
+5kpk
+4qo4
+4la7
+5xjm
+3ctj
+5nhp
+3hyf
+1jmq
+5h0e
+5hbe
+3my1
+2zm3
+5hj9
+Waring: Missing or wrong elements: B
+6mzq
+2y2h
+Waring: Missing or wrong elements: B
+6ea1
+5awt
+4nzo
+2bgr
+3ntp
+6anl
+4ufg
+3rv9
+5eom
+4oz1
+3phe
+4hyb
+4cc7
+4ba3
+4umt
+5kgn
+4uzd
+3zjt
+Waring: Missing or wrong elements: B
+4pkw
+4zdu
+1swn
+5tzg
+6c3n
+2v0n
+3m1s
+Waring: Missing or wrong elements: R
+5ugh
+3hyg
+5i24
+3nc4
+3kvx
+3tcp
+2az9
+2aw1
+6dne
+3doy
+2csm
+3rqg
+3wqv
+5hbj
+5nhv
+5div
+1jyi
+6gxy
+5a0c
+1pdq
+6bsl
+3h06
+3u1i
+5ehe
+4cbt
+1hxk
+4mk7
+4kne
+1yz3
+5hh5
+6f6s
+5ho6
+3hc8
+5ei6
+3bys
+1gag
+3eu7
+5jf2
+2y2j
+Waring: Missing or wrong elements: B
+4e35
+3m5a
+4odm
+6gy5
+6co4
+3lqi
+5c20
+1c8v
+5e8w
+6g28
+4fcb
+6n92
+6cn8
+4uxj
+2a4q
+4k3o
+5c4k
+2gmv
+4pji
+5arf
+1v41
+2z8e
+5l8n
+4e3f
+4q3s
+Waring: Missing or wrong elements: B
+3bb1
+1iht
+2fr8
+3sie
+4ez5
+2kbr
+1etz
+6q39
+Waring: Missing or wrong elements: B
+6n3z
+5acw
+5f6d
+2pyi
+2lko
+5t66
+Waring: Missing or wrong elements: B
+4wnm
+5jv0
+3ejs
+4gb9
+5anq
+3syr
+3lgl
+4nrm
+3ohf
+3r2a
+2pj3
+4gk2
+5gmi
+4odn
+5t5g
+5nwh
+4x7i
+3k3a
+2ilp
+6qz7
+5fiv
+4gd6
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+3tam
+5mkx
+2wf3
+5o91
+2m0u
+5mnb
+3hy7
+3s7b
+1pwq
+3dp3
+3pkb
+2p98
+5oxn
+6n4t
+3o9g
+4tk4
+2o9v
+1ugw
+4p2t
+3ex3
+3zbf
+6e5b
+Waring: Missing or wrong elements: B
+3nga
+6n0p
+1czk
+5u4g
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+6pt3
+5hfc
+5n2d
+4i32
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+5c7c
+5uiq
+1nj1
+1qq9
+5he2
+2wqb
+2y1o
+1lf8
+4nks
+4im0
+4erq
+2y68
+1ett
+2nd0
+5dhq
+5ywy
+6b4w
+5qcl
+3ezv
+6bny
+3oxc
+5ur6
+4gh6
+5w5k
+3pup
+Waring: Missing or wrong elements: R
+6bgg
+3rti
+2lpr
+Waring: Missing or wrong elements: B
+3uqp
+2y54
+3tfk
+4yo6
+2ccs
+1bbz
+3arz
+5l2n
+2vnm
+4kab
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+3bf1
+6gqm
+4gui
+6ckc
+5i94
+4ej2
+3v8t
+3p9t
+3dxm
+1snk
+5d7a
+2i1r
+4x7l
+4lp0
+3pd4
+4xy2
+3g4f
+5wbz
+4wku
+Waring: Missing or wrong elements: B
+4pku
+5mfr
+4bcj
+1zhk
+4o7f
+6bmx
+5am3
+4o70
+4alw
+4bqw
+5f67
+3o3j
+5mrd
+3zzf
+1h9l
+6d59
+5thi
+3zya
+4o0j
+2pjc
+5o7n
+6cct
+3gpj
+4twt
+5elf
+4kzc
+6oqn
+2xi7
+5a85
+6hpg
+1u3q
+3d4l
+2j83
+3s3k
+2a3x
+5wou
+2boi
+5nt4
+3be2
+6m88
+6q8c
+6eyz
+2y34
+6afd
+3msc
+1ove
+1svh
+6b2q
+4oq5
+2ew6
+3eou
+2uw8
+2qlm
+6df7
+1q0b
+4rt0
+3t4h
+5g0q
+2jq9
+2oji
+2i5j
+6d6u
+5uwi
+3d7m
+2kfx
+6q8k
+3zlq
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+3qnj
+4c8r
+3vp1
+2nng
+2zg1
+1upk
+6hov
+4caf
+4l0b
+4mw7
+4yik
+6q7v
+3ck8
+2anm
+1tkx
+2i0d
+5np8
+4hbx
+5auu
+3vby
+5zef
+5tg6
+Waring: Missing or wrong elements: B
+5dxb
+3unj
+5q0j
+4bqx
+6bj3
+3bm9
+4lge
+1xud
+6oyw
+3hvc
+6qyl
+2x6j
+3oaw
+4yrr
+6g97
+2ff1
+5uy8
+2ow2
+2vti
+4fll
+4xe0
+4mse
+4ue1
+1j4k
+5n9s
+5uuu
+2y36
+4oq6
+3b8q
+1q3w
+1o4p
+5ke0
+4e5i
+4yw7
+6e83
+2g2r
+5dv2
+1zom
+6b33
+3wut
+4a4e
+3ooz
+4dk7
+4io8
+1o4r
+4ob2
+Waring: Missing or wrong elements: B
+4mqu
+1sfi
+5vc5
+3t5i
+2ojf
+4ztn
+4j1i
+6qfw
+4qmt
+5wdc
+1pig
+4kju
+5can
+4iwd
+3vsx
+5nb6
+5a8x
+5tg1
+4bhi
+4ocv
+4cfx
+1w6r
+3vws
+4pyv
+4uil
+6dgy
+5yc1
+1ci7
+3ueo
+3l5e
+2xui
+1xbb
+2ql9
+2x3t
+3zs1
+1mik
+4cmt
+5y86
+5uyu
+3as1
+5mz3
+6fns
+6mil
+6bfw
+2v0z
+1rek
+6mul
+4uvw
+4w53
+5k8v
+1r10
+2lyb
+5i56
+4oas
+2qv7
+3moe
+3lnz
+5z1e
+2g79
+4nw5
+5w9g
+4hej
+4kp0
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+3py0
+4hcu
+2ds1
+2w1i
+3i6m
+4egh
+5h2u
+4ejn
+3qj9
+2oc0
+5ndd
+3uph
+3dz2
+4mzk
+3o4l
+3uhm
+2wxd
+2auz
+2l75
+6ak6
+4op1
+5aqh
+3pxe
+1c85
+5lgo
+3mbz
+5k8o
+6n3o
+4gsy
+3i4a
+4umr
+2ohv
+4eop
+5dhf
+4l1a
+4yl1
+6g8p
+4z3v
+2cia
+5may
+5cei
+5emm
+3mtb
+3l81
+2cmc
+4ehe
+2qrh
+4mk1
+5a3r
+3l6f
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4j3u
+4jyu
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+5fxs
+4yrt
+6asz
+5l6o
+4y5i
+3zot
+5tqu
+5d7r
+5u9i
+6fyk
+3m17
+3n7s
+4tk5
+5hg7
+6ak4
+4feq
+5bpe
+4mb9
+3pj2
+6ez6
+4zsp
+2iw6
+4inu
+5nad
+2xd6
+4ps5
+3up7
+5eyz
+1jqe
+5km0
+5yyb
+7gch
+6nng
+5fap
+6rr0
+4bcf
+4k2f
+3pvw
+6ei4
+5zu0
+5v84
+1ag9
+4b70
+2og8
+5abh
+2piy
+1zuc
+1uj0
+6gmq
+1o6q
+5alk
+4g3e
+2vc7
+5ypw
+4dx9
+3bsc
+5dsx
+4wkt
+Waring: Missing or wrong elements: B
+5kql
+5k5s
+5xvu
+5ek0
+6gch
+5ksv
+2xx5
+3jq8
+5wad
+Waring: Missing or wrong elements: B
+4a6v
+2h5a
+2cct
+5cw8
+5w0q
+6rn6
+3hs9
+5nwz
+5ets
+1hy7
+3dbd
+6miq
+5vo2
+1sc8
+3ccc
+1gjd
+2hyy
+4pl3
+6keb
+5gv2
+1o0o
+3sou
+4bdj
+4jlg
+5ku9
+4pm0
+2qh6
+5qj3
+1o3e
+4ps1
+6axk
+2ykb
+1oxg
+3kqs
+3pch
+6pyc
+6s90
+4d2p
+1tfq
+2oqs
+1uyd
+4pnr
+1you
+6c98
+5fun
+5toz
+6imb
+3p55
+3kyg
+6rfi
+4ucd
+4huo
+5a5r
+2jst
+4nxo
+4qzs
+3ika
+3cpb
+2bzz
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+1xr8
+5un1
+6bfx
+4c5w
+2fie
+3fty
+5tyj
+Waring: Missing or wrong elements: B
+2wxi
+4cqe
+4z2j
+4gao
+3br9
+6pvx
+5vs6
+6eox
+5i8b
+4bw1
+6i8l
+5q0n
+3tpu
+4hxm
+4erz
+3gwx
+6tl2
+5xup
+6r7k
+1uyc
+3ddp
+1e9h
+4nj3
+4j53
+3vb4
+5dro
+4bzs
+6mdb
+4ksq
+5td7
+4h36
+2xaj
+1lb6
+2ay7
+5n20
+6u8l
+5kcv
+4qta
+3bpr
+1r6z
+5sxn
+4lh7
+2k00
+2f71
+5y7k
+4mx9
+3wgw
+5ea4
+1ukt
+4exg
+4eh7
+3aig
+6qw8
+4dhs
+5mno
+4j0p
+4pkv
+2opb
+3smq
+5vcx
+2jdv
+4xx4
+6fi5
+3oad
+3twj
+6ufn
+5t1i
+3sad
+4rvt
+5n21
+1ujj
+4r93
+5e1o
+4pvo
+4ezo
+4dt2
+4dce
+4ucu
+5i5z
+4deb
+3s2p
+4qc1
+3wuv
+1g5s
+1tg5
+4n4s
+6dvm
+1rry
+4kba
+5i4v
+1noj
+2bbb
+2o9a
+1i00
+5eb3
+4u0b
+3kd7
+4kc1
+1o2y
+4mz4
+2x5o
+4u5t
+4jn4
+4tww
+5he3
+4ee0
+5wrs
+4j1c
+1ezf
+4flk
+3hio
+4yec
+6dgz
+5xms
+5jhd
+1gym
+3kjn
+4yxd
+5akl
+3eig
+4bds
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4dtk
+2uz6
+5ofw
+5q1b
+4jai
+5ap0
+2ity
+2ay3
+2x4u
+2az5
+4p6e
+6c7r
+1p02
+Waring: Missing or wrong elements: B
+6afl
+2zxb
+1pmn
+4eol
+2oic
+2qd9
+6baw
+4btm
+4az3
+5w14
+Waring: Missing or wrong elements: B
+4bky
+3nf8
+2xf0
+5mxv
+4b85
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+2xag
+1y4z
+2zjf
+3nzi
+Waring: Missing or wrong elements: B
+3ked
+5d29
+5ajo
+3bjc
+6bqd
+3zha
+5ckr
+5mql
+3kfc
+5est
+Waring: Missing or wrong elements: B
+5zgg
+3d3p
+3pwh
+2q6b
+4jvb
+3cth
+3f82
+3g6z
+2aox
+4bi0
+4own
+4ww8
+1yid
+2y8l
+4at3
+5etu
+5k0t
+6mx3
+1guw
+4uwf
+2xne
+5f4u
+4lte
+4pzx
+5opc
+6aaq
+1fvv
+1h1b
+3djf
+5waf
+Waring: Missing or wrong elements: B
+3g2l
+1hqh
+2khh
+4j03
+6ezh
+2zb0
+4u3f
+5v7w
+5zz2
+5a6n
+1juy
+3hrf
+5z1s
+1bzf
+4hyh
+5iu4
+6huc
+4xmo
+1t4j
+2xoi
+3ppk
+2bmc
+6c2t
+4omd
+3fyj
+5jin
+3ccn
+3qvu
+1zh7
+4p0x
+3ryw
+3zpt
+4z7i
+1v3x
+1qxy
+3heg
+4r07
+3upx
+5x4m
+1jm4
+4h3b
+4bfr
+1xot
+5iq6
+3que
+4iz0
+4bd3
+5tv3
+4jyv
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+6a04
+3qio
+1ni1
+3cgy
+5agu
+1rdi
+4ce3
+6f34
+2wtd
+6f6u
+3ovz
+2g78
+6oxx
+5qap
+4mt9
+5tgy
+Waring: Missing or wrong elements: Z
+4pr5
+4oc4
+5v8q
+4pns
+4wvt
+5mja
+5xvw
+5i12
+2x7d
+5u5l
+4psq
+5eld
+6hmb
+6aa5
+4bzo
+4zjc
+5bml
+2x2l
+5a3s
+3tct
+4j5b
+3qi4
+6d40
+6dk1
+4okg
+5knv
+1dbk
+6bij
+3ayd
+5alo
+3o86
+Waring: Missing or wrong elements: B
+3cso
+1ax1
+4wk7
+5eel
+5j3v
+2fme
+6b5i
+5m6m
+6npm
+2c6i
+4jbs
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4dcd
+4pli
+2v85
+4dxj
+1u2r
+4e9c
+5c26
+4uro
+1hiv
+4bdh
+5yy9
+1rti
+3d9o
+1oir
+6hkn
+2piz
+6h4x
+4euv
+6aoy
+3e73
+5mli
+3are
+1inh
+6bkx
+2c9t
+4zs9
+6aah
+4cby
+3zlk
+2y8i
+5sy3
+4ie2
+Waring: Missing or wrong elements: B
+3tv8
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+3eu5
+5x9o
+6b5t
+4c73
+5ni0
+2of2
+2kup
+6gjy
+2n14
+3qcl
+5auw
+2rg6
+1n5z
+3kqt
+4i10
+5ne1
+Waring: Missing or wrong elements: B
+6fyp
+5ewz
+6ez9
+4qsm
+5iz9
+4wgi
+2mwp
+2pjb
+5dls
+5qax
+3mks
+5gvp
+5nr7
+3pcb
+6ar4
+3t4n
+2r9b
+3qpo
+2va5
+3fi3
+2lsv
+4wkv
+Waring: Missing or wrong elements: B
+2i0j
+3vtc
+2emt
+4lv1
+Waring: Missing or wrong elements: B
+3fy0
+Waring: Missing or wrong elements: R
+6e91
+4es0
+5usq
+5mar
+4frj
+5m4i
+4l6s
+4os2
+1ylv
+4tkf
+1c3b
+Waring: Missing or wrong elements: B
+3nzw
+2hy0
+2uzn
+4e9d
+6e1a
+2jnp
+3kqd
+5ali
+4bbg
+4qvy
+Waring: Missing or wrong elements: B
+3f5p
+5ugd
+1i90
+3gxz
+5j74
+2bb7
+6nzf
+4nrt
+6afa
+4b77
+4k19
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+6g9k
+5kkt
+3meu
+2gnj
+5ni7
+1eol
+4j86
+6c5h
+6oy2
+4hys
+3wk6
+4rse
+2w70
+6b8j
+3ktr
+2fzz
+2vwz
+1rxp
+1tka
+5i8c
+5wzs
+5m3b
+5khd
+6nel
+4z0u
+4bfz
+3lpb
+6oko
+3q4l
+2f18
+3o64
+4avg
+5m1z
+6b95
+4xkx
+5zh5
+4xdo
+6dnp
+6jsn
+2llq
+3bl9
+2brg
+3r21
+3s9y
+6cje
+5u6k
+5jf6
+4xyn
+6fvm
+4j5e
+3wke
+6rrm
+6cd4
+4e20
+5ghv
+3gl6
+5w4r
+5jdi
+6n77
+4oq3
+6c5q
+3da6
+5ty8
+3qt7
+2o5d
+3sl1
+Waring: Missing or wrong elements: B
+5hff
+5oq7
+3nzx
+5qik
+4gvc
+3sn8
+4url
+2anl
+4kio
+4c4f
+5hls
+6ow2
+6ccx
+5g53
+2pj5
+6hot
+1br8
+4zpe
+4fhh
+6eip
+3lzb
+5c29
+4od0
+5ih2
+5jcj
+3l9n
+4zs2
+2z3z
+Waring: Missing or wrong elements: B
+1klg
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+2uue
+3c72
+4hy4
+1q66
+3k5u
+1qca
+3upy
+4fic
+3k84
+6n7c
+5lp6
+6f6i
+5os3
+1nhx
+2ria
+4zw3
+3ogx
+4gq6
+4myh
+2fde
+4wk2
+4yqv
+3h22
+4awj
+6d3g
+6g6y
+6b7c
+2woq
+3ske
+1ov3
+4jr5
+4jdf
+6hkm
+1tyn
+3twu
+3rl3
+1mf4
+5vdk
+6bef
+1c50
+5mky
+4c6z
+1hyz
+Waring: Missing or wrong elements: A
+2q15
+2y56
+3t3v
+2h03
+2ych
+3ti1
+3d3x
+6fnx
+4qt0
+3fck
+1bl4
+1mwt
+5g11
+4ff8
+5t2d
+4ogt
+4u4s
+6kqi
+6min
+5orz
+4xhe
+6bw5
+3lxg
+6mom
+5a09
+6iik
+2q2n
+4l3p
+1jt1
+2rt5
+4unq
+1u3s
+6d4v
+4b6q
+6ed6
+5adq
+5mm9
+3lfn
+5j87
+3u0p
+3gf2
+2r3k
+4piq
+3wmb
+6q6m
+5q14
+3wk9
+6cdg
+2ooz
+3t0t
+4emt
+3hha
+3q7j
+4i7c
+5uqx
+4zg7
+1ad8
+6abk
+1yvh
+3rmf
+4zyq
+2n3k
+5wfm
+5lj1
+5ivf
+1fdq
+5khi
+5npe
+4urn
+5k0j
+2bgd
+6sy7
+2pj1
+6jz0
+2ea2
+2frd
+4ms0
+2f6y
+2ntf
+3gds
+4gee
+6ft7
+3opp
+6pgp
+3tsd
+5owh
+4rfz
+1zd5
+1xur
+3tv6
+6bh3
+3hvg
+2z9g
+1h0r
+2hai
+6aps
+2srt
+5ai1
+1akq
+5fat
+4n8e
+1mxu
+2pl9
+6poh
+6gop
+4o4k
+5ml2
+6op0
+4nru
+3mvm
+4rg0
+1yys
+6i4x
+5ndb
+5ct1
+4y8y
+5zdp
+1jbd
+5vqy
+2lk1
+1mdl
+1ayu
+6mhb
+4u0x
+Waring: Missing or wrong elements: B
+2jo9
+6e3m
+2xx2
+5l2i
+5fi6
+6abp
+2vie
+5xyz
+4jmh
+1iau
+3dz5
+2y0j
+2ipo
+4r91
+4uwg
+2ci9
+4p4t
+3eor
+6hgx
+5m4c
+2fm5
+1hk5
+3nsh
+6eo8
+4bgm
+5tqs
+4xua
+5aer
+2zx9
+3fuk
+2i0h
+2jbk
+1qpl
+4hgl
+3u7m
+2jbu
+3uat
+1zaj
+1bmb
+3dow
+5bnr
+5hg8
+2gh7
+3hb8
+1ke5
+5fus
+5l6j
+4hww
+Waring: Missing or wrong elements: B
+2eum
+1cin
+1pau
+2isv
+5wzr
+4u0e
+1m5d
+1ntv
+1nyx
+2wgi
+3wpn
+3k5k
+6hmy
+5n7g
+6mlf
+5emj
+2v3e
+3u0t
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4jls
+5w19
+2y59
+Waring: Missing or wrong elements: B
+4ono
+5fwj
+3loo
+2lkk
+5efb
+3uvx
+6da4
+5tus
+6ipj
+4u2w
+3ztx
+1anf
+1tyr
+4byi
+3uib
+4w9w
+2eep
+Waring: Missing or wrong elements: B
+1azl
+5lyw
+5bns
+1t1r
+2gg2
+5ehp
+5mae
+5ewj
+6n82
+2isc
+3ttn
+3ij0
+6o0h
+5eob
+1ndj
+4dgb
+5qa6
+4bnx
+3cwk
+2az8
+3wq6
+2qe2
+1xs7
+3qzt
+4dgg
+2pmc
+4lbo
+4zz0
+6cvy
+5ti5
+3r8u
+5a4l
+1y2k
+5j9y
+1o4q
+3r01
+1qnh
+1rgl
+4qtc
+4ce1
+5fqs
+2r3h
+4g8l
+3wth
+5umw
+3bki
+5oug
+6fu1
+2ovx
+4dbn
+6gz9
+5wi0
+1riw
+2h44
+3l5d
+5v5d
+5t3n
+2a25
+1z3c
+6jsg
+6sze
+3hnb
+1k08
+4fci
+3wns
+3fun
+4bdi
+2xyn
+2g6p
+6e06
+3e7b
+2dua
+6i8z
+1bim
+6h5w
+1rm8
+3jsw
+1f40
+1c3i
+4egi
+1gx4
+5hjc
+1i7i
+1xh6
+2aa9
+5lo5
+2ito
+2l11
+2b1p
+5uxm
+6hv2
+2lbv
+1tkc
+2c8x
+3cib
+2pja
+6g3o
+1kna
+6mjj
+3fud
+3ro0
+5w4w
+3v31
+4l23
+5two
+6sfc
+1x9d
+3f35
+6ox0
+2wxo
+1bwn
+3wkd
+3uw9
+6pnm
+4kbk
+1i41
+1x76
+3f38
+5jzy
+4nud
+1q63
+5ung
+3mv5
+5x79
+5ti3
+4qmv
+4r6v
+4qvw
+Waring: Missing or wrong elements: B
+6e4t
+6jn3
+Waring: Missing or wrong elements: B
+4lpg
+3g0b
+2vo7
+4zyu
+1ahx
+3ls4
+6a8n
+6hld
+3n7h
+6v1c
+2cm7
+4u7o
+4cxy
+5hhx
+5y93
+5al5
+2mov
+6hbm
+3zls
+5w73
+4x1s
+5e1e
+4ze6
+5w12
+Waring: Missing or wrong elements: B
+2kdh
+6ic6
+1y91
+1nym
+Waring: Missing or wrong elements: B
+4u0i
+1tt1
+4q3r
+Waring: Missing or wrong elements: B
+1lkx
+4g1f
+2l65
+6jpj
+4ps3
+3fqs
+3wiz
+6q8p
+2j2i
+3adt
+5lgr
+6q92
+Waring: Missing or wrong elements: B
+4f14
+2jqi
+6m8b
+1lek
+6fgy
+4fab
+3u2k
+5uwf
+4yih
+1ujk
+3e8r
+1g05
+4gjb
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+2qft
+3hfz
+2wks
+4ef4
+1pmx
+3fal
+6j8q
+Waring: Missing or wrong elements: B
+5xst
+1is0
+2x38
+2vqm
+4eh3
+4r7m
+5vqv
+5c1x
+1p2a
+2y2n
+Waring: Missing or wrong elements: B
+6dik
+5ap2
+2f6v
+4nmo
+6g86
+2aie
+2oa0
+1d6n
+3ual
+1cka
+5fdd
+3sdk
+6aom
+5oah
+4o72
+2h02
+3n1w
+4ufe
+1kdw
+Waring: Missing or wrong elements: B
+5enf
+2vtn
+6gzl
+2qic
+3e6v
+Waring: Missing or wrong elements: B
+6hrx
+3ny3
+6o3y
+3h0v
+2xnm
+3pxy
+4h2m
+3cp9
+5gtr
+5jf7
+3kf7
+4ycw
+1nqc
+6moo
+1g49
+3hv4
+5aae
+5buj
+4b8p
+6buv
+5mi7
+4xnw
+5f1c
+4u0n
+6qhr
+5ap1
+1hc9
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+5fqt
+6gxa
+3mvl
+3v2o
+4ohm
+3ry8
+3ued
+6mtu
+5npb
+3g6h
+5w5u
+1i7m
+4uff
+6fqu
+4ht6
+1wqv
+1ih0
+3qai
+6hhh
+2nwn
+4bcb
+3dg8
+5o1s
+4j2c
+5w1w
+4p4s
+3fz1
+6j8r
+Waring: Missing or wrong elements: B
+3pkc
+2wu6
+5dhr
+3fl9
+5anw
+6mmc
+3avf
+2h13
+4mjr
+4wlb
+1fyr
+1biw
+4na7
+4ud7
+3rm8
+4b3u
+4ez3
+4j06
+3e62
+5f94
+4hzw
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+3f7u
+1uj6
+3mz3
+5lqq
+3vbq
+5vsk
+1mqj
+2ohl
+3lxo
+4bch
+3kmm
+5bnj
+2qrg
+3t9t
+6c9r
+6i15
+5ygi
+3shb
+6f8g
+5tzc
+5w4e
+3g3m
+2ye9
+2gg0
+6fse
+2b1q
+6e6j
+5maj
+5gn7
+1u0h
+5l6p
+2igv
+6d4u
+5w0e
+4l2f
+4lsj
+4jg7
+5trr
+4pnt
+3cpj
+1bzh
+1yy4
+5mra
+3qlc
+6a6k
+3gcq
+4oc6
+4j4o
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+1f9e
+4qwg
+5vc6
+3mpm
+3p5k
+6f55
+5koq
+1oq5
+3tki
+6ps9
+5xyy
+6inz
+1h39
+4m7x
+2yjx
+4mwv
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+1u6q
+3va4
+1pus
+6c0n
+4jvq
+5y0x
+2onz
+4os7
+2ewp
+4qvl
+Waring: Missing or wrong elements: B
+5e8r
+3sym
+5ggl
+3zm4
+2gv2
+4xrq
+5twh
+3eta
+2xpb
+6c7j
+2w0d
+2wei
+4zsr
+3oy3
+4g69
+4h1m
+4heu
+4ucr
+5xsu
+6gcw
+5zwi
+5db2
+5c7d
+4bkj
+5sy2
+4zph
+4dho
+6cqt
+3tnh
+4g93
+3r6t
+3ua8
+3wf8
+3ipx
+6c42
+4hvh
+4xv1
+5f4n
+1him
+3vs3
+3tpx
+5kos
+1rlp
+3qd3
+2wxf
+2c02
+3e0q
+3d7f
+6huv
+4qq4
+1j07
+4yl3
+3umo
+5izm
+5lpl
+1kak
+2byh
+1n1t
+2k62
+3tv7
+4h4e
+3qar
+4uvu
+5aln
+1z9h
+5juz
+6bqk
+2x8e
+4no9
+4eos
+4pni
+4o24
+5ldo
+4f70
+1tze
+4a7b
+2wf4
+4wh9
+2p93
+4iks
+1j5i
+6mob
+4uit
+4len
+Waring: Missing or wrong elements: B
+1ymx
+6seo
+3eyg
+3p44
+Waring: Missing or wrong elements: R
+4knb
+1zkl
+3l6x
+3h98
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+2wl4
+2ooh
+4xx9
+2uw5
+1opi
+1q83
+3n49
+5zhn
+5jv1
+5j7b
+1au0
+4nrk
+3jzs
+6c0r
+3k5i
+6nk0
+4dvf
+1v2p
+3lpf
+5tq4
+3kwz
+6et8
+5fsm
+3el7
+1okw
+1aqj
+3lc3
+4rx8
+1axs
+1ws5
+3nfk
+2w97
+5j8x
+Waring: Missing or wrong elements: B
+1n1g
+3ljj
+2chx
+2jaj
+6pl2
+4why
+5ztn
+4pqn
+5t2i
+2vew
+4w4z
+2p8n
+6cea
+5obj
+3v3b
+3dxh
+1jtq
+4d88
+3wyy
+2jkm
+1pf7
+5uv5
+3vjs
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+6s4u
+3sh0
+1e03
+6sfi
+4glx
+6fer
+4hod
+3cde
+5oqw
+5tyo
+Waring: Missing or wrong elements: B
+4mgv
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4dgr
+1h4n
+4pkt
+6f9r
+6fr0
+1iem
+Waring: Missing or wrong elements: B
+5aes
+4cl9
+6g4m
+6gvx
+4pml
+6fi1
+6iql
+2v5x
+4fil
+5alf
+6gcl
+1h07
+4l1u
+4k78
+2vci
+4a4c
+3k0k
+5lvn
+6qxu
+3aje
+3x1k
+5kcx
+3f6h
+5adt
+3uh2
+6n4b
+6sal
+5i3m
+3wti
+1xgj
+2x6w
+4krs
+1cwc
+2fx9
+5tyl
+Waring: Missing or wrong elements: B
+4qq5
+2yig
+4x6j
+3pka
+5l0c
+6cwi
+1czc
+3run
+6i3s
+4b0g
+1ft4
+3n2e
+5azg
+2n06
+2or4
+2lzg
+2gm9
+1rt2
+3sjt
+Waring: Missing or wrong elements: B
+3u0d
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+1mfg
+5kgw
+3uef
+4qqc
+5wxo
+4k8o
+4ywa
+4wj5
+6bfn
+6das
+6bgx
+4yvc
+3rkz
+3c7p
+6q6f
+4wj7
+3ptg
+6klk
+3kr2
+5tq3
+5fwa
+Waring: Missing or wrong elements: U
+5ovg
+1o32
+4j8m
+3wc5
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+1ryf
+6sdd
+4wx7
+5tpc
+4tn2
+1p93
+1xp0
+1bap
+1mcz
+5jha
+5jur
+3ecn
+4c4n
+5fb0
+2h23
+4jx7
+5yjk
+5zyi
+2w8f
+6eb1
+3gz9
+1h8s
+3w2o
+2uzj
+4j51
+4tnw
+5svk
+1q95
+5qad
+4yat
+5eym
+5jim
+3hav
+2cbr
+3psd
+5h09
+2xtn
+4y4v
+3h0a
+3ipb
+5c8m
+5ubt
+4x8n
+6evo
+5zun
+3pty
+4jfv
+1okx
+4ac3
+1qj6
+5ais
+3mnu
+Waring: Missing or wrong elements: B
+6ccm
+2xto
+3v4x
+5ne3
+6em6
+5y6g
+4o4y
+2ydj
+4eox
+3ipa
+4bdc
+6d1m
+3ldw
+6cq5
+4aw5
+3nus
+1auj
+Waring: Missing or wrong elements: B
+3wzp
+4i0f
+4i7f
+3ctq
+6enx
+6mod
+5cgv
+6g4n
+4yv9
+1pfy
+1nnb
+5vb9
+6ocq
+5os0
+6azk
+4qz6
+4mds
+5bui
+4y29
+5lay
+6h50
+3d9n
+3cy2
+6g2a
+3gfe
+1yy6
+5hn7
+3zm6
+3hqw
+2pzi
+5id0
+4b71
+1h37
+3ska
+1utc
+3hpt
+1axz
+2n27
+1dm2
+4iut
+6oa1
+1irs
+4ybm
+5hkh
+4kn7
+4bo2
+2vtj
+2ycs
+2k46
+6nsp
+5wa4
+4kiq
+5dxg
+3wav
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+5u48
+Waring: Missing or wrong elements: B
+6npi
+2bmg
+5abg
+3dux
+2vcx
+6r7r
+3sv6
+4w4v
+2xas
+2qcf
+3v7c
+5n4t
+4u0u
+6qz6
+5tuq
+4qab
+4cli
+5jf4
+1o0d
+1ol1
+8lpr
+Waring: Missing or wrong elements: B
+2etm
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+2jdl
+5csh
+3mag
+3lhj
+1y1m
+5vpm
+6euz
+2q2c
+3msk
+1skj
+1ax2
+5ut4
+5apr
+4ge2
+5qck
+3dkf
+5opv
+5w7i
+5lpm
+3g76
+4l0l
+5mka
+2qlb
+2vth
+4dwb
+6pka
+4aph
+5u1q
+4uw1
+1wum
+4uy1
+3ghe
+6fa2
+6nvi
+4yrg
+2ajd
+Waring: Missing or wrong elements: B
+4jht
+1fq7
+1ysg
+3hab
+4xh2
+6jn5
+Waring: Missing or wrong elements: B
+2r9m
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4yti
+4bis
+2gvz
+5mtx
+5zjz
+2b53
+4o7a
+6biv
+5a1f
+4urv
+6h4s
+3cwj
+6qg4
+2rg5
+5w86
+6dzv
+4wn0
+1j81
+4kza
+4mw1
+2nxl
+6mjq
+5lca
+5sys
+2ql5
+5iub
+2gz7
+3src
+3dwb
+3r2f
+4hz5
+4j8t
+5jr2
+3rwc
+3gxy
+4pde
+3hvh
+1mzc
+5gmm
+5ihc
+1oxq
+5jo0
+5amn
+4p75
+1vgc
+Waring: Missing or wrong elements: B
+2gbf
+5l97
+1vcu
+1r1i
+1aqc
+3v1r
+2xiz
+3udn
+5etl
+1awh
+6pf5
+5cal
+3hdn
+3uzc
+3g15
+5kk8
+3tdu
+4m7b
+1wb0
+4b1c
+3qs1
+4k5l
+4qms
+5a0e
+3pp7
+2xwe
+1utt
+4mjo
+6pic
+6pk7
+5dg6
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+3hfj
+3txo
+1doj
+4od9
+3iqg
+4oym
+6hx5
+1fo2
+3qi3
+5u69
+2c5n
+1prl
+4o1d
+6gn1
+5ntk
+5t23
+2j4z
+5wg5
+4ju7
+5zyj
+4gz3
+2qc6
+5to8
+4uj9
+3jzq
+4bzn
+5o0a
+5y59
+1yly
+Waring: Missing or wrong elements: B
+3c6u
+5zjy
+6gfy
+2yjc
+2uze
+6ow7
+5epy
+5tco
+4li6
+1ao8
+5gs4
+1maw
+4g2j
+1m5e
+5toe
+5lu2
+6fex
+5t2t
+6r1x
+1qcp
+3bmq
+6fdc
+1wok
+5v13
+4ufu
+5q0x
+3iny
+1i43
+4foc
+4cfv
+1yk7
+4hso
+4mic
+1njb
+5oy3
+2clm
+2xj0
+6skd
+Waring: Missing or wrong elements: B
+1ywh
+4uyn
+5zeq
+2ai7
+1tpz
+5orb
+1f9g
+2qmd
+4fgx
+2ycf
+4mx1
+2qzx
+6hzu
+2cng
+5hmy
+1xp9
+3vfj
+3d9v
+1a5h
+6m8w
+6ceh
+6f5m
+3rxa
+5v86
+5svx
+4tw9
+6imd
+4r95
+1t13
+3u3u
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+2vip
+3zmu
+4mzh
+6npf
+5v83
+5a4q
+6jmf
+1w10
+5c3k
+3nij
+1y3a
+5u5t
+1zxc
+4i0r
+3n5e
+5vee
+2wou
+5ief
+5wvd
+3rik
+4l10
+3d9k
+5fos
+4pf3
+3ly2
+5lc0
+Waring: Missing or wrong elements: B
+5vfm
+4ie3
+Waring: Missing or wrong elements: B
+4u44
+4a9t
+4mpe
+3lce
+4mq1
+5k51
+2cgv
+4obz
+6itj
+5w99
+4qg7
+6ovz
+3r7b
+1qi0
+6bh0
+3oqk
+4ofb
+5xg4
+1a5v
+4fmq
+3faa
+2pj6
+2qp6
+5a5d
+3tjm
+5f0c
+3qkl
+2vj6
+3qa2
+6iuo
+3d7g
+3p76
+4ux6
+6oxy
+6pm9
+6eq6
+5hgc
+4ctk
+4dv9
+6n55
+6f7b
+4w9s
+4pl5
+5uz0
+2xba
+3m8p
+5l4f
+3ary
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+2wkt
+3uwk
+4lpb
+4zyc
+5es1
+6nrg
+4oee
+3i7i
+6f9t
+5nwg
+5uc1
+1l2z
+5t1k
+1l5s
+4iu1
+6eq4
+2jbl
+3r2y
+4oi6
+4bid
+5lpj
+4h39
+6i0p
+1qj1
+5uci
+6dkp
+4pkb
+2ylq
+5ypo
+1b4d
+5xiw
+2bxu
+6peu
+2euf
+5du6
+5apj
+3eov
+5q16
+4abj
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+2op3
+3v7s
+4g3g
+2pe2
+5nzm
+2pj8
+1z4n
+3byu
+4o3u
+5cfb
+2w2i
+6hwu
+6q9u
+4o7d
+6chl
+1klu
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+6r8p
+3tdc
+2yiv
+6biy
+2znu
+3v66
+3s9t
+1py1
+6bo6
+5abe
+5ggp
+3elm
+3rup
+1g42
+2hw2
+5tvn
+5k0x
+3l9m
+2q8g
+6ps3
+4gpl
+4qsh
+4wxi
+5am2
+2xwy
+3vb5
+3f81
+2fl5
+1a86
+1n7m
+5j58
+4fpf
+5n87
+4b1d
+1onp
+6i5i
+3zmm
+6i1r
+3e85
+4ear
+2yis
+2hs2
+2mip
+2b52
+2i4t
+4j5c
+6pf4
+6hvi
+3uvk
+6hk7
+4qbm
+3vw9
+6pvy
+3mb6
+2ohr
+1i9o
+1nkm
+1a52
+4q1s
+3vqh
+6fav
+5agv
+5tri
+6a94
+5yba
+2f10
+6jax
+4meo
+2c68
+4acf
+5mte
+6md7
+6ma1
+3nal
+1zub
+4j73
+2a29
+3qkv
+5a8z
+4trw
+2xs0
+5abw
+4ngr
+4dds
+3sxu
+2uup
+5dh3
+3bum
+3ap7
+1abt
+6cnk
+3dp1
+4nxs
+2xru
+5dts
+1tsi
+5cuh
+6czv
+6r0k
+2azc
+4yy6
+5ech
+4m5j
+6cn6
+1xuc
+1w6j
+6pfj
+2ybp
+2dxs
+4ocz
+1tft
+6f8t
+6hlb
+2jkk
+4ngs
+1ikv
+3hv3
+2hd1
+4uvx
+4hlk
+5m34
+4pd8
+1rne
+5lpd
+3muk
+3oui
+1g6r
+2qry
+2clf
+5ncy
+6oh2
+6bvb
+5arg
+4ojr
+4l2k
+1ha2
+1jut
+6f6n
+3olf
+5wzw
+2itk
+6fvl
+4jfl
+3vbw
+4prh
+2gbi
+2a5u
+1hlf
+6mxe
+5fb1
+4qjo
+4k9h
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4c0r
+6e5x
+4l7j
+4j3m
+1orw
+3byo
+4zjw
+5twl
+3dkg
+3wk5
+2r7b
+5l7k
+3oxi
+4otf
+6q8b
+1fsg
+2q6h
+4pid
+4euc
+3rl7
+6qat
+1owd
+6fjf
+5emb
+4eft
+2y9q
+5cfa
+6kdi
+4ay5
+3mxc
+2n1g
+6g33
+5zku
+4gsc
+6fg6
+2jfh
+6er3
+3mn8
+4tmp
+1z3j
+6ft8
+6ocz
+4k2y
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+5m0s
+3ncq
+1los
+4pmt
+3c4e
+6q36
+4nmt
+3eht
+6j7l
+5nqe
+4n1u
+2ftd
+5a9u
+6pdj
+4f20
+1w1v
+4lp9
+1ba8
+3sx9
+1gcz
+4e81
+3jzo
+5als
+4uvv
+5alx
+4prn
+5ivn
+6fnt
+2qq7
+5okt
+1me8
+4xuc
+4zuq
+3k26
+3qiz
+6fap
+1x11
+3bl7
+5g22
+4q18
+4kqr
+5i59
+6o6g
+3uxg
+6ic5
+3hq5
+1mm6
+1pwy
+1k03
+1hp0
+5ok6
+4qh8
+4yv0
+2q96
+1xdd
+5ous
+4lw1
+4ded
+5vo6
+3fuj
+5fkj
+4i31
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+3wcl
+5cs5
+3dbs
+6mvu
+3eka
+3ur9
+4ydn
+4pg3
+5wbr
+4gm8
+5of0
+4qsx
+4c66
+1g9t
+6fkz
+2q95
+5ak5
+4mww
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+1jq3
+3qti
+5f6u
+1utp
+3aqa
+3pcu
+1els
+4x7h
+1tys
+5t8q
+4bcd
+2ykj
+6gu3
+5nvf
+6o7g
+1gnj
+4zg6
+6a03
+2zzu
+5mev
+2waj
+2w12
+6f5h
+4mzj
+2rcw
+3hmv
+4zk5
+6i41
+5o5h
+4a6w
+4pov
+6o2p
+3udq
+4z7n
+1ilh
+3gpo
+6dzq
+4l7l
+6p8y
+3lcd
+5vad
+4ohk
+1zgv
+1zyj
+2fw3
+2qlj
+6oxl
+5a0a
+1u9v
+5k7h
+2gfa
+6iar
+5jh6
+6j63
+6c0u
+2jup
+3ivh
+5a6h
+4tjw
+4umj
+4hv3
+5aaa
+5ism
+1yw7
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4bh3
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+1c6y
+4zud
+3zmv
+2g1q
+6hzc
+6fo9
+6g8q
+5zuj
+2w5i
+4gtp
+5y0g
+4y83
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+6rmm
+4wzv
+2oz5
+6eu6
+1h61
+4bbh
+4mp7
+4jju
+2xaf
+4dpf
+4yxu
+4ty1
+5fjx
+3tn8
+6ipl
+4gne
+5t2p
+5wfc
+5vdq
+4i9s
+4qxs
+4esi
+3k8d
+2xaq
+4bhn
+6exm
+6djj
+5etf
+6nzk
+4xx3
+1hq5
+Waring: Missing or wrong elements: B
+2y77
+1ny0
+Waring: Missing or wrong elements: B
+6fh7
+5k00
+4z2l
+1kl5
+6f22
+4clp
+3d6q
+6aaj
+3ot8
+3l5c
+4dhq
+4o44
+3wt5
+2wf1
+5o3r
+4v11
+6qk8
+6me3
+1rgj
+1k2v
+4hyi
+1kc5
+5d9p
+3igv
+5f04
+1oky
+6e7m
+3h21
+6n9t
+6coj
+3v04
+4nyt
+5w0l
+6as6
+4dea
+3ns9
+2nno
+1bkm
+4ezw
+4k4f
+2p1c
+6n53
+4zx9
+4md6
+4zx8
+6etg
+5nho
+6ibv
+Waring: Missing or wrong elements: B
+5mi9
+5avi
+3m93
+6mo4
+5nhj
+4nah
+5q0o
+6m9f
+3tdz
+2r2b
+1h7a
+6arj
+3d45
+1w1g
+5yy4
+2o9k
+5y8c
+3ekq
+1s26
+4mbf
+3ftv
+6gmx
+5tx3
+6q6y
+2hj4
+3svv
+2xtk
+3vap
+3spk
+4q07
+2x7x
+5elz
+2oqv
+5zwe
+3plu
+4yuy
+5h08
+3ftz
+1rin
+4lwh
+5t4h
+6i10
+5lyx
+4h2j
+1sqi
+3r93
+4nxr
+5f3t
+6aqf
+5lh8
+2uzb
+5ayy
+3pj3
+6fbv
+6h51
+6p5v
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+2vd0
+6q9y
+2r3p
+5l3g
+4mvh
+5yof
+4hra
+4ge9
+3dgl
+2fm0
+4x7q
+6cgt
+6dtw
+5vsd
+5i8p
+6fyi
+1pwp
+2h1h
+4aom
+5nmg
+5hk2
+4zz1
+5t4e
+4nau
+6m8e
+6iph
+3qtf
+5wlt
+3kze
+3u7l
+5n69
+6g9d
+2xn6
+5v5e
+5nf5
+4mgb
+1dg9
+6hhi
+2gde
+4c6v
+1u8t
+5y5u
+6qxa
+6qtx
+5ak4
+6evp
+6a84
+5nra
+6h4y
+6g8i
+2a2g
+5kpm
+6gr7
+4qo9
+4j8b
+1sqp
+1okv
+3efk
+5wio
+3qc4
+4b4q
+5wzt
+2bdl
+4qiy
+1ggn
+6hd4
+1fta
+3e4a
+4iq6
+5knr
+1ewj
+3fui
+6ibx
+2ow3
+6cus
+4a22
+4a0j
+6alz
+3h6z
+3vbv
+3wdc
+5u2j
+1il5
+3nw6
+5wzu
+2y6c
+4loj
+5wb3
+3kaf
+6f4n
+4wy3
+3oe0
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+5yr5
+6pnn
+6ev0
+5qim
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+4x9w
+3rt6
+5ii1
+5x27
+5myk
+4xgz
+1g9b
+5zys
+6dcy
+4y64
+6f09
+5eie
+6bc9
+3qri
+5vgi
+5sxk
+5g6u
+5e8a
+6d5w
+6p1l
+4wr7
+4qxj
+5d11
+6fo7
+6p8x
+6f1w
+4mka
+5orx
+6jn6
+Waring: Missing or wrong elements: B
+4n8d
+5i9i
+2x85
+6ib0
+1tcw
+4jxw
+4mx0
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+1lf9
+1d5r
+1i8i
+1inq
+2y3p
+4gto
+5b6g
+4fmu
+2y58
+6uf0
+4x1f
+4lp6
+4acd
+5wag
+Waring: Missing or wrong elements: B
+4ycl
+2vev
+4bi2
+5nf9
+Waring: Missing or wrong elements: U
+Waring: Missing or wrong elements: U
+Waring: Missing or wrong elements: U
+Waring: Missing or wrong elements: U
+Waring: Missing or wrong elements: U
+Waring: Missing or wrong elements: U
+Waring: Missing or wrong elements: U
+Waring: Missing or wrong elements: U
+Waring: Missing or wrong elements: U
+4g16
+4jlj
+5a2j
+3k54
+1sqb
+1yvx
+5doh
+5qbv
+4m84
+3dv1
+5lhi
+3d20
+4mw2
+5dia
+3kag
+6gih
+2lsp
+3el0
+2vte
+6e3s
+3voz
+4xm6
+1a37
+6itp
+2ork
+5yea
+4j79
+4r6e
+2oc1
+4f6v
+5osy
+3chf
+3i90
+3wci
+3tkm
+2xdw
+3iuc
+4joo
+3ft8
+3qs5
+4ezj
+3k23
+4p0b
+1oj5
+5k05
+1njf
+3ocg
+6f26
+2oyl
+2qcn
+1pye
+3er5
+4b60
+4qlt
+3d2r
+1d4w
+1gsf
+4h3i
+2c0o
+2hwo
+6rk4
+3qck
+2fo4
+6hvv
+5ngu
+3kbz
+6b1f
+3ckt
+6hro
+5ml8
+2l8r
+6q9o
+4d2s
+4o0v
+5g3n
+4wsk
+4hl5
+4ux9
+3g9e
+2y7k
+6ft3
+3g5y
+3iqh
+2r5b
+2ym5
+3c4f
+1m74
+5u6c
+5q17
+5t8r
+6i68
+5i22
+6c2x
+1xmu
+4jve
+4og7
+4rxe
+5x5g
+1j1a
+5i2z
+3ibc
+3u8d
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+5drs
+2r3f
+6s0e
+2y2p
+Waring: Missing or wrong elements: B
+3vi5
+5tdw
+3kr5
+3k3e
+4yrc
+1n95
+4utn
+6boy
+5ap3
+2rc8
+1ow6
+3p1d
+4rj3
+5npr
+5lsx
+3zzh
+5o22
+6bbv
+6dim
+2oht
+7gpb
+1o43
+1q9d
+6pf3
+4ryc
+1jlq
+4xh6
+2znt
+5yg3
+1bq3
+5op6
+4pio
+5wle
+5cqx
+6di0
+4c1c
+4ap0
+5u4e
+Waring: Missing or wrong elements: B
+5lgq
+4hbn
+4q6r
+3kjf
+6rna
+6ce8
+1g1e
+5tkd
+2i47
+5oul
+6cwf
+5ox5
+5z89
+6g8m
+5d10
+2n9x
+5cpr
+6n4e
+3wd2
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4lq9
+6sen
+1lhd
+Waring: Missing or wrong elements: B
+3iu7
+5ak6
+5ll4
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+2wnl
+5ijp
+5osk
+5mf6
+5v2q
+3lw0
+5y0z
+5dms
+4d63
+3wkb
+2w0p
+4x2s
+3k05
+1q4x
+4kpx
+5fpi
+6cyc
+4ttv
+5j9z
+4gj8
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+2gpp
+4mwb
+1ca8
+5o3q
+3zeb
+2wl5
+3fkt
+2lgf
+4avt
+3lqj
+4uce
+4m3d
+4px6
+2p3d
+3i7c
+3zy2
+4y5h
+4k0u
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+1oxn
+4mrd
+5olk
+4mmf
+6f8r
+4jg1
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4acu
+5oui
+4idv
+6mhd
+3p2k
+5bqi
+6s1s
+Waring: Missing or wrong elements: B
+5yqo
+1rhj
+5ow8
+4x3t
+3wt7
+2b2v
+5tq1
+6eg9
+5duf
+2qm7
+3sfh
+2xow
+2g9x
+4loq
+1qhr
+1ynd
+2w7x
+1sqq
+5byy
+1puq
+6k05
+3vzg
+4n5t
+3e51
+2x8d
+6hm7
+5xof
+3qs6
+3nf9
+4mdq
+6j6m
+2aov
+4qh7
+4m7y
+6u9v
+3avz
+2wd1
+4csj
+6dxg
+6ikm
+4o9s
+2qf6
+3kqy
+2b54
+4bgh
+3kvw
+5q19
+1o45
+1uu8
+5qaq
+3i28
+4k5o
+2w1g
+4wmu
+3n0h
+6hf5
+6e7w
+2hdq
+3o2m
+4c4i
+4qhp
+6qff
+2iv9
+3bh8
+6boe
+4d0w
+2evm
+6q5b
+1y2d
+4tyb
+3fh8
+6p3w
+1p03
+Waring: Missing or wrong elements: B
+5dpa
+3lq8
+1oe0
+1uyk
+1czo
+1ent
+4wag
+3efw
+2duv
+4fcr
+3w69
+6gg8
+6p7p
+5gmj
+5y3n
+2w6t
+2x4r
+4ewr
+2ez5
+6e2m
+4n4t
+1cs4
+1rs4
+5zla
+5b5b
+6b0v
+6drz
+5ul5
+6f8v
+2ym4
+3pz3
+1o4a
+3svj
+5cte
+1npw
+3o9b
+1w51
+6npv
+5ov9
+3new
+1fax
+2q7y
+4bw4
+4f8j
+5aux
+1r58
+2c2l
+5lj0
+5gwz
+5m2q
+1pip
+3nrm
+4mcv
+3p4r
+3wka
+6atv
+4n6h
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+5z9e
+5fqr
+3pjc
+2ha5
+4ool
+6h4w
+6g2n
+6h96
+5k48
+4fyh
+2hzi
+2gm1
+5fue
+5ttg
+1bmq
+4itj
+2chw
+2ko7
+6ul8
+6o8u
+1rst
+2asu
+5hog
+3r7r
+2q3z
+4ahv
+6fug
+3hr1
+5vll
+6qzh
+6ehh
+5dlz
+4hg7
+3iqi
+6beb
+5c11
+5ory
+3px9
+1utr
+4flh
+5f4p
+5lub
+1rhq
+2n0w
+4xii
+3hqr
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+1gj7
+4ajo
+3nti
+4fjz
+5n9k
+5aqr
+3srv
+5fpp
+5t97
+4z68
+6dvl
+4twy
+5nx2
+6g3y
+5wbf
+5un9
+5m7m
+4nan
+5db3
+1mqd
+4jzf
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+3b8z
+4yff
+3uvq
+6cki
+4el5
+2hk5
+3rj7
+Waring: Missing or wrong elements: R
+5iuh
+4bib
+1iky
+1k3q
+1u65
+3shz
+6hvj
+5icz
+3fcl
+4x8t
+1w7x
+5jyo
+3qzq
+6o9b
+5urj
+3m53
+5mri
+2lwi
+1qjb
+4lts
+3isw
+2ad5
+4hlh
+1bzs
+6cz3
+3nnu
+4hs6
+2yir
+4u0d
+6qeg
+5a5s
+3q7p
+5am5
+6ey7
+3gjs
+4y6p
+3ft2
+6nem
+2x2c
+4kom
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4gs6
+5nev
+1jfh
+4rn2
+3w55
+4bio
+5li3
+3h2n
+2ay9
+2c1n
+6h9v
+1nju
+1b2m
+6ba7
+2vnn
+2chz
+3l38
+2xg5
+5zk5
+3u2q
+4iqt
+4ark
+2ms4
+4aj2
+1fls
+5vzy
+1x8b
+4mw6
+6fzm
+6jwa
+3f36
+6dud
+3t0l
+1gt5
+2oqi
+5dk4
+2wxn
+3uix
+5nxq
+5xag
+3eoc
+6f3e
+3r9h
+2o3p
+3bgl
+2i72
+Waring: Missing or wrong elements: B
+5f37
+2qiq
+2axi
+5lxp
+3uqg
+5w8v
+1ikw
+5gow
+3qch
+2xxy
+4e5d
+1k9r
+3okv
+2jg8
+3iwy
+6m8a
+3uik
+2xix
+4ohp
+1fq4
+5zah
+4x68
+1tnj
+4e3h
+3kb7
+1vwf
+6hzv
+6d07
+4qxt
+2q70
+1ing
+4kpz
+4ufd
+5cf8
+3nan
+4ehr
+6fa5
+4i0s
+6hry
+4oyp
+6max
+5dtw
+1wss
+3u78
+3iw8
+2xa4
+2x24
+3erd
+6ffh
+2l98
+2c5o
+4ov5
+5aab
+3soq
+5y2f
+4dht
+4g8r
+2igx
+6ajh
+5eol
+5t37
+1zsr
+1fsy
+Waring: Missing or wrong elements: B
+5zr3
+1n8v
+16pk
+1x78
+5ddb
+5jek
+5he7
+5thn
+4yb6
+5klp
+5ega
+6pii
+4zxy
+4xg8
+1iew
+6udy
+5xhz
+6h41
+6bh5
+5gso
+3f69
+6o50
+6e8k
+6ck6
+4ddy
+2owb
+1apw
+3qrk
+2vpg
+5eqq
+1o2t
+1rv1
+3zmj
+6dge
+5tl9
+3s3i
+6b31
+3gk4
+3w8o
+4w9q
+2vgp
+3ia6
+3jpx
+6gmd
+4yll
+1joc
+1tr7
+5jdc
+1x70
+3kqb
+6qsz
+4e3d
+4no8
+2gdo
+5wdj
+5ukj
+4izm
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: B @ HSE--------------
+------------Warning: Missing Parameters for Residue: B @ HSE--------------
+------------Warning: Missing Parameters for Residue: B @ HSE--------------
+------------Warning: Missing Parameters for Residue: B @ HSE--------------
+------------Warning: Missing Parameters for Residue: C @ HSE--------------
+------------Warning: Missing Parameters for Residue: C @ HSE--------------
+------------Warning: Missing Parameters for Residue: C @ HSE--------------
+------------Warning: Missing Parameters for Residue: C @ HSE--------------
+5uwp
+5aia
+3rv6
+4wm9
+3g4g
+6ipm
+2nv7
+5i0l
+6eo0
+5myr
+5u4a
+Waring: Missing or wrong elements: B
+1gux
+4usj
+3b2t
+3pd2
+5qa5
+4lbl
+6mwe
+5vlk
+5ivj
+4hs8
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4tpp
+6f8b
+3b5j
+5i83
+2np8
+1om9
+1hdt
+5qat
+6pgx
+Waring: Missing or wrong elements: T
+1lvk
+Waring: Missing or wrong elements: B
+1xmy
+5nat
+5xzr
+5klr
+1ch8
+3hrb
+3aza
+3ao1
+4xv3
+4j0s
+4qme
+4wyo
+4mz5
+3kme
+1tog
+3gjd
+5dyw
+5mmn
+4hxq
+Waring: Missing or wrong elements: B
+4gvd
+3m8q
+2jt6
+5q0z
+5u6v
+2nw4
+2gph
+3lkj
+2pri
+5izl
+3uda
+4lv3
+Waring: Missing or wrong elements: B
+6c3e
+2g19
+5t18
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+5oq6
+2ea4
+5kzi
+2brp
+5fq9
+Waring: Missing or wrong elements: B
+4gw6
+5bqg
+5k1v
+2fq6
+1vea
+3imy
+4dk5
+4pce
+6f86
+4l7d
+6bj2
+4oeg
+3ugc
+4el0
+3rtm
+2vgc
+Waring: Missing or wrong elements: B
+6n93
+1xlx
+1zm7
+4xtm
+2viz
+4acg
+4ebv
+6hu1
+5vqz
+6imi
+4j1k
+2gd8
+2ei6
+2ieh
+1i33
+2obj
+5vp0
+3jqf
+3sv7
+2mpm
+2hob
+4uua
+3atw
+5ggn
+3agm
+4i6f
+4zxx
+3skh
+4dxg
+4yur
+4pnn
+2xlc
+2yof
+4aa5
+4ps8
+6k4x
+4gs8
+3chd
+3gp0
+2aq7
+6qw7
+3krl
+5gvm
+4psx
+6bfa
+3zjc
+3al3
+5j7g
+3nth
+2r6y
+6bxy
+1c7e
+2kwn
+3dp2
+4mbc
+3p0g
+6p11
+2qju
+6b7d
+1swi
+4tk2
+4bcq
+5q0r
+4oru
+5auv
+5ajx
+5v4b
+4au7
+3ohh
+2o4s
+1mzs
+5h9s
+1a46
+5glu
+4ggl
+3mrv
+6qdx
+4d8e
+5kx7
+1em6
+5ccm
+1b5g
+6s88
+2jbj
+4lgu
+5b4k
+1o3h
+2w76
+3is9
+3u8w
+5ofx
+2wa4
+2a4r
+5tks
+4dfu
+5u7j
+6ccl
+4pyo
+5kpl
+6c7d
+2wk2
+3dt1
+5ejw
+4x3e
+5nhy
+4aa2
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4mk0
+2e9v
+5cyi
+5gn5
+2xn7
+5wbk
+3juq
+4qht
+3uo9
+1g37
+6o3x
+4byj
+3zmi
+5c13
+3r02
+4kfp
+5ljj
+5lg3
+4k67
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4nzm
+3sdg
+2c8y
+1wax
+2hdu
+1h9z
+2fx7
+3lfs
+3eqb
+4i1r
+3shy
+4uu7
+2m3m
+5y5n
+5j1w
+3d4f
+5vk0
+5wh5
+2c9d
+3hbo
+3igg
+2c3j
+5enc
+4d89
+5a7j
+6ax1
+2df6
+3rxb
+4k6v
+4kai
+Waring: Missing or wrong elements: B
+1o3k
+6h0u
+5ct7
+6f4x
+2y67
+2jsd
+3diw
+2kff
+2x8i
+6n3k
+4frk
+3jqg
+5urm
+4edy
+6gva
+6g9h
+4fr3
+5j1v
+1f28
+3bwk
+6b3v
+3et7
+1ywi
+1q5l
+2flu
+4x1p
+3ckr
+4jrv
+3rxj
+2lyw
+4zom
+2xct
+1rhr
+5tho
+4w5j
+1vwn
+5ujo
+Waring: Missing or wrong elements: R
+4cd8
+2exc
+4e3m
+Waring: Missing or wrong elements: B
+5z68
+1lol
+5kzp
+2xg3
+5ixq
+5ful
+4jjg
+4r5w
+1yw8
+1ckb
+2q9n
+4cpu
+4kwp
+5mav
+4bgy
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+6r5f
+5dya
+2x81
+1kfy
+5bms
+2a3i
+5jnn
+4m8t
+3qxh
+4i7d
+1qng
+1yvf
+3ril
+3jsi
+4z2k
+3py1
+4de3
+3wym
+1fbm
+4uvc
+5lck
+2x2k
+6d3z
+4tw8
+4lqy
+2xez
+5xih
+4k63
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+2vcg
+6ck3
+2r0y
+1uy6
+3c1x
+1k2i
+2c5x
+4bti
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+6oip
+1uyf
+2qfu
+6hjj
+4meq
+4hw2
+1kf0
+2r9s
+3d9p
+4fbx
+3dcv
+5iu6
+4lil
+4xv2
+4mgc
+4nw7
+5q1e
+5alr
+5f1l
+4ciy
+5o4z
+2mnz
+1qti
+6dm8
+3s3o
+6biz
+5iha
+4dcv
+1ths
+5h5s
+4twd
+2y57
+6b7f
+3q5u
+5vlp
+4lg6
+2l3r
+5tkb
+3rk9
+4pnl
+4f3h
+5wfz
+4uub
+3vfq
+6aum
+3h0w
+3v4j
+4edu
+3az8
+2w85
+6gu4
+4j82
+4wmy
+3dba
+6g5j
+4kv9
+5u9d
+3s3r
+4uco
+3pm1
+5nsp
+1aku
+6q89
+4tsz
+6jib
+6htz
+3cho
+1hs6
+2obo
+3rse
+3l9h
+4uva
+6ela
+5teg
+3t1l
+5wbl
+3q4k
+1jdj
+6clv
+4ehv
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+2zjv
+5km2
+5olb
+5erg
+4lv2
+Waring: Missing or wrong elements: B
+2zif
+6fbw
+6bid
+4i0t
+5khg
+3ut5
+4c4e
+5hng
+4lh2
+6mqm
+1kcs
+1a0q
+4tkn
+5wr7
+5iyv
+2z7r
+1qf4
+3uvl
+5lz8
+6fii
+6q7a
+4lqg
+3oyp
+5uxn
+5kam
+1f47
+1lf3
+5jan
+3chp
+3pke
+5i0b
+5gmp
+3fq7
+4c1m
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+5ncz
+1c3r
+2nmy
+2r02
+2iwu
+3r0w
+5hyx
+4qz4
+2iw8
+3tge
+4qr3
+3frg
+1shd
+4rx9
+4op2
+6pit
+5b5p
+1y2e
+6jjz
+4frs
+4j8s
+1t49
+3mbp
+6fdu
+6afh
+2y6d
+4pjt
+5pzn
+4wvs
+4y38
+1pmu
+5uac
+3k98
+4kva
+6c8c
+4x1n
+6g8n
+4jck
+5e3d
+3eq7
+2gnh
+3wfg
+5ett
+2qhr
+1nlo
+5zhm
+4ris
+4y2y
+4x7n
+3max
+4oz3
+5zqp
+3sl0
+Waring: Missing or wrong elements: B
+4zyt
+4eki
+3iad
+3c3o
+3v3l
+1ow4
+2azm
+4w7p
+6iiv
+4idz
+4zx5
+5agt
+Waring: Missing or wrong elements: B
+2ieo
+6dlj
+2pjt
+5zdc
+3ti5
+2eg8
+3we4
+5hmh
+3oof
+1xh7
+4ra5
+5n9n
+6h7z
+4qwx
+4tyt
+4hxr
+1y2f
+2xkc
+5uhi
+5emk
+3t3h
+5ktw
+4j1e
+3db8
+5swf
+5v35
+2qqs
+5znr
+2zsc
+3atk
+5aok
+6e4f
+5zk9
+2q8i
+4x6k
+2xln
+Waring: Missing or wrong elements: B
+6oyh
+2f3e
+3n5k
+4jgv
+3l1n
+3v49
+4e3j
+Waring: Missing or wrong elements: B
+4wnp
+5kj0
+3gzn
+5egs
+3hf6
+4kw6
+2f4b
+4jps
+4m5n
+1h1q
+5f88
+3q5h
+4fl3
+5kv9
+5dgz
+4j84
+5oh1
+4wwn
+4rxc
+6bsx
+3ens
+1gz9
+1iq1
+6aqo
+4ckr
+4f6s
+5npd
+1mqi
+1ogu
+5n7x
+2fb8
+6bqj
+4o37
+5nt0
+4hze
+Waring: Missing or wrong elements: B
+4qn7
+3jzf
+5wkm
+4nct
+3ds0
+4iu0
+Waring: Missing or wrong elements: B
+4oar
+3iiy
+5v41
+1p5e
+4ayx
+1xm6
+4mib
+4l52
+1exw
+4mma
+3fea
+1my8
+Waring: Missing or wrong elements: B
+6fgf
+4zyw
+2qhd
+6c0t
+1o4n
+5hgq
+2yi5
+4x47
+2o9i
+3lil
+3uqf
+1zp5
+5x4o
+5ar4
+6bmv
+5t1u
+4zh2
+1pf8
+3piz
+5nhf
+4dt6
+4is6
+2zis
+5cvd
+3d7b
+3khj
+5xv7
+1ka7
+3wax
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+Waring: Missing or wrong elements: B
+5a6a
+5ap6
+4pvv
+1ym2
+3qw7
+4mho
+6v5l
+5o4y
+5ekh
+2d06
+3wk7
+5zh4
+6oie
+1g4k
+3dla
+6q73
+2igw
+1lrt
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+2yj9
+4oex
+1pum
+2ydi
+4yht
+4mw5
+5mny
+6esy
+3btc
+2vl1
+3as2
+6nvh
+4v0i
+5vsb
+5fas
+2qtu
+3vnt
+1g9s
+4g0c
+5lx6
+5w6e
+6db3
+1a2c
+2w87
+1n2v
+5cs2
+4zga
+6fdt
+5etm
+3l5b
+4bb2
+5ni8
+5am4
+3r7n
+2pjl
+2aoj
+5c0m
+4znx
+2y1w
+1b6m
+2w77
+5lsc
+4jfw
+1f0q
+5bve
+2v11
+5tz3
+2z92
+3nc9
+1jje
+3unk
+5o0j
+5zh3
+1wva
+Waring: Missing or wrong elements: B
+1dzp
+5ieg
+6n6o
+3hau
+2hrp
+4f1q
+3q43
+2prj
+4hkp
+4p45
+2ww2
+5op2
+3iw7
+3b2w
+5yzd
+3mqf
+2ada
+2ga2
+2l12
+6h1h
+4w50
+6oah
+5j6d
+1qtn
+4qwk
+6ar9
+2wxk
+2wi2
+3mj1
+2yiw
+5dy5
+1v2v
+5hdv
+5all
+5fdr
+2ica
+3e63
+1hgj
+6ft9
+1pu8
+6c7g
+2f0z
+4lh3
+5xmt
+13gs
+5db0
+5mk3
+6kdx
+6ncj
+4x8p
+6s7s
+1xbc
+1clu
+4x49
+4wt6
+4gts
+4aof
+4int
+4rvm
+3rzb
+9lpr
+Waring: Missing or wrong elements: B
+4xyc
+5iop
+3gwu
+3q2a
+5tjx
+2o7n
+3i5n
+1g2m
+4z6i
+2tsr
+4ybs
+6nfo
+5tyr
+3kdt
+4d8c
+2vxa
+3q3k
+6g4z
+3ine
+3lbj
+5j4v
+4eg5
+2ll6
+1pzj
+6uyx
+2p9a
+5ans
+4n7j
+6qme
+3udr
+3hdk
+1f8a
+2pr9
+5izk
+4w4x
+2ndo
+1lq2
+5ze6
+5aen
+5tig
+5gwy
+4amx
+5iok
+5f3e
+5w6i
+4ln7
+5hx6
+6fym
+1llb
+4gk7
+6pht
+Waring: Missing or wrong elements: B
+6ee6
+2pvn
+6oxt
+4xqb
+2hug
+3g7l
+5h0b
+4jg6
+1azx
+5w1v
+6f8w
+6nm4
+4g0l
+1gz4
+4bci
+4xe1
+3dda
+3v6r
+6hwv
+5cgc
+6qra
+5tln
+3w5e
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4qwj
+6ap7
+4ge4
+6cdc
+5dgj
+5qam
+4pyy
+6mdd
+2vu3
+4eh2
+5hk9
+6cef
+4ybj
+3ind
+5nu5
+3pjg
+6me1
+6chn
+4i2z
+6qm7
+3s7m
+3qrj
+3m54
+1t7r
+3jwr
+2nnk
+2xk7
+6bbu
+3tv5
+6jsz
+5gu4
+6mim
+4mk5
+5m63
+1cim
+2o65
+3sv9
+3rey
+5qak
+3d8y
+5y8z
+5iu8
+2ajl
+5iu7
+2adm
+5nfb
+Waring: Missing or wrong elements: U
+Waring: Missing or wrong elements: U
+Waring: Missing or wrong elements: U
+Waring: Missing or wrong elements: U
+Waring: Missing or wrong elements: U
+Waring: Missing or wrong elements: U
+Waring: Missing or wrong elements: U
+Waring: Missing or wrong elements: U
+Waring: Missing or wrong elements: U
+2l0i
+1x7r
+6eww
+2zu4
+3hx3
+6n7y
+4k72
+2iyf
+6hv0
+5lsy
+5up0
+6pml
+5epp
+4k10
+5ji6
+2loz
+4ruu
+4pl0
+5ovh
+3mg8
+3pi5
+2w54
+6ggd
+2qn3
+5ipa
+6aqq
+1bdl
+4fvr
+3ppo
+3qsd
+4a50
+5yu9
+5k5n
+1jjk
+4hy0
+5hlm
+4fe9
+2j9n
+4dmn
+2pvw
+5hm3
+2bdf
+3ti8
+3o57
+4ogi
+5c84
+1eed
+1pk0
+3aav
+5w3i
+3wv3
+2a2x
+4i1c
+4cu1
+3ufa
+6fgl
+3kga
+5c6v
+1hww
+1uxb
+2gej
+6jno
+5npf
+5f9e
+5zkb
+1w2g
+4nni
+4wr8
+5xhr
+4lkj
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4mg7
+4r18
+5bue
+4mrf
+5mon
+5u5k
+3qcf
+2w3o
+1tnl
+5o83
+4cwb
+9hvp
+1rs2
+4jft
+3rv3
+2bua
+5cxi
+4mx5
+5tzo
+3khv
+4mh7
+4ztr
+4ddl
+5uwm
+3g1m
+5q10
+1qpf
+4b9w
+1amn
+4dpu
+4yt6
+3v3v
+3a2c
+4aua
+5vdr
+5qa4
+1cj1
+2v12
+1wug
+1nde
+4xsx
+2kgi
+7hvp
+1hti
+3stj
+2bve
+1xoe
+5t4v
+3g8i
+3t7g
+4nym
+5yv5
+5oq5
+5mwz
+4z6h
+5qaf
+3n1v
+2wf0
+5z95
+3uli
+1zzz
+1o41
+1tvo
+4ith
+4k69
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+3hdz
+1a7x
+5opu
+5ctc
+3ewh
+4xsy
+4g3f
+3er3
+Waring: Missing or wrong elements: *
+4yyi
+5ax3
+6gi6
+2qn2
+4x34
+2zxa
+1zeo
+4x60
+4ep2
+6hck
+5mqx
+6h7l
+4ks5
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+3lcv
+5zqr
+3gb2
+5zmq
+3r91
+5iez
+4j4n
+6e05
+5tgc
+5v8p
+4mk8
+1dtt
+5y8w
+4j1p
+3rxp
+3rg2
+4ocp
+1tet
+6fky
+4kb7
+Waring: Missing or wrong elements: B
+5aiv
+4hhz
+5fgk
+2ph6
+2xu4
+5syn
+1h3a
+4j1h
+3ad7
+3guz
+5q1d
+4mg8
+4n84
+6g6x
+220l
+6eea
+4p4i
+6aej
+2gnl
+4aif
+5qil
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+5nq5
+6drg
+2g72
+3hac
+5knx
+6cve
+5x13
+5f32
+2wxm
+5f3c
+1o39
+6njz
+6dql
+3az9
+4r6w
+5aki
+6qz8
+4ega
+3wnt
+2qrq
+2q9m
+1o3g
+6st3
+1rbo
+2fys
+1gwq
+4hct
+6hvt
+3bim
+2aof
+4h5d
+1ets
+1al7
+2pze
+4acx
+1h28
+5mnx
+4ibm
+6sd9
+4e1n
+5a6i
+2vwu
+5szc
+1juq
+5q0f
+3axk
+6b5a
+2wmv
+4d8n
+3fmr
+2jc0
+5fi7
+3ff6
+4q9m
+2c4w
+3pj1
+3wk4
+4inh
+6q9q
+1q6k
+6mo2
+3uyt
+2xk1
+Waring: Missing or wrong elements: B
+5byz
+5c6p
+1oy7
+3saz
+5gp7
+6fty
+3sff
+3sfi
+3zpr
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+4aoc
+1owj
+5axq
+4myq
+4nhc
+4bek
+1i8j
+6i78
+5zms
+1kds
+Waring: Missing or wrong elements: B
+4ayt
+5tci
+5aix
+3krr
+4q1n
+3tf7
+6bvh
+5f02
+4ir5
+2fjn
+1z6q
+1tou
+6uii
+4lc7
+3f3v
+6fzj
+4qgh
+2hvc
+3h52
+2ymt
+2io6
+3oe6
+4rn1
+1h24
+1a5g
+2c9b
+3fi2
+1qja
+3zw3
+3oe8
+4ys7
+4hxl
+4e8w
+5knj
+4iku
+5diu
+4lpf
+5dry
+5igq
+2w0x
+2hmb
+6mt5
+6ink
+1q4l
+3p4q
+3wd9
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+6fmk
+4dmy
+6cqz
+1ek1
+5ops
+4h1e
+3sji
+4rrr
+3zrc
+4fob
+4mbi
+2hpa
+6k1q
+3zhz
+1ow8
+5zk7
+6qxd
+2ima
+1v2m
+2r0u
+3rxo
+4ybt
+6r0u
+6ms1
+3met
+2c3k
+4odf
+4j3j
+5duc
+6f7q
+4ntj
+5zfi
+3odi
+4e1m
+3gxt
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+6cjy
+3anq
+4msk
+4pn1
+6df2
+6s07
+4iti
+4b0c
+3ifp
+1gzg
+4qwi
+4fem
+5akz
+3fxb
+5ngt
+3mpt
+4imz
+2pcu
+4xhv
+2eh8
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+6mbp
+4nrl
+5ol3
+4u7q
+6uvp
+6cec
+1py2
+5dv4
+3sbh
+4bqy
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+3s53
+3f7z
+2ha0
+1gui
+6q8a
+4nmp
+4yjl
+2q80
+2qzk
+5c5h
+4pgc
+5vdp
+3qpn
+2cne
+3mg0
+Waring: Missing or wrong elements: B
+2xk3
+6psb
+2p8h
+6f08
+1npz
+1ftl
+5hlb
+4u0g
+3img
+1l5r
+6bed
+6bgz
+5ncq
+2avv
+6ps6
+3rq7
+4uwk
+6pya
+4n9b
+5oae
+6npu
+3kx1
+6uhv
+2a3a
+5nvh
+4x3h
+6f6d
+3jxw
+3zkf
+6fau
+2b8v
+1lt6
+4qvp
+Waring: Missing or wrong elements: B
+5huy
+1qj7
+4r3b
+4ks2
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+3dkj
+1py5
+2xh5
+6ert
+Waring: Missing or wrong elements: B
+4oel
+5l4h
+4mnx
+4lno
+1xo2
+1o2u
+5l15
+5nhh
+3ig7
+3hy9
+4kil
+6aec
+1m5b
+1bqm
+3erk
+6g92
+3zmg
+2qmf
+4nhy
+5qaj
+4yoi
+4u68
+3ms7
+3c1k
+5qqo
+5tiu
+2i40
+3qci
+5b0x
+4bo4
+2hz4
+3q4j
+2psx
+1fsw
+Waring: Missing or wrong elements: B
+4bb4
+5d7c
+4xs2
+3tyv
+3gv6
+5dtr
+5tzd
+5uzk
+4fiv
+4pzh
+2xk8
+4c68
+3ehw
+3o9f
+2ozr
+4pge
+4z7f
+3k3j
+1k3t
+6ohd
+1qvu
+2xwd
+3dng
+4ab8
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+2wxp
+3sl8
+5uir
+5l9h
+4tw6
+5bnm
+3q4b
+3h91
+3uvw
+1wbs
+4oyk
+3at4
+2vr3
+4kz0
+3h0b
+3tku
+4ona
+1a9u
+6oin
+1d2s
+2yoj
+1qpb
+6uwp
+4w9x
+5tc0
+3m3r
+3q77
+6e3g
+5m9d
+5qa9
+3le6
+6hy7
+4gv8
+3sax
+4lmu
+3szb
+3hwn
+1w22
+2ja3
+3dtc
+5mk9
+4bj9
+5em7
+4edz
+6fvn
+6gin
+5ake
+4pkr
+4kip
+3k3g
+5hld
+3kl8
+4x6s
+6drx
+6c7b
+3uvo
+6bln
+3gnv
+4zuo
+6fel
+5kup
+5c7a
+3arn
+3sl4
+3cyu
+6emu
+6o9d
+2zyn
+3rvi
+4q1b
+1xdg
+4abv
+5n49
+3fxw
+4py4
+3ej5
+2ceo
+1oqp
+4b7n
+5fp0
+5k0b
+3ggv
+3dpc
+4yp1
+4kql
+1o2k
+3w2q
+3r42
+4gjc
+5mtw
+1j4p
+4pp9
+6fn9
+4ob1
+Waring: Missing or wrong elements: B
+5w94
+5tob
+2c6l
+6c5f
+4hmq
+5da3
+6bcr
+6hky
+1wv7
+1czq
+5hm0
+4c71
+6ega
+4ajk
+1pcg
+2xcg
+1q9m
+6rvk
+Waring: Missing or wrong elements: B
+6e9l
+4re3
+3iit
+2jbv
+2wsx
+6uvy
+6r7d
+2vl8
+1fv9
+3s2o
+1urg
+5i38
+4m3b
+5mxo
+2oh4
+4xnv
+6o68
+4nal
+6qwi
+6k4t
+4hvs
+3nrz
+3chc
+2yit
+5trj
+4m48
+5eg4
+3pdc
+5unf
+6apt
+4d1d
+2hdx
+1g9c
+5gjg
+3w1f
+1dub
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+centreofmass.sh: line 120: 2940952 Segmentation fault      (core dumped) $LEDOCK input.txt
+6bau
+4hzt
+3n3l
+5q1g
+6hjk
+1cwb
+2aig
+4e5g
+2xyr
+3vf9
+3thb
+1yt9
+4i9z
+4pgd
+4hy5
+6i5j
+4yyn
+2wi1
+3qd4
+1oth
+3ken
+5q0w
+2e93
+5uwn
+6ilz
+2onc
+6qxs
+3mw1
+6f3g
+3lbz
+1o5m
+3fv8
+5m4q
+3bze
+1yye
+5f3i
+3t3y
+3tdh
+4anb
+3dcw
+1g6s
+1w7h
+3f9n
+6rw1
+Waring: Missing or wrong elements: B
+5ez0
+3gqo
+1tuf
+1cil
+3uo6
+1btn
+3g90
+5nwb
+3gur
+5wev
+4fgt
+2c8w
+6ps1
+5jcb
+6eh2
+3t0w
+4kzb
+5xii
+------------Warning: Missing Parameters for Residue: C @ HSE--------------
+------------Warning: Missing Parameters for Residue: C @ HSE--------------
+5q0s
+5ktx
+3v8w
+5c85
+6qad
+5mhp
+1rrw
+4o0t
+1e06
+5g2n
+4rhu
+6hva
+4jbo
+5ur9
+1bcj
+4k3q
+2oq6
+6bgy
+6i96
+6me4
+6rhe
+1zpb
+6nfz
+6o57
+4zup
+6axl
+6iup
+4mdt
+1pyw
+6ct7
+3s7a
+2iw9
+3f39
+5o7e
+6qha
+3sgv
+3sm0
+5n58
+5t35
+5hcl
+4htp
+3vry
+1zkn
+5v4q
+2fx8
+6bic
+1oeb
+5tnt
+5ezz
+3skg
+4apo
+1ppw
+6egs
+3ilq
+4pci
+4to8
+1xoz
+1i48
+4gkc
+3nin
+4mm4
+1l7x
+6cha
+Waring: Missing or wrong elements: B
+4aqc
+2g5t
+4azy
+5l6h
+5u4f
+Waring: Missing or wrong elements: B
+Waring: Missing or wrong elements: B
+4hva
+4fz6
+6ffe
+6nkp
+7lpr
+Waring: Missing or wrong elements: B
+5t1s
+4dwg
+5fao
+3g0c
+4drk
+4lwc
+4ch2
+2hz0
+4g55
+6hwz
+5wgq
+4gj6
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+6gfx
+1ugy
+6rln
+4an2
+4g2l
+2lcs
+4eyj
+1y2h
+6aak
+4tk1
+3otf
+4k75
+5f2s
+6byk
+6b1o
+5knt
+3k48
+6b67
+4txc
+2pgj
+5akw
+2flb
+4i47
+5yz7
+5v3r
+2r6n
+2w8g
+3msj
+4trz
+5al2
+5ml3
+3afk
+1sle
+2viq
+2ohp
+6oco
+5prc
+4muw
+4men
+4tju
+4anq
+5vrl
+Waring: Missing or wrong elements: B
+5wkl
+3v30
+2h9p
+2wig
+6eji
+3tia
+5a0b
+6e5g
+4gw5
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+2ks9
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+3i81
+2veu
+5b6c
+4bo1
+6nvj
+6fc6
+5ajc
+6nzg
+1ljt
+3sjo
+4fse
+4csy
+6c9p
+5ku3
+4mzf
+5b4l
+6fu5
+6qac
+5ddf
+4yee
+1nok
+5yql
+4rqz
+1q41
+5eje
+2va6
+3t19
+2jle
+2yak
+Waring: Missing or wrong elements: R
+6hhp
+2b7a
+3c5u
+5ytu
+2rqu
+6rj6
+5t4b
+5wf3
+1ll4
+5kdf
+2d41
+2vvt
+5w84
+4i7b
+2qlf
+3rx7
+2f3r
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+Waring: Missing or wrong elements: A
+1i6v
+5afl
+1p0y
+3eid
+3eqs
+5urk
+6bfd
+2xcn
+Waring: Missing or wrong elements: B
+3dxj
+3p9j
+4wmv
+5mt4
+2f1a
+3wdz
+1p28
+5w88
+3uvu
+3fr2
+1waw
+4i33
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+5v2p
+6do3
+5kbf
+6qtw
+Processing 6c5k
+Processing 6faw
+Processing 5k4x
+Processing 6aji
+Processing 1wbw
+Processing 5i5x
+Processing 4o42
+Processing 2osm
+Processing 5qag
+Processing 6gjd
+Processing 6gu7
+Processing 5hlp
+Processing 2a0t
+Processing 4enx
+Processing 4puk
+Processing 2b1z
+Processing 4ym4
+Processing 6pek
+Processing 5xig
+Processing 2itz
+Processing 1w2h
+Processing 4mwy
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+Processing 3cl2
+Processing 2g1y
+Processing 5hes
+Processing 5tw2
+Processing 5ng9
+Processing 5nba
+Processing 5cao
+Processing 5fb7
+Processing 1vkj
+Processing 2oo8
+Processing 5t52
+Processing 3exf
+Processing 4ynk
+Processing 6nzt
+Processing 2etk
+Processing 1n9m
+Processing 4k43
+Processing 5y0f
+Processing 6g9m
+Processing 5ngf
+Processing 1ero
+Waring: Missing or wrong elements: B
+Processing 2gg9
+Processing 3avb
+Processing 6gge
+Processing 3vp4
+Processing 4x69
+Processing 3ixj
+Processing 4lww
+Processing 4rj6
+Processing 2fix
+Processing 5ntp
+Processing 4i6b
+Processing 4btw
+Processing 5zty
+Processing 5wmt
+Processing 4jj8
+Processing 4hni
+Processing 3bzi
+Processing 2yln
+Processing 2o48
+Processing 1zky
+Processing 2rf2
+Processing 5n1v
+Processing 3jq9
+Processing 3lj7
+Processing 4gg5
+Processing 1hk3
+Processing 6cyg
+Processing 2ykc
+Processing 1juf
+Processing 2hrm
+Processing 1gt1
+Processing 4zz2
+Processing 6a80
+Processing 1jd6
+Processing 4afj
+Processing 1swk
+Processing 6qrd
+Processing 3ixg
+Waring: Missing or wrong elements: B
+Processing 3d94
+Processing 2cfd
+Waring: Missing or wrong elements: R
+Processing 5ty1
+Processing 6gy0
+Processing 4z2p
+Processing 4kby
+Processing 5d1j
+Processing 1xlz
+Processing 6qh9
+Processing 1lhc
+Waring: Missing or wrong elements: B
+Processing 4oti
+Processing 4wvl
+Processing 4yym
+Processing 2fgh
+Processing 5eto
+Processing 1ule
+Processing 1zz3
+Processing 4his
+Processing 2e9c
+Processing 5k5c
+Processing 6d4r
+Processing 3bbt
+Processing 5ylu
+Processing 6jse
+Processing 2q72
+Processing 2z4y
+Processing 2uzv
+Processing 2l6j
+Processing 2pfy
+Processing 6qrg
+Processing 6gxw
+Processing 4ykn
+Processing 3jy9
+Processing 5wii
+Processing 1a4m
+Processing 1hyv
+Waring: Missing or wrong elements: A
+Processing 2vwf
+Processing 3apc
+Processing 5xpl
+Processing 1uvr
+Processing 1pr1
+Processing 5o0e
+Processing 4no1
+Waring: Missing or wrong elements: B
+Processing 6fne
+Processing 4luo
+Processing 6pys
+Processing 2a4g
+Processing 2vcq
+Processing 6i76
+Processing 4yv8
+Processing 3jzi
+Processing 2h9t
+Processing 5hda
+Processing 2hds
+Processing 2ydk
+Processing 3hu2
+Processing 2b1r
+Processing 6fdp
+Processing 5f95
+Processing 3pcc
+Processing 6pxc
+Processing 3kxz
+Processing 5gx6
+Processing 5vkm
+Processing 4lm5
+Processing 5alh
+Processing 5nx9
+Processing 4xta
+Processing 6frf
+Processing 3o9c
+Processing 3r5j
+Processing 4yw2
+Processing 3mrx
+Processing 5d1w
+Processing 6gy1
+Processing 6hbn
+Processing 5ot3
+Waring: Missing or wrong elements: B
+Processing 2fr3
+Processing 6dq8
+Processing 4p7m
+Processing 5j5r
+Processing 5d12
+Processing 3cgf
+Processing 4bpi
+Processing 3o8h
+Processing 5kit
+Processing 6m89
+Processing 1p04
+Waring: Missing or wrong elements: B
+Processing 3zo1
+Processing 6oou
+Processing 5y6f
+Processing 5lhh
+Processing 4lnp
+Processing 4qmo
+Processing 6djd
+Processing 4ww6
+Processing 1a1b
+Processing 4hcz
+Processing 3ma3
+Processing 4ifh
+Processing 3vv7
+Processing 3od0
+Processing 4m5h
+Processing 2nqg
+Processing 3me9
+Processing 3vbg
+Processing 4b4n
+Processing 6do4
+Processing 5qb1
+Processing 2ndf
+Processing 2aou
+Processing 1u32
+Processing 5qaw
+Processing 4luv
+Processing 2jdk
+Processing 2vx0
+Processing 3njq
+Processing 4pnw
+Processing 4qyo
+Processing 4rrv
+Processing 3csl
+Processing 3hwx
+Processing 1vjy
+Processing 3f07
+Processing 1g9d
+Processing 2r6w
+Processing 4o13
+Processing 4li7
+Processing 1ryh
+Processing 2xuf
+Processing 3cen
+Processing 3pkn
+Processing 1wbv
+Processing 3c0z
+Processing 6md4
+Processing 5owt
+Processing 2rgp
+Processing 1cp6
+Waring: Missing or wrong elements: B
+Processing 2c93
+Processing 6dji
+Processing 3hvk
+Processing 4u58
+Processing 4jj7
+Processing 4hlw
+Processing 6by8
+Processing 3vb6
+Processing 2q93
+Processing 5h21
+Processing 5vqx
+Processing 6jt3
+Processing 3hiw
+Processing 2yne
+Processing 3c9e
+Processing 5u00
+Processing 5vp1
+Processing 5q0t
+Processing 1o48
+Processing 4inb
+Processing 5d1t
+Processing 3vye
+Processing 5wfw
+Processing 5t4u
+Processing 2wti
+Processing 3u4i
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+Processing 2ama
+Processing 1xos
+Processing 3fzt
+Processing 3dek
+Processing 1xon
+Processing 5jog
+Processing 4bnv
+Processing 3o1e
+Processing 6prt
+Processing 2gtv
+Processing 3nf6
+Processing 4py1
+Processing 2bcd
+Processing 6qs5
+Processing 1fq8
+Processing 4hrc
+Processing 5pzm
+Processing 6qhg
+Processing 4mu7
+Processing 4zim
+Processing 2l8j
+Processing 5hjb
+Processing 6htr
+Processing 3qo9
+Processing 1noi
+Processing 3p3j
+Waring: Missing or wrong elements: R
+Processing 5ixf
+Processing 5cnj
+Processing 1qfs
+Processing 2xhr
+Processing 6aee
+Processing 3qbh
+Processing 4ydq
+Processing 4ufz
+Processing 3qcy
+Processing 6mxd
+Processing 4zur
+Processing 2k0x
+Processing 3qs8
+Processing 4dhf
+Processing 5u6d
+Processing 1d3v
+Waring: Missing or wrong elements: B
+Processing 6bu0
+Processing 6c8p
+Processing 5izq
+Processing 1pxm
+Processing 4bs4
+Processing 4dtt
+Processing 3vg1
+Processing 5w0i
+Processing 3zlw
+Processing 5jaz
+Processing 5k76
+Processing 5mi6
+Processing 6do5
+Processing 3sz1
+Processing 2hf8
+Processing 3oy1
+Processing 5fdo
+Processing 5nb7
+Processing 3qsb
+Processing 4e4x
+Processing 5lvf
+Processing 2xz5
+Processing 5cy3
+Processing 4anw
+Processing 5cf6
+Processing 5ea3
+Processing 4y16
+Processing 2xdm
+Waring: Missing or wrong elements: B
+Processing 5isl
+Processing 2yjb
+Processing 1lhe
+Waring: Missing or wrong elements: B
+Processing 5kgx
+Processing 4lrh
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+Processing 5kdr
+Processing 5mxr
+Processing 3dnt
+Processing 3mj5
+Processing 5usz
+Processing 3pp0
+Processing 1agw
+Processing 6cf5
+Processing 1jiz
+Processing 1y3w
+Processing 5kjm
+Processing 2vio
+Processing 6h7n
+Processing 3vi7
+Processing 5aqt
+Processing 6k5t
+Processing 3pz1
+Processing 4jr0
+Processing 4brx
+Processing 6gj7
+Processing 3oe9
+Processing 3clp
+Processing 3osw
+Processing 3ggc
+Processing 5em8
+Processing 4prb
+Processing 5mxx
+Processing 5vdu
+Processing 1sqc
+Processing 4bw2
+Processing 2go4
+Processing 4oue
+Processing 3hjo
+Processing 5ier
+Processing 1r6n
+Processing 5u6b
+Processing 4yhz
+Processing 1jik
+Processing 1lxf
+Processing 5c7f
+Processing 3uvn
+Processing 5wa1
+Processing 3np7
+Processing 5mgg
+Processing 3e1r
+Processing 5ivz
+Processing 2fts
+Processing 3o0g
+Processing 3r22
+Processing 3zmt
+Processing 6fvo
+Processing 6u80
+Processing 5yc2
+Processing 5nme
+Processing 5vqr
+Processing 4mvx
+Processing 6c7e
+Processing 2h2h
+Processing 5ceo
+Processing 3r4o
+Processing 3h85
+Processing 5svl
+Processing 2p0x
+Processing 1g3f
+Processing 6pvu
+Processing 1jld
+Processing 4wz8
+Processing 4n1t
+Processing 6n54
+Processing 1mwn
+Processing 5jk3
+Processing 2i2b
+Processing 3fyz
+Processing 3atv
+Processing 2vin
+Processing 6aud
+Processing 6oht
+Processing 4qt2
+Processing 3odk
+Processing 3tiz
+Processing 3km4
+Processing 2xzc
+Processing 1exv
+Processing 5wxg
+Processing 4lnw
+Processing 4l5j
+Processing 4tk3
+Processing 5n53
+Processing 2v0c
+Waring: Missing or wrong elements: B
+Processing 4e93
+Processing 4jpa
+Processing 2xk6
+Processing 1w14
+Processing 6hcv
+Processing 3dz6
+Processing 2zns
+Processing 1ol2
+Processing 3zrk
+Processing 5g43
+Processing 1b9s
+Processing 5djr
+Processing 4qga
+Processing 5a8y
+Processing 5d6f
+Processing 5i89
+Processing 5e0m
+Processing 6qg7
+Processing 3ctr
+Processing 6sfk
+Processing 6ftn
+Processing 4zt6
+Processing 5izu
+Processing 4dli
+Processing 3dv5
+Processing 6hu3
+Processing 4n8r
+Processing 4knr
+Processing 3ka2
+Processing 6ocu
+Processing 2pe1
+Processing 2y06
+Processing 2il2
+Processing 5icp
+Processing 3k16
+Processing 5nsx
+Processing 4pdk
+Processing 3zsz
+Processing 4nak
+Processing 5i23
+Processing 5eak
+Processing 1o2g
+Processing 5f6v
+Processing 1i91
+Processing 6ccy
+Processing 4uv8
+Processing 1lqd
+Processing 1yyy
+Processing 2qt9
+Processing 3l2y
+Processing 4man
+Processing 5zo7
+Processing 2gga
+Processing 5vrp
+Processing 6ibs
+Waring: Missing or wrong elements: B
+Processing 3c45
+Processing 3dgq
+Processing 5a6b
+Processing 3asx
+Processing 4quo
+Processing 4jk6
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+Processing 2wij
+Processing 1m7q
+Processing 6qfq
+Processing 3axm
+Processing 3vyd
+Processing 6oir
+Processing 4wnk
+Processing 4j6i
+Processing 3uvp
+Processing 4f3i
+Processing 3l7a
+Processing 4hrd
+Processing 5idp
+Processing 6nri
+Processing 1q1m
+Processing 6s9x
+Processing 2h42
+Processing 3bv3
+Processing 2h96
+Processing 3tiw
+Processing 3iiw
+Processing 4wkc
+Processing 3pdh
+Processing 4nus
+Processing 1rpa
+Processing 5jpt
+Processing 4dro
+Processing 4jvi
+Processing 5etp
+Processing 5ajp
+Processing 1s3k
+Processing 5n70
+Processing 5law
+Processing 6hlz
+Processing 4cae
+Processing 1n3w
+Processing 4w9n
+Processing 1o47
+Processing 6bnt
+Processing 2fjp
+Processing 2ltz
+Processing 4guj
+Processing 6tyz
+Processing 4y6r
+Processing 4jmx
+Processing 5t2b
+Processing 4kvm
+Processing 4q4i
+Processing 6qtr
+Processing 3g4l
+Processing 1ppx
+Processing 3cgo
+Processing 4cc2
+Processing 1xge
+Processing 4zjj
+Processing 4odp
+Processing 5ohj
+Processing 3vhe
+Processing 4dn0
+Processing 6bs5
+Processing 6g9f
+Processing 1inc
+Processing 2zmj
+Processing 4hzz
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+Processing 4wph
+Processing 5lgu
+Processing 1o4b
+Processing 2zo3
+Processing 6u26
+Processing 6iso
+Processing 3qpp
+Processing 4lwe
+Processing 3kn0
+Processing 1pq6
+Processing 4pz8
+Processing 6nzr
+Processing 3zov
+Processing 3bym
+Processing 4ng9
+Processing 2qwg
+Processing 5ely
+Processing 4eoy
+Processing 2x4s
+Processing 4pmp
+Processing 4cfe
+Processing 2x6e
+Processing 4jok
+Processing 4l6q
+Waring: Missing or wrong elements: B
+Processing 4d1y
+Processing 4usi
+Processing 6m8y
+Processing 1hqf
+Processing 4y3b
+Processing 1gj4
+Processing 6azl
+Processing 2hwi
+Processing 3haw
+Processing 1i7c
+Processing 3a73
+Processing 3wi6
+Processing 1pg2
+Processing 2bow
+Processing 4mji
+Processing 5m0m
+Processing 3zlv
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+Processing 2zhd
+Processing 4m5g
+Processing 4kn2
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+Processing 1xt3
+Processing 3bt9
+Processing 4fhi
+Processing 4ii9
+Processing 6n0m
+Processing 5gwa
+Processing 4zyy
+Processing 4dma
+Processing 4qp8
+Processing 4wp7
+Processing 3rah
+Processing 4c36
+Processing 4j2t
+Processing 4lmn
+Processing 6nzh
+Processing 2ggu
+Processing 2f8i
+Processing 5n55
+Processing 6skb
+Waring: Missing or wrong elements: B
+Processing 3itz
+Processing 1m5f
+Processing 1tl3
+Processing 3qcq
+Processing 5jat
+Processing 4ifi
+Processing 5tyh
+Processing 3lk1
+Processing 4aj1
+Processing 6cjp
+Processing 3gws
+Processing 4tlr
+Processing 3qqk
+Processing 1zhl
+Processing 2pj4
+Processing 5e0g
+Processing 2h9n
+Processing 6n3e
+Processing 3mg4
+Processing 3so9
+Processing 3as0
+Processing 4hup
+Processing 3evf
+Processing 4d09
+Processing 4daw
+Waring: Missing or wrong elements: R
+Processing 2zg3
+Processing 5alt
+Processing 6mlw
+Processing 3jzg
+Processing 1gu1
+Processing 3udj
+Processing 2d2v
+Processing 2gg8
+Processing 6eru
+Processing 4u03
+Processing 2iws
+Processing 5ab1
+Processing 6c7f
+Processing 1jg0
+Processing 2yex
+Processing 5afk
+Processing 3ij1
+Processing 5ea5
+Processing 3owd
+Processing 5he0
+Processing 4e28
+Processing 3zn1
+Processing 5dhp
+Processing 4yhf
+Processing 6guf
+Processing 1xxi
+Processing 6itq
+Processing 4b6c
+Processing 3k3i
+Processing 4oty
+Processing 5wcl
+Processing 3sv8
+Processing 4j58
+Processing 1w1t
+Processing 5nve
+Processing 3bx5
+Processing 3mea
+Processing 3whw
+Waring: Missing or wrong elements: R
+Processing 5zqu
+Processing 1n43
+Processing 2vwy
+Processing 4azp
+Processing 3el8
+Processing 3my5
+Processing 4rwl
+Processing 1r5w
+Processing 5mng
+Processing 6e49
+Processing 1w80
+Processing 3g86
+Processing 4hiq
+Processing 6prg
+Processing 4ery
+Processing 2q94
+Processing 4k3k
+Processing 1jpl
+Processing 2xl3
+Processing 5ivs
+Processing 4gtm
+Processing 1dzj
+Processing 1h5u
+Processing 5jq9
+Processing 3mj2
+Processing 6h75
+Processing 2w16
+Processing 4zhm
+Processing 2c5y
+Processing 2qnz
+Processing 6eb2
+Processing 5heb
+Processing 3bjm
+Processing 4z1s
+Processing 3tt0
+Processing 5n1y
+Processing 5hka
+Processing 2y5l
+Processing 6d4o
+Processing 2fs9
+Processing 2z4w
+Processing 2ael
+Processing 4cnh
+Processing 2jiu
+Processing 4mwq
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+Processing 4k6t
+Processing 1nzl
+Processing 4qna
+Processing 3wp1
+Processing 6oy0
+Processing 3qbn
+Processing 5n8v
+Processing 4ktc
+Processing 3dy6
+Processing 6c4u
+Processing 2ylp
+Processing 4x6h
+Processing 5t28
+Processing 1tl7
+Processing 3ah8
+Processing 4deg
+Processing 4fli
+Processing 2iiv
+Processing 2puy
+Processing 6b1e
+Processing 4hvg
+Processing 5qcm
+Processing 4fns
+Processing 5etr
+Processing 4z22
+Processing 4li8
+Processing 6awn
+Processing 1lvc
+Processing 6msn
+Processing 2ow9
+Processing 5kqg
+Processing 1ld7
+Processing 1p10
+Waring: Missing or wrong elements: B
+Processing 6h7m
+Processing 4xhk
+Processing 3omc
+Processing 6cyh
+Processing 4prd
+Processing 5kre
+Processing 4hvi
+Processing 6ps4
+Processing 6s89
+Processing 4ke0
+Processing 1yvz
+Processing 3nwb
+Processing 1bdr
+Processing 5ou1
+Processing 5jf5
+Processing 5l0h
+Processing 1t5a
+Processing 6tld
+Processing 5ti2
+Processing 2w3k
+Processing 4bvb
+Processing 3rtn
+Processing 5hu0
+Processing 2oi9
+Processing 4kup
+Processing 1qm5
+Processing 3snl
+Processing 1m21
+Processing 2zx5
+Processing 2mwy
+Processing 3mxr
+Waring: Missing or wrong elements: B
+Processing 5dtq
+Processing 5hfu
+Processing 6pi7
+Processing 6fby
+Processing 3v7d
+Processing 3w0l
+Processing 2mc1
+Processing 5nkk
+Processing 5lrg
+Processing 5wei
+Processing 5dva
+Processing 5f1u
+Processing 6djc
+Processing 5hln
+Processing 2bro
+Processing 3g70
+Processing 4z0d
+Processing 4ybi
+Processing 5l96
+Processing 3oxz
+Processing 4uuq
+Processing 4e3b
+Processing 4x13
+Processing 3mww
+Processing 4cfu
+Processing 4x3u
+Processing 4lwv
+Processing 1ybg
+Processing 2qrp
+Processing 6hrt
+Processing 6ps5
+Processing 1g3m
+Processing 6pi1
+Processing 5y7z
+Processing 5ugc
+Processing 4og5
+Processing 2gvd
+Processing 4cpx
+Processing 4ivt
+Processing 4abk
+Processing 2gni
+Processing 4bo8
+Processing 3daj
+Processing 5vse
+Processing 2wfg
+Waring: Missing or wrong elements: B
+Processing 4d83
+Processing 1h2u
+Processing 3eks
+Processing 4c35
+Processing 1n8u
+Processing 3oyn
+Processing 4pxf
+Processing 6f7c
+Processing 5vex
+Processing 1tv6
+Processing 4muk
+Processing 2x6f
+Processing 4qmw
+Processing 1p05
+Waring: Missing or wrong elements: B
+Processing 4btt
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+Processing 1bl7
+Processing 6mt6
+Processing 5bvw
+Processing 5u7i
+Processing 5ahu
+Processing 6qre
+Processing 3vi2
+Processing 1zyr
+Processing 3c1n
+Processing 3l3x
+Processing 2pzy
+Processing 3ti4
+Processing 6b4h
+Processing 2j4k
+Processing 1hte
+Processing 6mr5
+Processing 6ggg
+Processing 3fpm
+Processing 6q35
+Waring: Missing or wrong elements: B
+Processing 6qcg
+Processing 3omm
+Processing 4uiv
+Processing 3mvj
+Processing 3npa
+Processing 6uyy
+Processing 2an5
+Processing 2xzw
+Processing 4zsm
+Processing 4cgj
+Processing 3ouh
+Processing 4qhc
+Processing 4qiz
+Processing 5im3
+Processing 1kr3
+Processing 1bo5
+Processing 2h2j
+Processing 1gi8
+Processing 3ral
+Processing 1yxd
+Processing 4ycu
+Processing 1o4f
+Processing 1z6f
+Waring: Missing or wrong elements: B
+Processing 5o5m
+Waring: Missing or wrong elements: B
+Processing 5v1y
+Processing 5t6z
+Processing 4zy2
+Processing 5k6a
+Processing 6oy1
+Processing 6oxq
+Processing 4mlx
+Processing 4r4q
+Processing 4urk
+Processing 3opr
+Processing 3bcn
+Processing 3gbq
+Processing 5ws3
+Processing 1sj0
+Processing 7kme
+Processing 3sh1
+Processing 6htc
+Processing 4puj
+Processing 6o3w
+Processing 5gnk
+Processing 5akj
+Processing 6moa
+Processing 4gm3
+Processing 4op3
+Processing 5alj
+Processing 4dcy
+Processing 3fk1
+Processing 2ai8
+Processing 2ym7
+Processing 2pt9
+Processing 4hbp
+Processing 1vr1
+Processing 6jij
+Processing 3avi
+Processing 2nm1
+Processing 1e8h
+Processing 2wi5
+Processing 3mt9
+Processing 5uga
+Processing 3n7r
+Processing 3bi0
+Processing 3mta
+Processing 1h3c
+Processing 1lxh
+Processing 1ftj
+Processing 4o1l
+Processing 4mti
+Processing 4ikr
+Processing 2qu5
+Processing 4eh8
+Processing 5ecv
+Processing 4jlh
+Processing 4ok3
+Processing 6g22
+Processing 4qye
+Processing 2xp2
+Processing 4nwk
+Processing 2mpa
+Processing 6bnk
+Processing 3nef
+Processing 2v83
+Processing 6f23
+Processing 1oai
+Processing 4nmv
+Processing 1y2j
+Processing 5q15
+Processing 3hv7
+Processing 2zdx
+Processing 5v8v
+Processing 3n5j
+Processing 6h7f
+Processing 5ok3
+Processing 3chg
+Processing 5yyz
+Processing 5o55
+Processing 3t0m
+Processing 3dnj
+Processing 1ayv
+Processing 6g15
+Processing 5i86
+Processing 4j1f
+Processing 4z2o
+Processing 4mcc
+Processing 5ow1
+Processing 6ai9
+Processing 3s68
+Processing 1qx1
+Processing 5n8e
+Processing 5h7g
+Processing 5ybi
+Processing 4d62
+Processing 2rip
+Processing 6htp
+Processing 6gxu
+Processing 6qed
+Processing 1i8z
+Processing 2fum
+Processing 3amb
+Processing 4yqm
+Processing 3egk
+Processing 2ygu
+Processing 3fe7
+Processing 1vik
+Processing 6iin
+Processing 3fdn
+Processing 6p3u
+Processing 4gwi
+Processing 4olh
+Processing 2hxl
+Processing 6ew7
+Processing 1mmp
+Processing 5hd0
+Processing 2g6q
+Processing 4g11
+Processing 5e0h
+Processing 6rjp
+Processing 3o87
+Waring: Missing or wrong elements: B
+Processing 6c1s
+Processing 4i0d
+Processing 4wuy
+Processing 4mga
+Processing 2lo6
+Processing 5aqk
+Processing 5mw4
+Processing 2xgs
+Processing 4xhl
+Processing 3ewz
+Processing 1erq
+Waring: Missing or wrong elements: B
+Processing 3tyq
+Processing 1c12
+Processing 4xcu
+Processing 2q2z
+Processing 4fi9
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+Processing 2pj9
+Processing 2c4f
+Processing 5vio
+Processing 4ydg
+Processing 2ywp
+Processing 5fnj
+Processing 6sq0
+Processing 5vqe
+Processing 5vzu
+Processing 4joa
+Processing 5a00
+Processing 3vru
+Processing 4jfz
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+Processing 3abt
+Processing 1flm
+Processing 2o7v
+Processing 6apz
+Processing 1vyq
+Processing 4xtt
+Processing 4jjs
+Processing 4hyf
+Processing 5wae
+Waring: Missing or wrong elements: B
+Processing 2vwv
+Processing 3i8t
+Processing 1vyj
+Processing 4xsz
+Processing 3vf3
+Processing 3d1g
+Processing 5zde
+Processing 4nrp
+Processing 5u3b
+Processing 5el2
+Processing 6oxu
+Processing 2pmk
+Processing 6ar2
+Processing 1yms
+Waring: Missing or wrong elements: B
+Processing 5moo
+Processing 3e16
+Processing 3pj8
+Processing 6h4r
+Processing 4zun
+Processing 4uyd
+Processing 5t2g
+Processing 4hpy
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+Processing 2p3o
+Processing 3doz
+Processing 1htg
+Processing 5zh2
+Processing 4xbb
+Processing 3ho2
+Processing 6miv
+Processing 4e8z
+Processing 6i5y
+Processing 2rgu
+Processing 7abp
+Processing 7prc
+Processing 6qw9
+Processing 1om2
+Processing 3vo3
+Processing 3arr
+Processing 5hvp
+Processing 4dpi
+Processing 3og7
+Processing 3e64
+Processing 5gmu
+Processing 4ay6
+Processing 4x8g
+Processing 3adu
+Processing 1evh
+Processing 5h9q
+Processing 5c8k
+Processing 1xzx
+Processing 6hdq
+Processing 4uau
+Processing 2ze1
+Processing 6mep
+Processing 4hwb
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+Processing 4b78
+Processing 4qw7
+Processing 2yol
+Processing 5w7x
+Processing 1uv5
+Processing 2xkd
+Processing 1h6e
+Processing 4wi1
+Processing 6afe
+Processing 3hhk
+Processing 4xxs
+Processing 4d85
+Processing 1vij
+Processing 2oph
+Processing 4aa4
+Processing 3g2k
+Processing 4htx
+Processing 1i5d
+Processing 6bhe
+Processing 4zyz
+Processing 5w13
+Waring: Missing or wrong elements: B
+Processing 1ym4
+Processing 6fv1
+Processing 4xjs
+Processing 6hhj
+Processing 5dxe
+Processing 4c1g
+Processing 1y3y
+Processing 3ds1
+Processing 1zm6
+Processing 3vid
+Processing 5ekx
+Processing 4hv7
+Processing 6g1w
+Processing 2a3w
+Processing 4ln2
+Processing 2fl2
+Processing 3zxe
+Processing 6q9w
+Processing 3cvk
+Processing 4dru
+Processing 5x28
+Processing 5yr6
+Processing 1ycm
+Processing 4d08
+Processing 5x26
+Processing 2o2u
+Processing 4y8z
+Processing 2i03
+Processing 6ps0
+Processing 4asy
+Processing 5eif
+Processing 3upi
+Processing 4mwc
+Processing 5gid
+Processing 4og8
+Processing 2z97
+Processing 4eoi
+Processing 3wcg
+Processing 6b1j
+Processing 5y53
+Processing 3cn0
+Processing 3krw
+Processing 2r3n
+Processing 3u4h
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+Processing 4i9o
+Processing 6fyv
+Processing 1agm
+Processing 4d2d
+Processing 2bw7
+Processing 6oxr
+Processing 2wzx
+Processing 3h2o
+Processing 3o0j
+Waring: Missing or wrong elements: B
+Processing 4rcg
+Processing 5u4c
+Waring: Missing or wrong elements: B
+Processing 3g5v
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+Processing 5t68
+Processing 2vur
+Processing 6dvn
+Processing 3g4i
+Processing 5jau
+Processing 1ztq
+Processing 5ceh
+Processing 3qk5
+Processing 2g70
+Processing 4qz0
+Processing 3c94
+Processing 6b27
+Processing 4b13
+Processing 2zva
+Processing 1gsz
+Processing 2y8o
+Processing 3eky
+Processing 4bo9
+Processing 5mqt
+Processing 6ott
+Processing 2nxd
+Processing 5d7x
+Processing 6fjm
+Processing 4uuh
+Processing 3cbp
+Processing 2q8y
+Processing 6b1x
+Processing 6d4a
+Processing 6ew6
+Processing 1ke6
+Processing 4wwo
+Processing 4k3p
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+------------Warning: Missing Parameters for Residue: A @ HSE--------------
+Processing 4tzm
+Processing 4oyo
+Processing 3oyl
+Processing 2vts
+Processing 4tx6
+Processing 5oq4
+Processing 4oyt
+Processing 4uiw
+Processing 2y71
+Processing 1ibc
+Processing 6erw
+Processing 4rj7
+Processing 2ofv
+Processing 3evc
+Processing 5cqj
+Processing 5luu
+Processing 6cv8
+Processing 6rtn
+Waring: Missing or wrong elements: B
+Processing 1xog
+2z4b
+4qvn
+Waring: Missing or wrong elements: B
+6qwa
+4dgn
+1eub
+5vew
+3sgt
+5tyi
+5kq5
+4awq
+3umx
+4e1z
+3ns7
+2yim
+5nxv
+4zla
+2nns
+1mns
+6h9x
+3qxd
+5ttu
+3lkh
+5jmw
+6cqf
+1xz8
+3ti6
+4bo5
+6bh2
+6h12
+4aa7
+3uzd
+4y46
+5mym
+3aru
+2wi4
+5i2r
+4p6g
+4yb7
+2clx
+1kne
+2q1j
+4k64
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+------------Warning: Missing Parameters for Residue: CYX @ HG--------------
+2hwp
+3fsm
+1cx9
+5os1
+5w85
+4ie7
+4u91
