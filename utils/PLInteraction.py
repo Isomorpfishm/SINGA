@@ -4,10 +4,9 @@ from oddt.spatial import distance
 from typing import List, Tuple
 
 try:
-    import .PLIExtension as interactions
+    import PLIExtension as interactions
 except:
-    import .utils.PLIExtension as interactions
-
+    from utils import PLIExtension as interactions
 
 
 def extract_atom_id_from_oddt_interractions(mol1_atoms_array, mol2_atoms_array) -> dict:
@@ -82,9 +81,10 @@ def close_contact_to_dict(protein_close_contacts: np.ndarray,
     return dict_close_contacts
 
 
-def remove_dupl_angles(protein_array: np.ndarray,
-                       ligand_array: np.ndarray,
-                       angles_array:np.ndarray):
+def remove_dupl_angles(protein_array:np.ndarray,
+                       ligand_array:np.ndarray,
+                       angles_array:np.ndarray,
+                       intr_type:str = None):
     """
     It was found that ODDT contains bugs where duplicated pairs of interaction are observed.
     Hence, we have to remove duplicated angles when this situation is observed
@@ -92,19 +92,37 @@ def remove_dupl_angles(protein_array: np.ndarray,
     Args:
         protein_array (np.ndarray): Array of protein atoms found in interaction
         ligand_array (np.ndarray):
-        angle_array (np.ndarray):
+        angles_array (np.ndarray):
+        intr_type (str): Different comparison approach for aromatic interaction (pi-stack and pi-cation)
         
     Output:
         angle_array (np.ndarray): Clean array of angles
     """
     to_be_removed = []
     assert protein_array.shape[0] == ligand_array.shape[0]
-    
+
     for i in range(protein_array.shape[0]-1):
-        if (protein_array[i][0], ligand_array[i][0]) == (protein_array[i+1][0], ligand_array[i+1][0]):
-            to_be_removed.append(i+1)
-    angles_array = np.delete(angles_array, to_be_removed, 0)    
-    
+        if intr_type is None:
+            if (protein_array[i][0], ligand_array[i][0]) == (protein_array[i+1][0], ligand_array[i+1][0]):
+                to_be_removed.append(i+1)
+            else:
+                continue
+        elif intr_type == 'pistack':
+            if np.array( np.concatenate((protein_array[i][0], ligand_array[i][0])) == np.concatenate((protein_array[i+1][0], ligand_array[i+1][0])) ).all():
+                to_be_removed.append(i+1)
+            else:
+                continue 
+        elif intr_type == 'pication':
+            if np.array( np.concatenate((protein_array[i][0], ligand_array[i][1])) == np.concatenate((protein_array[i+1][0], ligand_array[i+1][1])) ).all():
+                to_be_removed.append(i+1)
+            else:
+                continue
+        elif intr_type == 'pication_rev':
+            if np.array( np.concatenate((protein_array[i][1], ligand_array[i][0])) == np.concatenate((protein_array[i+1][1], ligand_array[i+1][0])) ).all():
+                to_be_removed.append(i+1)
+            else:
+                continue
+    angles_array = np.delete(angles_array, to_be_removed, 0)
     return angles_array
 
 
@@ -132,9 +150,13 @@ def get_bonds_protein_ligand(protein:Molecule,
 
     hbond_protein, hbond_ligand, hbond_angles = interactions.hbond_oddt(protein, ligand, cutoff=cutoff)
     dico_hbond = extract_atom_id_from_oddt_interractions(hbond_protein, hbond_ligand)
+    if len(hbond_angles) > 1:
+        hbond_angles = remove_dupl_angles(hbond_protein, hbond_ligand, hbond_angles)
     
     xbond_protein, xbond_ligand, xbond_angles = interactions.xbond_oddt(protein, ligand, cutoff=cutoff)
     dico_xbond = extract_atom_id_from_oddt_interractions(xbond_protein, xbond_ligand)
+    if len(xbond_angles) > 1:
+        xbond_angles = remove_dupl_angles(xbond_protein, xbond_ligand, xbond_angles)
 
     hphob_protein, hphob_ligand = interactions.hphob_oddt(protein, ligand, cutoff=cutoff)
     dico_hphob = extract_atom_id_from_oddt_interractions(hphob_protein, hphob_ligand)
@@ -145,11 +167,25 @@ def get_bonds_protein_ligand(protein:Molecule,
     # pi_stacking
     pistack_protein_residue, pistack_ligand, pistack_angles, _ = interactions.pistack_oddt(protein, ligand, cutoff=cutoff)
     list_residus_pistack = extract_residu_id_from_oddt_interractions(pistack_protein_residue)
+    if len(pistack_angles) > 1:
+        pistack_angles = remove_dupl_angles(pistack_protein_residue, pistack_ligand, pistack_angles, intr_type='pistack')
 
     # pi_cation
     pication_protein_residue, pication_ligand, pication_angles = interactions.pication_oddt(protein, ligand, cutoff=cutoff)
     list_residus_pication = extract_residu_id_from_oddt_interractions(pication_protein_residue)
+    if len(pication_angles) > 1:
+        pication_angles = remove_dupl_angles(pication_protein_residue, pication_ligand, pication_angles, intr_type='pication')
+        
+    # pi_cation - reversed
+    pication_ligand_rev, pication_protein_residue_rev, pication_angles_rev = interactions.pication_oddt(ligand, protein, cutoff=cutoff)
+    list_residus_pication_rev = extract_residu_id_from_oddt_interractions(pication_protein_residue_rev)
+    if len(pication_angles_rev) > 1:
+        pication_angles_rev = remove_dupl_angles(pication_protein_residue_rev, pication_ligand_rev, pication_angles_rev, intr_type='pication_rev')
 
+    # pication info housekeeping
+    list_residus_pication = list_residus_pication + list_residus_pication_rev
+    pication_angles = np.concatenate((pication_angles, pication_angles_rev))
+    
     protein_atom_to_res_dict = {}
     for np_row in np.nditer(protein.atom_dict):
         protein_atom_to_res_dict[np_row.tolist()[0]] = np_row.tolist()[9]
@@ -161,16 +197,8 @@ def get_bonds_protein_ligand(protein:Molecule,
     dict_close_contacts = close_contact_to_dict(close_contact_protein, close_contact_ligand)
     dists = distance(protein.atom_dict['coords'], ligand.atom_dict['coords'])
     
-    if len(hbond_angles) != 0:
-        hbond_angles = remove_dupl_angles(hbond_protein, hbond_ligand, hbond_angles)
-    if len(xbond_angles) != 0:
-        xbond_angles = remove_dupl_angles(xbond_protein, xbond_ligand, xbond_angles)
-    if len(pistack_angles) != 0:
-        pistack_angles = remove_dupl_angles(pistack_protein, pistack_ligand, pistack_angles)
-    if len(pication_angles) != 0:
-        pication_angles = remove_dupl_angles(pication_protein, pication_ligand, pication_angles)
-            
     i, j, k, l = 0, 0, 0, 0
+    angle_hbond, angle_xbond, angle_pistack, angle_pication = 0.0, 0.0, 0.0, 0.0
     for ligand_atom_id in range(len(ligand.atoms)):
         if ligand_atom_id in dict_close_contacts.keys():
             for close_contact in dict_close_contacts[ligand_atom_id]:
@@ -197,28 +225,21 @@ def get_bonds_protein_ligand(protein:Molecule,
                 l_to_p_edge_index[1] += [int(protein_atom_id)]
                 
                 if is_hbond:
-                    angle_hbond = hbond_angles[i][0]
-                    i += 1
-                else:
-                    angle_hbond = 0.0
-                
+                    if i < len(hbond_angles):
+                        angle_hbond = hbond_angles[i][0]
+                        i += 1
                 if is_xbond:
-                    angle_xbond = xbond_angles[j][0]
-                    j += 1
-                else:
-                    angle_xbond = 0.0                
-                
+                    if j < len(xbond_angles):
+                        angle_xbond = xbond_angles[j][0]
+                        j += 1               
                 if is_pistack:
-                    angle_pistack = pistack_angles[k]
-                    k += 1
-                else:
-                    angle_pistack = 0.0
-
+                    if k < len(pistack_angles):
+                        angle_pistack = pistack_angles[k]
+                        k += 1
                 if is_pication:
-                    angle_pication = pication_angles[l]
-                    l += 1
-                else:
-                    angle_pication = 0.0
+                    if l < len(pication_angles):
+                        angle_pication = pication_angles[l]
+                        l += 1
                                                         
                 p_to_l_edge_attr += [[dist, angle_hbond, angle_xbond, angle_pistack, angle_pication, 
                                       is_hbond, is_xbond, is_hphob, is_sbridge,

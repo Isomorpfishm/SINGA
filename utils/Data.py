@@ -1,5 +1,6 @@
-import os.path as osp
+import os
 import re
+import random
 import multiprocessing as mp
 from typing import List, Tuple, Union, Dict
 from dataclasses import dataclass, field
@@ -17,6 +18,8 @@ from oddt.toolkits.ob import Molecule, readfile
 from openbabel import openbabel
 
 
+### Adapted from https://github.com/KevinCrp/HGScore/blob/main/HGScore/featurizer.py
+###              https://github.com/KevinCrp/HGScore/blob/main/HGScore/data.py
 
 def atom_type_one_hot(atomic_num:int) -> List[int]:
     """
@@ -32,9 +35,8 @@ def atom_type_one_hot(atomic_num:int) -> List[int]:
         
     Output:
         List[int]: One-hot vector
-    
     """
-    one_hot = 43 * [0]
+    one_hot = 44 * [0]
     used_atom_num = [ 3,  4,  5,  6,  7,  8,  9, 11, 12, 13,
                      14, 15, 16, 17, 19, 20, 22, 23, 24, 25,
                      26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 
@@ -63,7 +65,6 @@ def atom_hybridisation_one_hot(hybridisation:int) -> List[int]:
         
     Output:
         List[int]: One-hot vector
-    
     """
     one_hot_hybridisation = 7 * [0]
     if hybridisation not in [1, 2, 3, 4, 5, 6]:
@@ -89,7 +90,7 @@ def atom_degree_one_hot(degree:int) -> List[int]:
         oh_degree[6] = 1
     else:
         oh_degree[degree] = 1
-    
+        
     return oh_degree
 
 
@@ -148,33 +149,20 @@ def get_molecular_properties(mol:Molecule) -> Tuple[List, List, List]:
         end_id = ob_bond.GetEndAtom().GetIdx() - 1
         edge_index[0] += [begin_id, end_id]
         edge_index[1] += [end_id, begin_id]
-        edge_attr += [get_bond_properties(ob_bond),
-                      get_bond_properties(ob_bond)]
-
+        edge_attr += [get_bond_properties(ob_bond), get_bond_properties(ob_bond)]
+        
     return (atom_properties_list, edge_index, edge_attr)
-
-"""
-@dataclass
-class CrossdockedDataSet(pyg.data.InMemoryDataset):
-    # Torch Geometric Dataset
-    root:str
-    stage:str
-    atomic_distance_cutoff:float
-    
-    def __post_init__(self):
-        self.df = pd.read_csv()
-        super().__init__(self.root)
-        self.data, self.slices = torch.load(self.processed_paths[0])
     
 
 @dataclass
 class CrossdockedDataModule(pl.LightningDataModule):
     # PyTorch Lightning Data Module
-    root: str                                     # path to data directory
-    atomic_distance_cutoff: float                 # cutoff for interatomic distance
-    batch_size:int = field(default=1)             # batch size
-    num_workers:int = field(default=1)            # number of workers
-    persistent_workers:bool = field(default=True) # use persistant workers in dataloader
+    root:str                                             # path to data directory
+    split_ratio:float = field(default=0.9)               # ratio of samples for training from split_by_name.pt
+    atomic_distance_cutoff:float = field(default=4.0)    # cutoff for interatomic distance
+    batch_size:int = field(default=1)                    # batch size
+    num_workers:int = field(default=1)                   # number of workers
+    persistent_workers:bool = field(default=True)        # use persistant workers in dataloader
 
     def __post_init__(self):
         super().__init__()
@@ -182,8 +170,40 @@ class CrossdockedDataModule(pl.LightningDataModule):
     def prepare_data(self):
         pass
         
-    def setup(self, stage=''):
-        self.dt_train = CrossdockedDataSet()
-        self.dt_val = CrossdockedDataset()
-"""
+    def setup(self):
+        split_idx = torch.load(self.root)
+        
+        lt_train_ori, lt_test = [], []
+        for i in range(len(split_idx['train'])):
+            lt_train_ori.append(os.path.join(self.root, str(split_idx['train'][i][0].split(".")[0]) + ".pt"))
+        for i in range(len(split_idx['test'])):
+            lt_test.append(os.path.join(self.root, str(split_idx['test'][i][0].split(".")[0]) + ".pt"))
+        
+        lt_train = lt_train_ori[:int(len(lt_train_ori)*self.split_ratio)]
+        lt_val = lt_train_ori[int(len(lt_train_ori)*self.split_ratio):]
+        
+        self.dt_train = [torch.load(i).to('cuda') for i in lt_train]
+        self.dt_val = [torch.load(i).to('cuda') for i in lt_val]
+        self.dt_test = [torch.load(i).to('cuda') for i in lt_test]
+        
+    def train_dataloader(self):
+        return pyg.loader.DataLoader(dataset=self.dt_train,
+                                     batch_size=self.batch_size,
+                                     shuffle=True,
+                                     num_workers=self.num_workers,
+                                     persistent_worker=self.persistent_workers)
 
+    def val_dataloader(self):
+        return pyg.loader.DataLoader(dataset=self.dt_val,
+                                     batch_size=self.batch_size,
+                                     shuffle=True,
+                                     num_workers=self.num_workers,
+                                     persistent_worker=self.persistent_workers)
+
+    def test_dataloader(self):
+        return pyg.loader.DataLoader(dataset=self.dt_test,
+                                     batch_size=self.batch_size,
+                                     shuffle=True,
+                                     num_workers=self.num_workers,
+                                     persistent_worker=self.persistent_workers)
+       

@@ -12,8 +12,12 @@ from rdkit import RDConfig
 from rdkit.Chem.rdchem import BondType
 from rdkit.Chem.rdmolops import AddHs
 from rdkit.Chem import ChemicalFeatures
+from rdkit.Chem.rdchem import Mol
 import oddt
+from oddt.toolkits.ob import Molecule
 import biopandas.pdb as bpdb
+
+
 
 ATOM_FAMILIES = ['Acceptor', 'Donor', 'Aromatic', 'Hydrophobe', 'LumpedHydrophobe', 'NegIonizable', 'PosIonizable', 'ZnBinder']
 ATOM_FAMILIES_ID = {s: i for i, s in enumerate(ATOM_FAMILIES)}
@@ -289,11 +293,8 @@ def parse_sdf_file(path):
 
 class StructureDual(object):
     """A helper class that prepares dual format (RDKit rdChem.Mol and ODDT Ob.Molecule) of a given structure"""
-    
-    def __init__(self, path:str, isProtein:bool=False, addHs:bool=True, removeHs:bool=False, sanitise:bool=False):
+    def __init__(self, path:str, isProtein:bool=False, addHs:bool=False, removeHs:bool=True, sanitise:bool=False):
         super().__init__()
-        if sanitise is False and removeHs is True:
-            raise ArgumentError("Not allowed to remove Hs while sanitisation is false!")
         if path is None:
             raise ArgumentError("Path to structure not given!")
         if addHs == removeHs:
@@ -301,7 +302,7 @@ class StructureDual(object):
 
         self.addHs = addHs
         self.removeHs = removeHs
-        self.sanitise = sanitiseRet
+        self.sanitise = sanitise
         self.path = path
         self.isProtein = isProtein
         self.ppdb = bpdb.PandasPdb()
@@ -311,26 +312,34 @@ class StructureDual(object):
         else:
             self.fileType = 'pdb'
             
-    def parse_to_rdkit(self):
+    def parse_to_rdkit(self) -> Mol:
         if self.isProtein:
-            protein = Chem.rdmolfiles.MolFromPDBFile(self.path, self.removeHs, self.sanitise)
-            if self.addHs:
-                protein = AddHs(protein, addCoords=True)
-            return protein
+            try:
+                protein = Chem.rdmolfiles.MolFromPDBFile(self.path, self.sanitise)
+                if self.addHs:
+                    protein = AddHs(protein, addCoords=True)
+                return protein
+            except:
+                return None
         else:
-            if self.fileType == 'sdf':
-                ligand = Chem.SDMolSupplier(self.path)[0]
-            elif self.fileType == 'mol2':
-                ligand = Chem.rdmolfiles.MolFromMol2File(self.path, self.removeHs, self.sanitise)
+            try:
+                if self.fileType == 'sdf':
+                    ligand = Chem.SDMolSupplier(self.path)[0]
+                elif self.fileType == 'mol2':
+                    ligand = Chem.rdmolfiles.MolFromMol2File(self.path, self.sanitise)
                 
-            if self.addHs:
-                ligand = AddHs(ligand, addCoords=True)
-            return ligand
+                if self.addHs:
+                    ligand = AddHs(ligand, addCoords=True)
+                return ligand
+            except:
+                return None
         
     def parse_to_oddt(self) -> Molecule:
         if self.isProtein:
             protein = next(oddt.toolkit.readfile('pdb', self.path))
             protein.protein = True
+            if len(protein.atom_dict) <= 10:
+                return None
             if self.removeHs:
                 protein.removeh()
             return protein
@@ -338,6 +347,8 @@ class StructureDual(object):
             ligand = next(oddt.toolkit.readfile(self.fileType, self.path))
             if self.removeHs:
                 ligand.removeh()
+            if len(ligand.atom_dict) <= 1:
+                return None
             return ligand 
             
     def RetrieveCoords(self, consideredIdx=None) -> List:
@@ -355,7 +366,7 @@ class StructureDual(object):
                 pos.append([coords.x, coords.y, coords.z])
         return pos
         
-    def RetreiveAtomNames(self) -> List:
+    def RetrieveAtomNames(self) -> List:
         self.ppdb.read_pdb(self.path)
         atom_df = self.ppdb.df['ATOM'][self.ppdb.df['ATOM']['element_symbol'] != 'H']
         list_atom_name = atom_df['atom_name'].tolist()

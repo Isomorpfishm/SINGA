@@ -168,12 +168,9 @@ def hbond_acceptor_donor(mol1, mol2, cutoff, tolerance=30, donor_exact=False):
                   _check_angles(angle2, d['hybridization'], tolerance))
         return a, d, angle1, angle2, strict
     else:
-        return a, d, np.array([], dtype=bool), np.array([], dtype=bool), np.array([], dtype=bool)
+        return a, d, np.array([], dtype=float), np.array([], dtype=float), np.array([], dtype=bool)
 
-def halogenbond_acceptor_halogen(mol1,
-                                 mol2,
-                                 cutoff,
-                                 tolerance=30):
+def halogenbond_acceptor_halogen(mol1, mol2, cutoff, tolerance=30):
     """Returns pairs of acceptor-halogen atoms, which meet halogen bond criteria
 
     Parameters
@@ -214,7 +211,7 @@ def halogenbond_acceptor_halogen(mol1,
                   _check_angles(angle2, np.ones_like(h['hybridization']), tolerance))
         return a, h, angle1, angle2, strict
     else:
-        return a, h, np.array([], dtype=bool), np.array([], dtype=bool), np.array([], dtype=bool)
+        return a, h, np.array([], dtype=float), np.array([], dtype=float), np.array([], dtype=bool)
 
 
 def salt_bridge_plus_minus(mol1, mol2, cutoff, cation_exact=False, anion_exact=False):
@@ -280,8 +277,16 @@ def hbond_oddt(protein, ligand, cutoff, tolerance=30, mol1_exact=False, mol2_exa
                    a2d1[1]['neighbors'])
     """
     a2, d1, _, angle2, _ = hbond_acceptor_donor(ligand, protein, cutoff, tolerance, mol1_exact)
-
-    return np.concatenate((a1, d1)), np.concatenate((d2, a2)), np.concatenate((angle1, angle2))
+    
+    try:
+        return np.concatenate((a1, d1)), np.concatenate((d2, a2)), np.concatenate((angle1, angle2))
+    except ValueError:
+        if angle1.shape[0] == 0 and angle2.shape[0] != 0:
+            return np.concatenate((a1, d1)), np.concatenate((d2, a2)), angle2
+        elif angle1.shape[0] != 0 and angle2.shape[0] != 0:
+            return np.concatenate((a1, d1)), np.concatenate((d2, a2)), angle1
+        else:
+            return np.concatenate((a1, d1)), np.concatenate((d2, a2)), np.array([], dtype=float)
 
 
 def xbond_oddt(protein, ligand, cutoff, tolerance=30, mol1_exact=False, mol2_exact=False):
@@ -309,14 +314,21 @@ def xbond_oddt(protein, ligand, cutoff, tolerance=30, mol1_exact=False, mol2_exa
     """
     a2, h1, _, angle2, _ = halogenbond_acceptor_halogen(ligand, protein, cutoff, tolerance)
     
-    return np.concatenate((a1, h1)), np.concatenate((h2, a2)), np.concatenate((angle1, angle2))
+    try:
+        return np.concatenate((a1, h1)), np.concatenate((h2, a2)), np.concatenate((angle1, angle2))
+    except ValueError:
+        if angle1.shape[0] == 0 and angle2.shape[0] != 0:
+            return np.concatenate((a1, h1)), np.concatenate((h2, a2)), angle2
+        elif angle1.shape[0] != 0 and angle2.shape[0] != 0:
+            return np.concatenate((a1, h1)), np.concatenate((h2, a2)), angle1
+        else:
+            return np.concatenate((a1, h1)), np.concatenate((h2, a2)), np.array([], dtype=float)
 
 
 def hphob_oddt(protein, ligand, cutoff):
     h1, h2 = close_contacts(protein.atom_dict[protein.atom_dict['ishydrophobe']], 
                             ligand.atom_dict[ligand.atom_dict['ishydrophobe']], 
                             cutoff)
-
     return h1, h2
     
     

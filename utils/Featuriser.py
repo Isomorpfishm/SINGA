@@ -11,11 +11,15 @@ import torch_geometric as pyg
 
 try:
     from Data import get_molecular_properties
-    from PLIneraction import get_bonds_protein_ligand
+    from PLInteraction import get_bonds_protein_ligand
+    from redirect import stderr_redirected
 except:
-    from .utils.Data import get_molecular_properties
-    from .utils.PLIneraction import get_bonds_protein_ligand
+    from utils.Data import get_molecular_properties
+    from utils.PLInteraction import get_bonds_protein_ligand
+    from utils.redirect import stderr_redirected
 
+
+### Adapted from https://github.com/KevinCrp/HGScore/blob/main/HGScore/featurizer.py ###
 
 def featurise(protein:Molecule, 
               ligand:Molecule, 
@@ -23,7 +27,7 @@ def featurise(protein:Molecule,
               cutoff:float,
     ) -> Tuple:
     """
-    Featurize a protein and a ligand to a set of nodes and edges
+    Featurise a protein and a ligand to a set of nodes and edges
 
     Args:
         protein (ob.Molecule):
@@ -40,9 +44,9 @@ def featurise(protein:Molecule,
     
     with stderr_redirected(to='obabel.err'):
         (protein_atom_properties_list,
-         protein_edge_index, protein_edge_attr) = get_molecule_properties(protein)
+         protein_edge_index, protein_edge_attr) = get_molecular_properties(protein)
         (ligand_atom_properties_list,
-         ligand_edge_index, ligand_edge_attr) = get_molecule_properties(ligand)
+         ligand_edge_index, ligand_edge_attr) = get_molecular_properties(ligand)
 
     (p_atm_to_l_edge_index, l_to_p_atm_edge_index, p_atm_to_l_edge_attr,
      l_to_p_atm_edge_attr) = get_bonds_protein_ligand(protein, ligand,
@@ -105,7 +109,7 @@ def create_pyg_graph(protein:Molecule,
      ligand_atm_to_ligand_atm_edge_attr,
      ligand_atm_to_protein_atm_edge_attr,
      protein_atm_to_ligand_atm_edge_attr
-     ) = featurize(protein, ligand, cutoff=cutoff, list_atom_name=list_atom_name)
+     ) = featurise(protein, ligand, cutoff=cutoff, list_atom_name=list_atom_name)
 
     data = pyg.data.HeteroData()
 
@@ -137,5 +141,4 @@ def create_pyg_graph(protein:Molecule,
     data.ligand_sasa = ligand_sasa
 
     return data
-
     

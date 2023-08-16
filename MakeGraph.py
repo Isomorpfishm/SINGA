@@ -25,18 +25,11 @@ import logging
 import itertools
 from tqdm import tqdm
 
-try:
-    from misc import *
-    from Featuriser import create_pyg_graph
-    from PLParser import StructureDual, parse_sdf_file
-    from PLFeature import ComputeSASA, ClassifyAtoms
-    from PLIExtension import close_contacts
-except:
-    from .utils.misc import *
-    from .utils.Featuriser import create_pyg_graph
-    from .utils.PLParser import StructureDual, parse_sdf_file
-    from .utils.PLFeature import ComputeSASA, ClassifyAtoms
-    from .utils.PLIExtension import close_contacts    
+from utils.misc import *
+from utils.Featuriser import create_pyg_graph
+from utils.PLParser import StructureDual, parse_sdf_file
+from utils.PLFeature import ComputeSASA, ClassifyAtoms
+from utils.PLIExtension import close_contacts    
 
 
 
@@ -45,7 +38,7 @@ if __name__ == '__main__':
     parser.add_argument('--config', type=str,
                         default='./config/config.yml')
     parser.add_argument('--outdir', type=str, 
-                        default='./dataset/crossdocked_vina10')
+                        default='./dataset/crossdocked_graph10')
     args = parser.parse_args()
     
     # Logging
@@ -57,23 +50,22 @@ if __name__ == '__main__':
     outDirExists = os.path.exists(args.outdir)
     if not outDirExists:
        os.makedirs(args.outdir)
-       logger.info("Output directory {args.outdir} is created.")
+       logger.info("Output directory {args.outdir} is created")
 
     # Load config
     outDirExists = os.path.isfile(args.config)
     if not outDirExists:
-        raise FileNotFoundError("Configuration YML (config.yml) file does not exist or is not specified.")
+        raise FileNotFoundError("Configuration YML (config.yml) file does not exist or is not specified")
     else:
         logger.info("Reading configuration YML file...")
         config = load_config(args.config)
         #seed_all(config.featuriser.seed)
         split_dict = torch.load(config.dataset.split)
-        logger.info(f"Found {len(split_dict['train'])} samples in the Crossdock dataset for training.")
+        logger.info(f"Found {len(split_dict['train'])} samples in the Crossdock dataset for training")
     
     # Docking ligands with Autodock Vina implemented in ODDT
     logger.info("Extracting features...")
-    #for i in tqdm(range(len(split_dict['train']))):
-    for i in tqdm(range(2)):
+    for i in tqdm(range(len(split_dict['train']))):
         logger.info(" ")
         complexDict, skippedComplex = {}, []
         name = str(split_dict['train'][i][0].split(".")[0])
@@ -81,15 +73,24 @@ if __name__ == '__main__':
         outDirExists = os.path.exists(os.path.join(args.outdir, name.split("/")[0]))
         if not outDirExists:
            os.makedirs(os.path.join(args.outdir, name.split('/')[0]))
-           logger.info(f"Output directory {name.split('/')[0]} is created.")
+           logger.info(f"Output directory {name.split('/')[0]} is created")
         
-        logger.info(f"Now reading {name}...")
+        logger.info(f"Now reading {name}")
         proteinDual = StructureDual(os.path.join(config.dataset.path, split_dict['train'][i][0]), isProtein=True)
         ligandDual = StructureDual(os.path.join(config.dataset.path, split_dict['train'][i][1]), isProtein=False)
         
-        protein, _protein = proteinDual.parse_to_oddt(), proteinDual.parse_to_rdkit()
-        ligand, _ligand = ligandDual.parse_to_oddt(), ligandDual.parse_to_rdkit()
-        ligand_com = parse_sdf_file(os.path.join(config.dataset.path, split_dict['train'][i][1]))['center_of_mass']
+        try:
+            protein, _protein = proteinDual.parse_to_oddt(), proteinDual.parse_to_rdkit()
+            ligand, _ligand = ligandDual.parse_to_oddt(), ligandDual.parse_to_rdkit()
+            ligand_com = parse_sdf_file(os.path.join(config.dataset.path, split_dict['train'][i][1]))['center_of_mass']
+        except Exception as e:
+            logger.error(traceback.format_exc())
+            skippedComplex.append(name)
+            continue
+            
+        if (protein is None) or (_protein is None) or (ligand is None) or (_ligand is None):
+            skippedComplex.append(name)
+            continue
         
         vina = autodock_vina(protein=protein, 
                              auto_ligand=ligand,
@@ -104,7 +105,7 @@ if __name__ == '__main__':
                                                cutoff=float(config.featuriser.sasa_cutoff))
         protein_cc_idx, ligand_cc_idx = list(np.unique(protein_cc['id'])), list(np.unique(ligand_cc['id']))
         protein_cc_radii, ligand_cc_radii = ClassifyAtoms(config.featuriser.symbol_radius_path, _protein, protein_cc_idx), ClassifyAtoms(config.featuriser.symbol_radius_path, _ligand, ligand_cc_idx)
-        
+        protein_sasa, ligand_sasa = None, None
         
         logger.info("Extracting protein and ligand node features...")
         # Computing SASA
@@ -116,17 +117,13 @@ if __name__ == '__main__':
             ligand_cc_coords = ligandDual.RetrieveCoords(ligand_cc_idx)
             ligand_cc_coords = list(itertools.chain.from_iterable(ligand_cc_coords))
             ligand_sasa = ComputeSASA(ligand_cc_coords, ligand_cc_idx)
-        except Exception as e:
-            logger.error(traceback.format_exc())
-            skippedComplex.append(name)
+            
+            logger.info("Creating protein-ligand heterogenous pyg graph...")
+            list_atom_name = proteinDual.RetrieveAtomNames()
 
-        logger.info("Creating protein-ligand heterogenous grapg...")
-        list_atom_name = proteinDual.RetrieveAtomNames()
-        
-        if (protein_sasa is not None) and (ligand_sasa is not None):
             g = create_pyg_graph(protein=protein, 
                                  ligand=ligand, 
-                                 cutoff=args.featuriser.interaction_cutoff, 
+                                 cutoff=config.featuriser.interaction_cutoff, 
                                  list_atom_name=list_atom_name,
                                  name=name,
                                  score=vina_score,
@@ -134,18 +131,13 @@ if __name__ == '__main__':
                                  protein_sasa=protein_sasa,
                                  ligand_sasa=ligand_sasa,
                                  )
+        except Exception as e:
+            logger.error(traceback.format_exc())
+            skippedComplex.append(name)
         else:
-            g = create_pyg_graph(protein=protein, 
-                                 ligand=ligand, 
-                                 cutoff=args.featuriser.interaction_cutoff, 
-                                 list_atom_name=list_atom_name,
-                                 name=name,
-                                 score=vina_score,
-                                 rmsd=0.0)
-
             logger.info("Saving graph...")
-            #torch.save(g, args.outdir + '/' + name + '.pt')
-            torch.save(g, "example/" + name + ".pt")
+            torch.save(g, args.outdir + '/' + name + '.pt')
+            #torch.save(g, "./example/" + name.split("/")[-1] + ".pt")
     
     logger.info(f"Skipped {len(skippedComplex)} complexes: {skippedComplex}")
     logger.info("Process terminated successfully.\n")

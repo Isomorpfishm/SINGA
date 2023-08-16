@@ -4,4 +4,6 @@
 
 ### This project is under progress. Coming soon.
 
-Developer: OON Yu Yang, Project Officer (Computational Biology/Biochemistry) at School of Biological Sciences, Nanyang Technological University Singapore
+Developer: OON Yu Yang, Project Officer (Computational Biology/Biochemistry) at School of Biological Sciences, Nanyang Technological University
+
+Principal Investigator: **[Assoc Prof MU Yuguang](https://dr.ntu.edu.sg/cris/rp/rp00074?ST_EMAILID=YGMU)**
