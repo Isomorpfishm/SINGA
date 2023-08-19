@@ -1,57 +1,44 @@
 dataset:
-    name: pl
-    path: ./dataset/crossdocked_vina10
+    path: ./dataset/crossdocked_graph10
     split: ./dataset/split_by_name.pt
     
+embedding:
+    atomic_distance_cutoff: 4.0
+    batch_size: 64
+    dropout: 0.13
+    heads: 2
+    hetero_aggr: mean
+    hidden_channels_la: 
+    - 48
+    - 76
+    - 121
+    hidden_channels_pa:
+    - 48
+    - 57
+    - 68
+    lr: 0.001
+    mlp_channels:
+    - 189
+    - 94
+    - 1
+    molecular_embedding_size: 4
+    num_layers: 3
+    str_for_hparams: 'InterMol length: 4.0A'
+    weight_decay: 0.0001
+    NB_ATOM_FTS: 58
+    NB_INTRA_BOND_FTS: 6
+    NB_INTER_BOND_FTS: 6
+
 model:
-    name: singa
-    
-train:
-    seed: 1
-    use_apex: False
-    batch_size: 8
-    num_workers: 8
-    pin_memory: True
-    max_iters: 500000
-    val_freq: 5000
-    pos_noise_std: 0.1
-    max_grad_norm: 100.0
-    optimizer:
-        type: adam
-        lr: 2.e-4    
-        weight_decay: 0
-        beta1: 0.99
-        beta2: 0.999
-    scheduler:
-        type: plateau
-        factor: 0.6
-        patience: 8
-        min_lr: 1.e-5
-    transform:
-        mask:
-            type: mixed
-            min_ratio: 0.0
-            max_ratio: 1.1
-            min_num_masked: 1
-            min_num_unmasked: 0 
-            p_random: 0.15
-            p_bfs: 0.6
-            p_invbfs: 0.25
-        contrastive:
-            num_real: 20
-            num_fake: 20
-            pos_real_std: 0.05
-            pos_fake_std: 2.0
-        edgesampler:
-            k: 8
+    name: SINGA
 
 PLInteraction:
     nonpolar:
-        6: 1.7
-        9: 1.47
-        17: 1.75
-        35: 1.85
-        53: 1.98
+        '6': 1.7
+        '9': 1.47
+        '17': 1.75
+        '35': 1.85
+        '53': 1.98
     hbond_dist_cut: 3.5
     hbond_angle_cut: 180.0
     hbond_dist_bound: 2.5
@@ -66,7 +53,7 @@ PLInteraction:
     pistack_dist_cut: 6.5
     pistack_dist_bound: 3.8
     pistack_angle_cut: 90.0
-    pistack_angle_boundL 60.0
+    pistack_angle_bound: 60.0
     pication_dist_cut: 6.5
     pication_dist_bound: 4.3
     pication_angle_cut: 90.0

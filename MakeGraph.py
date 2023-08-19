@@ -31,6 +31,10 @@ from utils.PLParser import StructureDual, parse_sdf_file
 from utils.PLFeature import ComputeSASA, ClassifyAtoms
 from utils.PLIExtension import close_contacts    
 
+# CUDA for PyTorch
+use_cuda = torch.cuda.is_available()
+device = torch.device("cuda:0" if use_cuda else "cpu")
+torch.backends.cudnn.benchmark = True
 
 
 if __name__ == '__main__':

@@ -9,7 +9,10 @@ import numpy as np
 import pandas as pd
 from biopandas.pdb import PandasPdb
 import torch
+from torch import Tensor
+from torch.utils.data import Dataset
 import torch_geometric as pyg
+#from torch_geometric.data import Dataset
 import pytorch_lightning as pl
 
 import oddt.interactions as interactions
@@ -152,12 +155,29 @@ def get_molecular_properties(mol:Molecule) -> Tuple[List, List, List]:
         edge_attr += [get_bond_properties(ob_bond), get_bond_properties(ob_bond)]
         
     return (atom_properties_list, edge_index, edge_attr)
+
+
+class CrossdockedDataSet(Dataset):
+    # PyTorch Geometric Dataset module 
+    def __init__(self, list_IDs:List) -> None:
+        super().__init__()
+        self.list_IDs = list_IDs
+        
+    def __getitem__(self, index) -> Tensor:
+        path_to_pt = self.list_IDs[index]
+        X = torch.load(path_to_pt)
+        X = X.to(torch.device('cuda:0'))
+        return X
     
+    def __len__(self):
+        return len(self.list_IDs)
+
 
 @dataclass
 class CrossdockedDataModule(pl.LightningDataModule):
     # PyTorch Lightning Data Module
     root:str                                             # path to data directory
+    index:str                                            # path to split index
     split_ratio:float = field(default=0.9)               # ratio of samples for training from split_by_name.pt
     atomic_distance_cutoff:float = field(default=4.0)    # cutoff for interatomic distance
     batch_size:int = field(default=1)                    # batch size
@@ -171,39 +191,63 @@ class CrossdockedDataModule(pl.LightningDataModule):
         pass
         
     def setup(self):
-        split_idx = torch.load(self.root)
+        split_idx = torch.load(self.index)
         
         lt_train_ori, lt_test = [], []
         for i in range(len(split_idx['train'])):
-            lt_train_ori.append(os.path.join(self.root, str(split_idx['train'][i][0].split(".")[0]) + ".pt"))
+            filePth = os.path.join(self.root, str(split_idx['train'][i][0].split(".")[0]) + ".pt")
+            fileExist = os.path.isfile(filePth)
+            if fileExist:
+                lt_train_ori.append(filePth)
+            else:
+                continue
         for i in range(len(split_idx['test'])):
-            lt_test.append(os.path.join(self.root, str(split_idx['test'][i][0].split(".")[0]) + ".pt"))
+            filePth = os.path.join(self.root, str(split_idx['test'][i][0].split(".")[0]) + ".pt")
+            fileExist = os.path.isfile(filePth)
+            if fileExist:
+                lt_test.append(filePth)
+            else:
+                continue
         
         lt_train = lt_train_ori[:int(len(lt_train_ori)*self.split_ratio)]
         lt_val = lt_train_ori[int(len(lt_train_ori)*self.split_ratio):]
         
-        self.dt_train = [torch.load(i).to('cuda') for i in lt_train]
-        self.dt_val = [torch.load(i).to('cuda') for i in lt_val]
-        self.dt_test = [torch.load(i).to('cuda') for i in lt_test]
+        """
+        for i in lt_train[:5000]:
+            try:
+                self.dt_train.append(torch.load(i).to('cuda'))
+            except FileNotFoundError:
+                continue
+        
+        for i in lt_val:
+            try:
+                self.dt_val.append(torch.load(i).to('cuda'))
+            except FileNotFoundError:
+                continue
+        #self.dt_test = [torch.load(i).to('cuda') for i in lt_test]
+        """
+        self.dt_train = CrossdockedDataSet(lt_train[5000:10000])
+        self.dt_val = CrossdockedDataSet(lt_val)
+        
         
     def train_dataloader(self):
         return pyg.loader.DataLoader(dataset=self.dt_train,
                                      batch_size=self.batch_size,
                                      shuffle=True,
                                      num_workers=self.num_workers,
-                                     persistent_worker=self.persistent_workers)
+                                     persistent_workers=self.persistent_workers)
 
     def val_dataloader(self):
         return pyg.loader.DataLoader(dataset=self.dt_val,
                                      batch_size=self.batch_size,
                                      shuffle=True,
                                      num_workers=self.num_workers,
-                                     persistent_worker=self.persistent_workers)
-
+                                     persistent_workers=self.persistent_workers)
+    
     def test_dataloader(self):
         return pyg.loader.DataLoader(dataset=self.dt_test,
                                      batch_size=self.batch_size,
                                      shuffle=True,
                                      num_workers=self.num_workers,
-                                     persistent_worker=self.persistent_workers)
+                                     persistent_workers=self.persistent_workers)
        
