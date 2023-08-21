@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from scipy.spatial.distance import cdist
 import oddt
+from oddt.toolkits.ob import Molecule
 import rdkit
 from rdkit import Chem
 import math
@@ -13,7 +14,7 @@ import yaml
 BASE_ANGLES = np.array((0, 180, 120, 109.5, 90), dtype=float)
 
 #######################################################################################
-################################### Initialisation ####################################
+################################## Helper Function ####################################
 #######################################################################################
 
 """
@@ -27,7 +28,7 @@ def angle(p1, p2, p3):
 
     Parameters
     ----------
-    p1,p2,p3 : numpy arrays, shape = [n_points, n_dimensions]
+    p1, p2, p3 : numpy arrays, shape = [n_points, n_dimensions]
         Triplets of points in n-dimensional space, aligned in rows.
 
     Returns
@@ -120,7 +121,15 @@ def _check_angles(angles, hybridizations, tolerance):
     return ((angles > lower_bound) & (angles < upper_bound)).any(axis=-1)
 
 
-def hbond_acceptor_donor(mol1, mol2, cutoff, tolerance=30, donor_exact=False):
+#######################################################################################
+################################ Capture Interaction ##################################
+#######################################################################################
+
+def hbond_acceptor_donor(mol1:Molecule, 
+                         mol2:Molecule, 
+                         cutoff:float, 
+                         tolerance:int=30, 
+                         donor_exact:bool=False):
     """Returns pairs of acceptor-donor atoms, which meet H-bond criteria
 
     Parameters
@@ -144,6 +153,9 @@ def hbond_acceptor_donor(mol1, mol2, cutoff, tolerance=30, donor_exact=False):
     a, d : atom_dict-type numpy array
         Aligned arrays of atoms forming H-bond, firstly acceptors,
         secondly donors.
+
+    angle1, angle2 : numpy array
+        Aligned arrays of angles forming H-bond
 
     strict : numpy array, dtype=bool
         Boolean array align with atom pairs, informing whether atoms
@@ -170,7 +182,11 @@ def hbond_acceptor_donor(mol1, mol2, cutoff, tolerance=30, donor_exact=False):
     else:
         return a, d, np.array([], dtype=float), np.array([], dtype=float), np.array([], dtype=bool)
 
-def halogenbond_acceptor_halogen(mol1, mol2, cutoff, tolerance=30):
+
+def halogenbond_acceptor_halogen(mol1:Molecule, 
+                                 mol2:Molecule, 
+                                 cutoff:float, 
+                                 tolerance:int=30):
     """Returns pairs of acceptor-halogen atoms, which meet halogen bond criteria
 
     Parameters
@@ -191,6 +207,9 @@ def halogenbond_acceptor_halogen(mol1, mol2, cutoff, tolerance=30):
         Aligned arrays of atoms forming halogen bond, firstly acceptors,
         secondly halogens
 
+    angle1, angle2 : numpy array
+        Aligned arrays of angles forming X-bond
+        
     strict : numpy array, dtype=bool
         Boolean array align with atom pairs, informing whether atoms
         form 'strict' halogen bond (pass all angular cutoffs). If false,
@@ -214,7 +233,11 @@ def halogenbond_acceptor_halogen(mol1, mol2, cutoff, tolerance=30):
         return a, h, np.array([], dtype=float), np.array([], dtype=float), np.array([], dtype=bool)
 
 
-def salt_bridge_plus_minus(mol1, mol2, cutoff, cation_exact=False, anion_exact=False):
+def salt_bridge_plus_minus(mol1:Molecule, 
+                           mol2:Molecule, 
+                           cutoff:float, 
+                           cation_exact:bool=False, 
+                           anion_exact:bool=False):
     """Returns pairs of plus-mins atoms, which meet salt bridge criteria
 
     Parameters
@@ -251,7 +274,12 @@ def salt_bridge_plus_minus(mol1, mol2, cutoff, cation_exact=False, anion_exact=F
 ##################################### Extraction ######################################
 #######################################################################################
 
-def hbond_oddt(protein, ligand, cutoff, tolerance=30, mol1_exact=False, mol2_exact=False):
+def hbond_oddt(protein:Molecule, 
+               ligand:Molecule, 
+               cutoff:float, 
+               tolerance:int=30, 
+               mol1_exact:bool=False, 
+               mol2_exact:bool=False):
     """
     a1, d2 : protein as acceptor, ligand as donor
     
@@ -289,7 +317,12 @@ def hbond_oddt(protein, ligand, cutoff, tolerance=30, mol1_exact=False, mol2_exa
             return np.concatenate((a1, d1)), np.concatenate((d2, a2)), np.array([], dtype=float)
 
 
-def xbond_oddt(protein, ligand, cutoff, tolerance=30, mol1_exact=False, mol2_exact=False):
+def xbond_oddt(protein:Molecule, 
+               ligand:Molecule, 
+               cutoff:float, 
+               tolerance:int=30, 
+               mol1_exact:bool=False, 
+               mol2_exact:bool=False):
     """
     a1, h2 : protein as acceptor, ligand as halogen donor
 
@@ -325,25 +358,36 @@ def xbond_oddt(protein, ligand, cutoff, tolerance=30, mol1_exact=False, mol2_exa
             return np.concatenate((a1, h1)), np.concatenate((h2, a2)), np.array([], dtype=float)
 
 
-def hphob_oddt(protein, ligand, cutoff):
+def hphob_oddt(protein:Molecule, ligand:Molecule, cutoff:float):
     h1, h2 = close_contacts(protein.atom_dict[protein.atom_dict['ishydrophobe']], 
                             ligand.atom_dict[ligand.atom_dict['ishydrophobe']], 
                             cutoff)
     return h1, h2
     
     
-def sbridge_oddt(protein, ligand, cutoff, mol1_exact=False, mol2_exact=False):
-    """p1, l2: protein positive, ligand negative"""
+def sbridge_oddt(protein:Molecule, 
+                 ligand:Molecule, 
+                 cutoff:float, 
+                 mol1_exact:bool=False, 
+                 mol2_exact:bool=False):
+    """
+    p1, l2: protein positive, ligand negative
+    """
     protein_plus, ligand_minus = salt_bridge_plus_minus(protein, ligand, cutoff)
     
-    """l1, p2: ligand positive, protein negative"""
+    """
+    l1, p2: ligand positive, protein negative
+    """
     ligand_plus, protein_minus = salt_bridge_plus_minus(ligand, protein, cutoff)
 
     return np.concatenate((protein_plus, protein_minus)), np.concatenate((ligand_minus, ligand_plus))
     
 
-def pistack_oddt(protein, ligand, cutoff, tolerance=30):
-    """Interested: angle1[i]"""
+def pistack_oddt(protein:Molecule, 
+                 ligand:Molecule, 
+                 cutoff:float, 
+                 tolerance:int=30):
+    
     r1, r2 = close_contacts(protein.ring_dict, ligand.ring_dict, cutoff, x_column='centroid', y_column='centroid')
     
     if len(r1) > 0 and len(r2) > 0:
@@ -355,14 +399,18 @@ def pistack_oddt(protein, ligand, cutoff, tolerance=30):
                        r2['centroid'],
                        r1['centroid'])
         return r1, r2, angle1, angle2
-
     else:
         return r1, r2, np.array([], dtype=bool), np.array([], dtype=bool)
 
 
-def pication_oddt(protein, ligand, cutoff, tolerance=30, cation_exact=False):
-    """Interested: angle1[i]"""
+def pication_oddt(protein:Molecule, 
+                  ligand:Molecule, 
+                  cutoff:float, 
+                  tolerance:int=30, 
+                  cation_exact:bool=False):
+
     cation_map = ligand.atom_dict['isplus']
+    
     if cation_exact:
         cation_map = cation_map & (ligand.atom_dict['formalcharge'] > 0)
     
@@ -376,4 +424,3 @@ def pication_oddt(protein, ligand, cutoff, tolerance=30, cation_exact=False):
         return r1, plus2, angle1
     else:
         return r1, plus2, np.array([], dtype=bool)
-

@@ -226,7 +226,7 @@ class CrossdockedDataModule(pl.LightningDataModule):
                 continue
         #self.dt_test = [torch.load(i).to('cuda') for i in lt_test]
         """
-        self.dt_train = CrossdockedDataSet(lt_train[5000:10000])
+        self.dt_train = CrossdockedDataSet(lt_train[5000:5640])
         self.dt_val = CrossdockedDataSet(lt_val)
         
         

@@ -266,7 +266,9 @@ class HG_Net(nn.Module):
         mol_x_dict, mol_edge_index_dict = molecular_pooling(y_dict, edge_index, batch)
         x_pa, x_la = self.gcn_mol(mol_x_dict, mol_edge_index_dict)
         x_fp = torch.cat((x_pa, x_la), axis=1)
-        return self.mlp(x_fp)
+        x_fp = x_fp.unsqueeze(-1)
+        return self.mlp(x_fp).transpose(1, -1)
+        
 
     def get_nb_parameters(self, only_trainable:bool=False) -> int:
         """

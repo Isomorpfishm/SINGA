@@ -18,50 +18,13 @@ embedding:
     - 68
     lr: 0.001
     mlp_channels:
-    - 189
-    - 94
     - 1
+    - 189
+    - 256
     molecular_embedding_size: 4
     num_layers: 3
     str_for_hparams: 'InterMol length: 4.0A'
     weight_decay: 0.0001
-    NB_ATOM_FTS: 58
-    NB_INTRA_BOND_FTS: 6
-    NB_INTER_BOND_FTS: 6
 
 model:
     name: SINGA
-
-PLInteraction:
-    nonpolar:
-        '6': 1.7
-        '9': 1.47
-        '17': 1.75
-        '35': 1.85
-        '53': 1.98
-    hbond_dist_cut: 3.5
-    hbond_angle_cut: 180.0
-    hbond_dist_bound: 2.5
-    hbond_angle_bound: 90.0
-    hphob_dist_cut: 4.0
-    hphob_dist_bound: 1.25
-    contact_scale_cut: 1.75
-    contact_scale_opt: 1.25
-    sbridge_dist_cut: 5.0
-    sbridge_dist_bound: 3.25
-    sbridge_resonance: True
-    pistack_dist_cut: 6.5
-    pistack_dist_bound: 3.8
-    pistack_angle_cut: 90.0
-    pistack_angle_bound: 60.0
-    pication_dist_cut: 6.5
-    pication_dist_bound: 4.3
-    pication_angle_cut: 90.0
-    pication_angle_bound: 30.0
-    xbond_dist_cut: 5.0
-    xbond_dist_bound: 3.5
-    xbond_angle_cut: 150.0
-    xbond_angle_bound: 135.0
-    acceptor_metal_dist_cut: 4.0
-    pimetal_dist_cut: 5.0
-    
