@@ -268,7 +268,6 @@ class HG_Net(nn.Module):
         x_fp = torch.cat((x_pa, x_la), axis=1)
         x_fp = x_fp.unsqueeze(-1)
         return self.mlp(x_fp).transpose(1, -1)
-        
 
     def get_nb_parameters(self, only_trainable:bool=False) -> int:
         """

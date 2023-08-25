@@ -12,7 +12,6 @@ import torch
 from torch import Tensor
 from torch.utils.data import Dataset
 import torch_geometric as pyg
-#from torch_geometric.data import Dataset
 import pytorch_lightning as pl
 
 import oddt.interactions as interactions
@@ -121,15 +120,16 @@ def get_bond_properties(bond:openbabel.OBBond) -> List:
     return [length, aromatic, ring, order==1, order==2, order==3]
     
     
-def get_molecular_properties(mol:Molecule) -> Tuple[List, List, List]:
+def get_molecular_properties(mol:Molecule) -> Tuple[List, List, List, List]:
     """
     Compute all atomic and molecular properties of a molecule
+      *** Added atomic position for equivariance ***
     
     Args:
         pybel_mol (Molecule): An ODDT Molecule object
         
     Output:
-        Tuple[List, List, List]: (Atoms' properties, edge index, edge attributes)
+        Tuple[List, List, List, List]: (Atoms' properties, edge index, edge attributes)
     """
     oh_atom_type = np.array(list(map(atom_type_one_hot, mol.atom_dict['atomicnum'].tolist())))
     oh_hybridisation = np.array(list(map(atom_hybridisation_one_hot, mol.atom_dict['hybridization'].tolist())))
@@ -142,6 +142,7 @@ def get_molecular_properties(mol:Molecule) -> Tuple[List, List, List]:
     isminus = mol.atom_dict['isminus'].reshape(-1, 1)
     isplus = mol.atom_dict['isplus'].reshape(-1, 1)
     
+    atom_pos = mol.atom_dict['coords'].tolist()
     atom_properties_list = np.concatenate((oh_atom_type, oh_hybridisation, partial_charge, hydrophobic, isaromatic, isacceptor, isdonor, isdonorh, isminus, isplus), axis=1).tolist()
     
     edge_index, edge_attr = [[], []], []
@@ -154,7 +155,7 @@ def get_molecular_properties(mol:Molecule) -> Tuple[List, List, List]:
         edge_index[1] += [end_id, begin_id]
         edge_attr += [get_bond_properties(ob_bond), get_bond_properties(ob_bond)]
         
-    return (atom_properties_list, edge_index, edge_attr)
+    return (atom_properties_list, atom_pos, edge_index, edge_attr)
 
 
 class CrossdockedDataSet(Dataset):
@@ -211,7 +212,6 @@ class CrossdockedDataModule(pl.LightningDataModule):
         
         lt_train = lt_train_ori[:int(len(lt_train_ori)*self.split_ratio)]
         lt_val = lt_train_ori[int(len(lt_train_ori)*self.split_ratio):]
-        
         """
         for i in lt_train[:5000]:
             try:

@@ -19,7 +19,6 @@ from torch_geometric.utils import to_networkx
 
 
 
-
 def accuracy(y_pred, y_true):
     """Calculate accuracy."""
     return torch.sum(y_pred==y_true)/len(y_true)
@@ -114,7 +113,6 @@ def RetrieveMolecularFeatures(molList:list, labelList:list):
     a list of torch_geometric.data.Data objects which represent labeled molecular graphs 
     that can readily be used for machine learning
     """
-
     data_list = []
 
     for (mol, y_val) in zip(molList, labelList):
@@ -198,18 +196,3 @@ def ComputeSASA(coords:list, Rvdw:list):
     sa = freesasa.calcCoord(coords, Rvdw)
     
     return sa.totalArea()
-
-
-"""
-def compute_sasa(mol):
-    mol = Chem.AddHs(mol)
-
-    # Get Van der Waals radii (angstrom)
-    ptable = Chem.GetPeriodicTable()
-    radii = [ptable.GetRvdw(atom.GetAtomicNum()) for atom in mol.GetAtoms()]
-
-    # Compute solvent accessible surface area
-    sa = rdFreeSASA.CalcSASA(mol, radii, confIdx=-1)
-    
-    return sa
-"""

@@ -24,8 +24,7 @@ except:
 def featurise(protein:Molecule, 
               ligand:Molecule, 
               list_atom_name:list,
-              cutoff:float,
-    ) -> Tuple:
+              cutoff:float) -> Tuple:
     """
     Featurise a protein and a ligand to a set of nodes and edges
 
@@ -43,9 +42,9 @@ def featurise(protein:Molecule,
     assert list_atom_name is not None, 'Missing a list of atom names'
     
     with stderr_redirected(to='obabel.err'):
-        (protein_atom_properties_list,
+        (protein_atom_properties_list, protein_atom_pos,
          protein_edge_index, protein_edge_attr) = get_molecular_properties(protein)
-        (ligand_atom_properties_list,
+        (ligand_atom_properties_list, ligand_atom_pos,
          ligand_edge_index, ligand_edge_attr) = get_molecular_properties(ligand)
 
     (p_atm_to_l_edge_index, l_to_p_atm_edge_index, p_atm_to_l_edge_attr,
@@ -55,6 +54,9 @@ def featurise(protein:Molecule,
 
     return (protein_atom_properties_list,  # protein_atoms.x
             ligand_atom_properties_list,  # ligand_atoms.x
+            
+            protein_atom_pos,
+            ligand_atom_pos,
 
             protein_edge_index,  # protein_atoms <-> protein_atoms
             ligand_edge_index,  # ligand_atoms <-> ligand_atoms
@@ -76,8 +78,7 @@ def create_pyg_graph(protein:Molecule,
                      protein_sasa:float = None,
                      ligand_sasa:float = None,
                      name:str = None,
-                     cutoff:float = 4.0,
-                     ) -> pyg.data.HeteroData:
+                     cutoff:float = 4.0) -> pyg.data.HeteroData:
     """
     Create a torch_geometric HeteroGraph of a protein-ligand complex
 
@@ -99,6 +100,9 @@ def create_pyg_graph(protein:Molecule,
     """
     (protein_atm_x,
      ligand_atm_x,
+     
+     protein_atm_pos,
+     ligand_atm_pos,
 
      protein_atm_to_protein_atm_edge_index,
      ligand_atm_to_ligand_atm_edge_index,
@@ -115,6 +119,9 @@ def create_pyg_graph(protein:Molecule,
 
     data['protein_atoms'].x = torch.tensor(protein_atm_x)
     data['ligand_atoms'].x = torch.tensor(ligand_atm_x)
+    
+    data['protein_atoms'].pos = torch.tensor(protein_atm_pos)
+    data['ligand_atoms'].pos = torch.tensor(ligand_atm_pos)
 
     data['protein_atoms', 'linked_to', 'protein_atoms'].edge_index = torch.tensor(
         protein_atm_to_protein_atm_edge_index)
@@ -135,10 +142,10 @@ def create_pyg_graph(protein:Molecule,
         protein_atm_to_ligand_atm_edge_attr).float()
 
     data.name = name
-    data.rmsd = rmsd
-    data.y = score
-    data.protein_sasa = protein_sasa
-    data.ligand_sasa = ligand_sasa
+    #data.rmsd = rmsd
+    #data.protein_sasa = protein_sasa
+    #data.ligand_sasa = ligand_sasa
+    data.y = [score, rmsd, protein_sasa, ligand_sasa]
 
     return data
     
