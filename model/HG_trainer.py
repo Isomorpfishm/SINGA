@@ -91,8 +91,7 @@ for i, X in enumerate(datamodule):
       y_pred = model(X)
       assert y_pred.shape == (config.embedding.batch_size, \
                               config.embedding.mlp_channels[-1], \
-                              (config.embedding.hidden_channels_pa[-1] + config.embedding.hidden_channels_la[-1]) \
-                             )
+                              (config.embedding.hidden_channels_pa[-1] + config.embedding.hidden_channels_la[-1]) )
 
 # Sample (graph) complexes for testing
 G_exp_file = ['./dataset/crossdocked_graph10/P53_HUMAN_94_306_0/4agq_B_rec_5a7b_kmn_lig_tt_docked_2_pocket10.pt', 
@@ -102,14 +101,19 @@ G_exp = []
 for i in G_exp_file:
     G_exp.append(torch.load(i).to(device))
 
-edge_index = G_exp[-1][('ligand_atoms', 'linked_to', 'ligand_atoms')]
-ligand_x = G_exp[-1]['ligand_atoms']['x']
+#edge_index = G_exp[-1][('ligand_atoms', 'linked_to', 'ligand_atoms')]
+#ligand_x = G_exp[-1]['ligand_atoms']['x']
 
-ligand_masking = LigandMasking(device=device)
-G_mod, masked_idx, content_idx = ligand_masking(G_exp[-1])
+ligand_masking = LigandMasking(HeteroData=G_exp[-1], device=device)
+masked_idx, content_idx = ligand_masking()
+subset_dict = {'ligand_atoms': content_idx}
+G_mod = ligand_masking.subset_subgraph(subset_dict=subset_dict)
+#G_mod = ligand_masking(G_exp[-1])
+print(G_mod)
 
 
 # For backup testing
 protein = next(oddt.toolkit.readfile('pdb', 'example/7cff_protein.pdb'))
 protein.protein = True
 ligand = next(oddt.toolkit.readfile('sdf', 'example/7cff_ligand.sdf'))
+
