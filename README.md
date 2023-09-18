@@ -12,7 +12,7 @@ Principal Investigator: **[Assoc Prof MU Yuguang](https://dr.ntu.edu.sg/cris/rp/
 
 ![Protein-ligand complex as three-dimensional heterogeneous graph](img/PLComplex.png)
 <p align="center">
-    *Protein-ligand complex as a three-dimensional heterogeneous graph, with an emphasis on protein-ligand interactions.*
+    <em>Protein-ligand complex as a three-dimensional heterogeneous graph, with an emphasis on interactions between the protein and ligand.</em>
 </p>
 
 ## Directory tree
@@ -21,39 +21,39 @@ Principal Investigator: **[Assoc Prof MU Yuguang](https://dr.ntu.edu.sg/cris/rp/
   $ singa (main directory)
   .
   |
-  |-- /autodock_vina
-  |-- /ckpt
-  |-- /config
-  |-- /dataset
+  |__ /autodock_vina
+  |__ /ckpt
+  |__ /config
+  |__ /dataset
       |__ /crossdocked_graph10
-  |-- /example
-  |-- /features
-  |-- /img
-  |-- /model
-      |-- Discriminator.py
-      |-- EF_embedding.py
-      |-- EF_layers.py
-      |-- GAN.py
-      |-- Generator.py
+  |__ /example
+  |__ /features
+  |__ /img
+  |__ /model
+      |__ Discriminator.py
+      |__ EF_embedding.py
+      |__ EF_layers.py
+      |__ GAN.py
+      |__ Generator.py
       |__ Masking.py
-  |-- /output
-  |-- /utils
-      |-- /ledock
-      |-- __init__.py
-      |-- Data.py
-      |-- Featuriser.py 
-      |-- misc.py
-      |-- PLFeature.py
-      |-- PLIExtension.py
-      |-- PLInteraction.py
-      |-- PLParser.py
+  |__ /output
+  |__ /utils
+      |__ /ledock
+      |__ __init__.py
+      |__ Data.py
+      |__ Featuriser.py 
+      |__ misc.py
+      |__ PLFeature.py
+      |__ PLIExtension.py
+      |__ PLInteraction.py
+      |__ PLParser.py
       |__ redirect.py
-  |-- .gitignore
-  |-- __init__.py
-  |-- environment.yml
-  |-- LICENSE
-  |-- MakeGraph.py
-  |-- README.md
+  |__ .gitignore
+  |__ __init__.py
+  |__ environment.yml
+  |__ LICENSE
+  |__ MakeGraph.py
+  |__ README.md
   |__ train.py
 ```
 
