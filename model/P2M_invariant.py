@@ -1,116 +1,177 @@
-import torch
-import torch.nn as nn
-import torch.nn.functional as F
-from torch.nn import Module, Linear, LeakyReLU
-from torch.nn.modules.loss import _WeightedLoss
-from torch_geometric.nn import global_mean_pool, knn, knn_graph
-from torch_scatter import scatter_mean, scatter_add
-
 import math
 from math import pi as PI
+from typing import Tuple
 import numpy as np
+
+import torch
+from torch import Tensor
+import torch.nn as nn
+import torch.nn.functional as F
+from torch.nn import Linear, LeakyReLU
+from torch.nn.modules.loss import _WeightedLoss
+from torch_geometric.nn import knn, knn_graph
+from torch_scatter import scatter_mean, scatter_add
 
 EPS = 1e-6
 
 
-class MessageModule(Module):
-    def __init__(self, node_sca, node_vec, edge_sca, edge_vec, out_sca, out_vec, cutoff=10.):
+class MessageModule(nn.Module):
+    def __init__(self, 
+                 node_sca: int,
+                 node_vec: int,
+                 edge_sca: int,
+                 edge_vec: int,
+                 out_sca: int,
+                 out_vec: int,
+                 cutoff: float = 10.,
+                 device: str = 'cpu',
+                 ) -> None:
         super().__init__()
         hid_sca, hid_vec = edge_sca, edge_vec
         self.cutoff = cutoff
-        self.node_gvlinear = GVLinear(node_sca, node_vec, out_sca, out_vec)
-        self.edge_gvp = GVPerceptronVN(edge_sca, edge_vec, hid_sca, hid_vec)
+        self.device = device
 
-        self.sca_linear = Linear(hid_sca, out_sca)
-        self.e2n_linear = Linear(hid_sca, out_vec)
-        self.n2e_linear = Linear(out_sca, out_vec)
-        self.edge_vnlinear = VNLinear(hid_vec, out_vec)
+        self.node_gvlinear = GVLinear(node_sca, node_vec, out_sca, out_vec, device=device)
+        self.edge_gvp = GVPerceptronVN(edge_sca, edge_vec, hid_sca, hid_vec, device=device)
+        self.sca_linear = Linear(hid_sca, out_sca, device=device)
+        self.e2n_linear = Linear(hid_sca, out_vec, device=device)
+        self.n2e_linear = Linear(out_sca, out_vec, device=device)
+        self.edge_vnlinear = VNLinear(hid_vec, out_vec, device=device)
+        self.out_gvlienar = GVLinear(out_sca, out_vec, out_sca, out_vec, device=device)
 
-        self.out_gvlienar = GVLinear(out_sca, out_vec, out_sca, out_vec)
-
-    def forward(self, node_features, edge_features, edge_index_node, dist_ij=None, annealing=False):
-        node_scalar, node_vector = self.node_gvlinear(node_features)
+    def forward(self, 
+                node_features_sca: Tensor,
+                node_features_vec: Tensor,
+                edge_features_sca: Tensor,
+                edge_features_vec: Tensor,
+                edge_index_node: Tensor,
+                dist_ij: Tensor = None,
+                annealing: bool = False,
+                ):
+        node_scalar, node_vector = self.node_gvlinear(node_features_sca, node_features_vec)
         node_scalar, node_vector = node_scalar[edge_index_node], node_vector[edge_index_node]
-        edge_scalar, edge_vector = self.edge_gvp(edge_features)
+        edge_scalar, edge_vector = self.edge_gvp(edge_features_sca, edge_features_vec)
 
         y_scalar = node_scalar * self.sca_linear(edge_scalar)
         y_node_vector = self.e2n_linear(edge_scalar).unsqueeze(-1) * node_vector
         y_edge_vector = self.n2e_linear(node_scalar).unsqueeze(-1) * self.edge_vnlinear(edge_vector)
         y_vector = y_node_vector + y_edge_vector
 
-        output = self.out_gvlienar((y_scalar, y_vector))
+        output = self.out_gvlienar(y_scalar, y_vector)
 
         if annealing:
             C = 0.5 * (torch.cos(dist_ij * PI / self.cutoff) + 1.0)  # (A, 1)
             C = C * (dist_ij <= self.cutoff) * (dist_ij >= 0.0)
             output = [output[0] * C.view(-1, 1), output[1] * C.view(-1, 1, 1)]   # (A, 1)
+        
         return output
 
 
-class GVPerceptronVN(Module):
-    def __init__(self, in_scalar, in_vector, out_scalar, out_vector):
+class GVPerceptronVN(nn.Module):
+    def __init__(self,
+                 in_scalar: int, in_vector: int,
+                 out_scalar: int, out_vector: int,
+                 device: str = 'cpu',
+                 ) -> None:
         super().__init__()
-        self.gv_linear = GVLinear(in_scalar, in_vector, out_scalar, out_vector)
+        self.gv_linear = GVLinear(in_scalar, in_vector, out_scalar, out_vector, device=device)
         self.act_sca = LeakyReLU()
-        self.act_vec = VNLeakyReLU(out_vector)
+        self.act_vec = VNLeakyReLU(out_vector, device=device)
+        
+        self.lin_vector_weight = self.gv_linear.lin_vector_weight
+        self.lin_vector2_weight = self.gv_linear.lin_vector2_weight
+        self.scalar_to_vector_gates_weight = self.gv_linear.scalar_to_vector_gates_weight
+        self.lin_scalar_weight = self.gv_linear.lin_scalar_weight
 
-    def forward(self, x):
-        sca, vec = self.gv_linear(x)
+        self.lin_vector_bias = self.gv_linear.lin_vector_bias
+        self.lin_vector2_bias = self.gv_linear.lin_vector2_bias
+        self.scalar_to_vector_gates_bias = self.gv_linear.scalar_to_vector_gates_bias
+        self.lin_scalar_bias = self.gv_linear.lin_scalar_bias
+
+    def forward(self, x: Tensor, pos: Tensor) -> Tuple[Tensor, Tensor]:
+        sca, vec = self.gv_linear(x, pos)
         vec = self.act_vec(vec)
         sca = self.act_sca(sca)
         return sca, vec
 
 
-class GVLinear(Module):
-    def __init__(self, in_scalar, in_vector, out_scalar, out_vector):
+class GVLinear(nn.Module):
+    def __init__(self,
+                 in_scalar: int, in_vector: int,
+                 out_scalar: int, out_vector: int,
+                 device: str = 'cpu',
+                 ) -> None:
         super().__init__()
         dim_hid = max(in_vector, out_vector)
-        self.lin_vector = VNLinear(in_vector, dim_hid, bias=False)
-        self.lin_vector2 = VNLinear(dim_hid, out_vector, bias=False)
-        self.scalar_to_vector_gates = Linear(out_scalar, out_vector)
-        self.lin_scalar = Linear(in_scalar + dim_hid, out_scalar, bias=False)
+        self.lin_vector = VNLinear(in_vector, dim_hid, bias=False, device=device)
+        self.lin_vector2 = VNLinear(dim_hid, out_vector, bias=False, device=device)
+        self.scalar_to_vector_gates = Linear(out_scalar, out_vector, device=device)
+        self.lin_scalar = Linear(in_scalar+dim_hid, out_scalar, bias=False, device=device)
+        self.device = device
+        
+        self.lin_vector_weight = self.lin_vector.weight
+        self.lin_vector2_weight = self.lin_vector2.weight
+        self.scalar_to_vector_gates_weight = self.scalar_to_vector_gates.weight
+        self.lin_scalar_weight = self.lin_scalar.weight
 
-    def forward(self, features):
-        feat_scalar, feat_vector = features
-        feat_vector_inter = self.lin_vector(feat_vector)  # (N_samples, dim_hid, 3)
+        self.lin_vector_bias = self.lin_vector.bias
+        self.lin_vector2_bias = self.lin_vector2.bias
+        self.scalar_to_vector_gates_bias = self.scalar_to_vector_gates.bias
+        self.lin_scalar_bias = self.lin_scalar.bias
+
+    def forward(self, feat_scalar: Tensor, feat_vector: Tensor) -> Tuple[Tensor, Tensor]:
+        """
+        Args:
+            feat_scalar (Tensor) of dimension (N_samples, in_scalar)
+            feat_vector (Tensor) of dimension (N_samples, dim_hid, 3)
+        
+        Output:
+            out_scalar, out_vector (Tuple[Tensor, Tensor]) of dimension (N_samples, out_scalar) and (N_samples, dim_hid, 3) resp.
+        """
+        feat_vector_inter = self.lin_vector(feat_vector)  # feat_vector: (N_samples, dim_hid, 3)
         feat_vector_norm = torch.norm(feat_vector_inter, p=2, dim=-1)  # (N_samples, dim_hid)
         feat_scalar_cat = torch.cat([feat_vector_norm, feat_scalar], dim=-1)  # (N_samples, dim_hid+in_scalar)
 
         out_scalar = self.lin_scalar(feat_scalar_cat)
         out_vector = self.lin_vector2(feat_vector_inter)
 
-        gating = torch.sigmoid(self.scalar_to_vector_gates(out_scalar)).unsqueeze(dim = -1)
+        gating = torch.sigmoid(self.scalar_to_vector_gates(out_scalar)).unsqueeze(dim=-1)
         out_vector = gating * out_vector
+        
         return out_scalar, out_vector
 
 
 class VNLinear(nn.Module):
-    def __init__(self, in_channels, out_channels, *args, **kwargs):
+    def __init__(self, in_channels: int, out_channels: int, *args, **kwargs) -> None:
         super(VNLinear, self).__init__()
-        self.map_to_feat = nn.Linear(in_channels, out_channels, *args, **kwargs)
+        self.map_to_feat = Linear(in_channels, out_channels, *args, **kwargs)
+        
+        self.weight = self.map_to_feat.weight
+        self.bias = self.map_to_feat.bias
     
-    def forward(self, x):
-        '''
-        x: point features of shape [B, N_samples, N_feat, 3]
-        '''
-        x_out = self.map_to_feat(x.transpose(-2,-1)).transpose(-2,-1)
+    def forward(self, x: Tensor) -> Tensor:
+        """
+        x: point features of dimension [B, N_samples, N_feat, 3]
+        """
+        x_out = self.map_to_feat(x.transpose(-2, -1)).transpose(-2, -1)
         return x_out
 
 
 class VNLeakyReLU(nn.Module):
-    def __init__(self, in_channels, share_nonlinearity=False, negative_slope=0.01):
+    def __init__(self, in_channels, share_nonlinearity=False, negative_slope=0.01, device='cpu') -> None:
         super(VNLeakyReLU, self).__init__()
         if share_nonlinearity == True:
-            self.map_to_dir = nn.Linear(in_channels, 1, bias=False)
+            self.map_to_dir = Linear(in_channels, 1, bias=False, device=device)
         else:
-            self.map_to_dir = nn.Linear(in_channels, in_channels, bias=False)
+            self.map_to_dir = Linear(in_channels, in_channels, bias=False, device=device)
         self.negative_slope = negative_slope
+        self.device = device
 
-    def forward(self, x):
-        '''
-        x: point features of shape [B, N_samples, N_feat, 3]
-        '''
-        d = self.map_to_dir(x.transpose(-2,-1)).transpose(-2,-1)  # (N_samples, N_feat, 3)
+    def forward(self, x: Tensor) -> Tensor:
+        """
+        x: point features of dimension [B, N_samples, N_feat, 3]
+        """
+        d = self.map_to_dir(x.transpose(-2, -1)).transpose(-2, -1)  # (N_samples, N_feat, 3)
         dotprod = (x*d).sum(-1, keepdim=True)  # sum over 3-value dimension
         mask = (dotprod >= 0).to(x.dtype)
         d_norm_sq = (d*d).sum(-1, keepdim=True)  # sum over 3-value dimension
@@ -231,10 +292,9 @@ class MultiLayerPerceptron(nn.Module):
 
         self.layers = nn.ModuleList()
         for i in range(len(self.dims) - 1):
-            self.layers.append(nn.Linear(self.dims[i], self.dims[i + 1]))
+            self.layers.append(Linear(self.dims[i], self.dims[i + 1]))
 
     def forward(self, input):
-        """"""
         x = input
         for i, layer in enumerate(self.layers):
             x = layer(x)
@@ -264,8 +324,7 @@ class SmoothCrossEntropyLoss(_WeightedLoss):
         return targets
 
     def forward(self, inputs, targets):
-        targets = SmoothCrossEntropyLoss._smooth_one_hot(targets, inputs.size(-1),
-            self.smoothing)
+        targets = SmoothCrossEntropyLoss._smooth_one_hot(targets, inputs.size(-1), self.smoothing)
         lsm = F.log_softmax(inputs, -1)
 
         if self.weight is not None:
@@ -273,61 +332,70 @@ class SmoothCrossEntropyLoss(_WeightedLoss):
 
         loss = -(targets * lsm).sum(-1)
 
-        if  self.reduction == 'sum':
+        if self.reduction == 'sum':
             loss = loss.sum()
-        elif  self.reduction == 'mean':
+        elif self.reduction == 'mean':
             loss = loss.mean()
 
         return loss
 
 
 class EdgeExpansion(nn.Module):
-    def __init__(self, edge_channels):
+    def __init__(self, edge_channels: int, device: str = 'cuda'):
         super().__init__()
-        self.nn = nn.Linear(in_features=1, out_features=edge_channels, bias=False)
+        self.nn = Linear(in_features=1, out_features=edge_channels, bias=False, device=device)
+        self.device = device
     
     def forward(self, edge_vector):
-        edge_vector = edge_vector / (torch.norm(edge_vector, p=2, dim=1, keepdim=True)+1e-7)
+        edge_vector = edge_vector / (torch.norm(edge_vector, p=2, dim=1, keepdim=True) + 1e-7).to(self.device)
         expansion = self.nn(edge_vector.unsqueeze(-1)).transpose(1, -1)
-        return expansion
+        return expansion.to(self.device)
 
 
 class GaussianSmearing(nn.Module):
-    def __init__(self, start=0.0, stop=10.0, num_gaussians=50):
+    def __init__(self,
+                 start: float = 0.0, stop: float = 10.0,
+                 num_gaussians: int = 64,
+                 device: str = 'cuda'):
         super().__init__()
         self.stop = stop
-        offset = torch.linspace(start, stop, num_gaussians)
+        offset = torch.linspace(start, stop, num_gaussians, device=device)
         self.coeff = -0.5 / (offset[1] - offset[0]).item()**2
         self.register_buffer('offset', offset)
+        self.device = device
 
     def forward(self, dist):
         dist = dist.clamp_max(self.stop)
         dist = dist.view(-1, 1) - self.offset.view(1, -1)
-        return torch.exp(self.coeff * torch.pow(dist, 2))
+        return torch.exp(self.coeff*torch.pow(dist, 2)).to(self.device)
 
 
 class GaussianSmearingVN(nn.Module):
-    def __init__(self, start=0.0, stop=10.0, num_gaussians=64):
+    def __init__(self,
+                 start: float = 0.0, stop: float = 10.0,
+                 num_gaussians: int = 64,
+                 device: str = 'cuda'):
         super().__init__()
         assert num_gaussians % 8 == 0
         num_per_direction = num_gaussians // 8
         delta = (stop - start) / num_per_direction
-        offset = torch.linspace(start+delta/2, stop-delta/2, num_per_direction)
-        unit_vector = self.get_unit_vector()
+        offset = torch.linspace(start+delta/2, stop-delta/2, num_per_direction).to(device)
+        unit_vector = self.get_unit_vector().to(device)
         kernel_vectors = unit_vector.unsqueeze(1) * offset.reshape([1, -1, 1])
-        self.kernel_vectors = kernel_vectors.reshape([-1, 3])
+        self.kernel_vectors = kernel_vectors.reshape([-1, 3]).to(device)
         self.coeff = -0.5 / delta.item()**2
         self.register_buffer('offset', offset)
+        self.device = device
     
-    def get_unit_vector(self,):
-        vec = torch.tensor([-1., 1.])
-        vec = torch.stack([a.reshape(-1) for a in torch.meshgrid(vec, vec, vec, indexing=None)], dim=-1)
+    def get_unit_vector(self):
+        vec = torch.tensor([-1., 1.]).to(self.device)
+        vec = torch.stack([a.reshape(-1) for a in torch.meshgrid(vec, vec, vec, indexing=None)], dim=-1).to(self.device)
         vec = vec / np.sqrt(3)
         return vec
 
     def forward(self, dist):
         dist = dist.view(-1, 1, 3) - self.kernel_vectors.view(1, -1, 3)
-        return torch.exp(self.coeff * torch.pow(dist, 2))
+        return torch.exp(self.coeff * torch.pow(dist, 2)).to(self.device)
 
 
 class ShiftedSoftplus(nn.Module):
@@ -348,15 +416,16 @@ def compose_context(h_protein, h_ligand, pos_protein, pos_ligand, batch_protein,
     ], dim=0)[sort_idx]
 
     batch_ctx = batch_ctx[sort_idx]
-    h_ctx = torch.cat([h_protein, h_ligand], dim=0)[sort_idx]       # (N_protein+N_ligand, H)
-    pos_ctx = torch.cat([pos_protein, pos_ligand], dim=0)[sort_idx] # (N_protein+N_ligand, 3)
+    h_ctx = torch.cat([h_protein, h_ligand], dim=0)[sort_idx]        # (N_protein+N_ligand, H)
+    pos_ctx = torch.cat([pos_protein, pos_ligand], dim=0)[sort_idx]  # (N_protein+N_ligand, 3)
 
     return h_ctx, pos_ctx, batch_ctx, is_mol_atom
 
 
-def embed_compose(compose_feature, compose_pos, idx_ligand, idx_protein,
-                                      ligand_atom_emb, protein_atom_emb,
-                                      emb_dim):
+def embed_compose(compose_feature, compose_pos,
+                  idx_ligand, idx_protein,
+                  ligand_atom_emb, protein_atom_emb,
+                  emb_dim):
 
     h_ligand = ligand_atom_emb(compose_feature[idx_ligand], compose_pos[idx_ligand])
     h_protein = protein_atom_emb(compose_feature[idx_protein], compose_pos[idx_protein])
@@ -418,20 +487,18 @@ def get_compose_knn_graph(
     return compose_knn_edge_index, compose_knn_edge_feature
 
 
-def get_query_compose_knn_edge(
-        pos_query,
-        pos_compose,
-        k,
-        batch_query,
-        batch_compose,
-    ):
-    query_compose_knn_edge_index = knn(
-        x=pos_compose,
-        y=pos_query, 
-        k=k,
-        batch_x=batch_compose,
-        batch_y=batch_query
-    )
+def get_query_compose_knn_edge(pos_query,
+                               pos_compose,
+                               k,
+                               batch_query,
+                               batch_compose,
+                               ):
+    query_compose_knn_edge_index = knn(x=pos_compose,
+                                       y=pos_query,
+                                       k=k,
+                                       batch_x=batch_compose,
+                                       batch_y=batch_query,
+                                       )
     return query_compose_knn_edge_index
 
 
@@ -538,4 +605,3 @@ def compose_context_stable(h_protein, h_ligand, pos_protein, pos_ligand, batch_p
     mask_protein = torch.cat(mask_protein, dim=0)
 
     return h_ctx, pos_ctx, batch_ctx, mask_protein
-

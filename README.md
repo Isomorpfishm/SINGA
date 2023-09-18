@@ -8,31 +8,53 @@ Developer: OON Yu Yang (翁宇陽), Project Officer (Computational Biology || Bi
 
 Principal Investigator: **[Assoc Prof MU Yuguang](https://dr.ntu.edu.sg/cris/rp/rp00074?ST_EMAILID=YGMU)**
 
+## Introduction
+
+![Protein-ligand complex as three-dimensional heterogeneous graph](img/PLComplex.png)
+<p align="center">
+    *Protein-ligand complex as a three-dimensional heterogeneous graph, with an emphasis on protein-ligand interactions.*
+</p>
+
 ## Directory tree
 
 ```
-    singa
-    |
-    |---- /autodock_vina
-    |---- /ckpt
-    |---- /config
-    |---- /dataset
-          |---- /crossdocked_graph10
-    |---- /example
-    |---- /features
-    |---- /img
-    |---- /model
-    |---- /output
-    |---- /utils
-          |---- /ledock
-    |
-    |---- .gitignore
-    |---- __init__.py
-    |---- environment.yml
-    |---- LICENSE
-    |---- MakeGraph.py
-    |---- README.md
-    |---- train.py
+  $ singa (main directory)
+  .
+  |
+  |-- /autodock_vina
+  |-- /ckpt
+  |-- /config
+  |-- /dataset
+      |__ /crossdocked_graph10
+  |-- /example
+  |-- /features
+  |-- /img
+  |-- /model
+      |-- Discriminator.py
+      |-- EF_embedding.py
+      |-- EF_layers.py
+      |-- GAN.py
+      |-- Generator.py
+      |__ Masking.py
+  |-- /output
+  |-- /utils
+      |-- /ledock
+      |-- __init__.py
+      |-- Data.py
+      |-- Featuriser.py 
+      |-- misc.py
+      |-- PLFeature.py
+      |-- PLIExtension.py
+      |-- PLInteraction.py
+      |-- PLParser.py
+      |__ redirect.py
+  |-- .gitignore
+  |-- __init__.py
+  |-- environment.yml
+  |-- LICENSE
+  |-- MakeGraph.py
+  |-- README.md
+  |__ train.py
 ```
 
 ## License
@@ -41,4 +63,4 @@ MIT License
 
 ## Acknowledgement
 
-Part of this codebase is adapted from [Pocket2Mol](https://github.com/pengxingang/Pocket2Mol/tree/main) and [HGScore](https://github.com/KevinCrp/HGScore). Details of the adaptation are stated explicitly in the script.
+Part of this codebase is adapted from [EquiformerV2](https://github.com/atomicarchitects/equiformer_v2) and [HGScore](https://github.com/KevinCrp/HGScore). Details of the adaptation are stated explicitly in the script.
