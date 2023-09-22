@@ -10,10 +10,34 @@ Principal Investigator: **[Assoc Prof MU Yuguang](https://dr.ntu.edu.sg/cris/rp/
 
 ## Introduction
 
-![Protein-ligand complex as three-dimensional heterogeneous graph](img/PLComplex.png)
+![Protein-ligand complex as three-dimensional heterogeneous graph](img/PLGraph.png)
 <p align="center">
     <em>Protein-ligand complex as a three-dimensional heterogeneous graph, with an emphasis on interactions between the protein and ligand.</em>
 </p>
+
+## Installation
+
+Working inside a Conda virtual environment is hightly encouraged, but not necessary. Create a new environment with the command:
+
+```
+conda env create -f environment.yml
+```
+
+Otherwise, install the following dependencies sequentially.
+
+```
+conda create -n SINGA python=3.10
+conda activate SINGA
+conda install -c conda-forge openbabel
+pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+pip install torch_geometric==2.3.1
+pip install torch-scatter==2.1.1 torch-sparse==0.6.17
+pip install biopandas==0.4.1 pytorch-lightning==2.0.6
+pip install rdkit==2023.3.3
+pip install oddt==0.7
+pip install easydict==1.10
+pip install e3nn==0.5.1
+```
 
 ## Directory tree
 
@@ -25,7 +49,7 @@ Principal Investigator: **[Assoc Prof MU Yuguang](https://dr.ntu.edu.sg/cris/rp/
   |__ /ckpt
   |__ /config
   |__ /dataset
-      |__ /crossdocked_graph10
+      |__ /crossdocked_graph10_v2
   |__ /example
   |__ /features
   |__ /img

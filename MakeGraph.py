@@ -3,8 +3,8 @@
 # ==================                                            # 
 # 1. Find RMSD of docked ligand poses from crystal structure    #
 # 2. Retrieve molecular features of protein and ligand          #
-# 3. Prepare node and edge features (ODDT)                      #
-# 4. Dump all relevant info to pickle file                      #
+# 3. Prepare node and edge features (ODDT/RDKit)                #
+# 4. Dump all relevant info to PyTorch .pt file                 #
 #                                                               #
 #################################################################
 
@@ -42,7 +42,7 @@ if __name__ == '__main__':
     parser.add_argument('--config', type=str,
                         default='./config/config.yml')
     parser.add_argument('--outdir', type=str, 
-                        default='./dataset/crossdocked_graph10')
+                        default='./dataset/crossdocked_graph10_v2')
     args = parser.parse_args()
     
     # Logging

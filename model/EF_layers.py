@@ -4,10 +4,11 @@ Copyright (c) Facebook, Inc. and its affiliates.
 This source code is licensed under the MIT license found in the
 LICENSE file in the root directory of this source tree.
 """
-import os
+import collections
 import copy
 import math
-from typing import Dict, Union
+import os
+from typing import Dict, Optional, Tuple, Union
 
 import torch
 from torch import Tensor
@@ -39,17 +40,17 @@ class EdgeDegreeEmbedding(nn.Module):
     """
     def __init__(
         self,
-        sphere_channels,
-        lmax_list,
-        mmax_list,
+        sphere_channels: int,
+        lmax_list: list,
+        mmax_list: list,
         SO3_rotation,
         mappingReduced,
-        max_num_elements,
-        edge_channels_list,
-        use_atom_edge_embedding,
-        rescale_factor,
+        max_num_elements: int,
+        edge_channels_list: list,
+        use_atom_edge_embedding: bool,
+        rescale_factor: float,
         device: str = 'cuda',
-    ):
+    ) -> None:
         super(EdgeDegreeEmbedding, self).__init__()
         self.sphere_channels = sphere_channels
         self.lmax_list = lmax_list
@@ -88,17 +89,23 @@ class EdgeDegreeEmbedding(nn.Module):
         edge_distance: Tensor,
         edge_index: Tensor,
         hetero: bool,
+        source_target: Optional[Tuple[str, str]] = None,
     ):
         assert hetero is not None, "Please specify args: hetero"
+        if hetero:
+            assert collections.Counter(list(atomic_numbers.keys())) == collections.Counter(['protein_atoms', 'ligand_atoms']),\
+                "Error: atomic_numbers incorrect for Hetero case"
+            assert source_target is not None, "Please specify source-target tuple when hetero is true"
+
+            source, target = source_target[0], source_target[1]
+            source_atomic_num, target_atomic_num = atomic_numbers[source], atomic_numbers[target]
+            source_element = source_atomic_num[edge_index[0]]
+            target_element = target_atomic_num[edge_index[1]]
+        else:
+            source_element = atomic_numbers[edge_index[0]]
+            target_element = atomic_numbers[edge_index[1]]
+
         if self.use_atom_edge_embedding:
-            if hetero:
-                assert list(atomic_numbers.keys()) == ['source', 'target'], "Error: atomic_numbers incorrect for Hetero case"
-                source_atomic_num, target_atomic_num = atomic_numbers['source'], atomic_numbers['target']
-                source_element = source_atomic_num[edge_index[0]]
-                target_element = target_atomic_num[edge_index[1]]
-            else:
-                source_element = atomic_numbers[edge_index[0]]
-                target_element = atomic_numbers[edge_index[1]]
             source_embedding = self.source_embedding(source_element)
             target_embedding = self.target_embedding(target_element)
             x_edge = torch.cat((edge_distance, source_embedding, target_embedding), dim=1)
@@ -132,517 +139,14 @@ class EdgeDegreeEmbedding(nn.Module):
         x_edge_embedding._rotate_inv(self.SO3_rotation, self.mappingReduced)
 
         # Compute the sum of the incoming neighbouring messages for each target node
-        x_edge_embedding._reduce_edge(edge_index[1], atomic_numbers.shape[0])
+        if hetero:
+            x_edge_embedding._reduce_edge(edge_index[1], target_atomic_num.shape[0])
+        else:
+            x_edge_embedding._reduce_edge(edge_index[1], atomic_numbers.shape[0])
+
         x_edge_embedding.embedding = x_edge_embedding.embedding / self.rescale_factor
 
         return x_edge_embedding
-
-
-class SO2_m_Convolution(nn.Module):
-    """
-    SO(2) Conv: Perform an SO(2) convolution on features corresponding to +- m
-
-    Args:
-        m (int):                    Order of the spherical harmonic coefficients
-        sphere_channels (int):      Number of spherical channels
-        m_output_channels (int):    Number of output channels used during the SO(2) conv
-        lmax_list (list:int):       List of degrees (l) for each resolution
-        mmax_list (list:int):       List of orders (m) for each resolution
-    """
-    def __init__(
-        self,
-        m,
-        sphere_channels,
-        m_output_channels,
-        lmax_list,
-        mmax_list,
-        device: str = 'cuda',
-    ):
-        super(SO2_m_Convolution, self).__init__()
-        self.m = m
-        self.sphere_channels = sphere_channels
-        self.m_output_channels = m_output_channels
-        self.lmax_list = lmax_list
-        self.mmax_list = mmax_list
-        self.num_resolutions = len(self.lmax_list)
-        self.device = device
-
-        num_channels = 0
-        for i in range(self.num_resolutions):
-            num_coefficents = 0
-            if self.mmax_list[i] >= self.m:
-                num_coefficents = self.lmax_list[i] - self.m + 1
-            num_channels = num_channels + num_coefficents * self.sphere_channels
-        assert num_channels > 0
-
-        self.fc = Linear(num_channels,
-                         2 * self.m_output_channels * (num_channels // self.sphere_channels),
-                         bias=False,
-                         device=device)
-        self.fc.weight.data.mul_(1 / math.sqrt(2))
-
-    def forward(self, x_m):
-        x_m = self.fc(x_m)
-        x_r = x_m.narrow(2, 0, self.fc.out_features // 2)
-        x_i = x_m.narrow(2, self.fc.out_features // 2, self.fc.out_features // 2)
-        x_m_r = x_r.narrow(1, 0, 1) - x_i.narrow(1, 1, 1)  # x_r[:, 0] - x_i[:, 1]
-        x_m_i = x_r.narrow(1, 1, 1) + x_i.narrow(1, 0, 1)  # x_r[:, 1] + x_i[:, 0]
-        x_out = torch.cat((x_m_r, x_m_i), dim=1)
-
-        return x_out
-
-
-class SO2_Convolution(nn.Module):
-    """
-    SO(2) Block: Perform SO(2) convolutions for all m (orders)
-
-    Args:
-        sphere_channels (int):      Number of spherical channels
-        m_output_channels (int):    Number of output channels used during the SO(2) conv
-        lmax_list (list:int):       List of degrees (l) for each resolution
-        mmax_list (list:int):       List of orders (m) for each resolution
-        mappingReduced (CoefficientMappingModule): Used to extract a subset of m components
-        internal_weights (bool):    If True, not using radial function to multiply inputs features
-        edge_channels_list (list:int):  List of sizes of invariant edge embedding. For example, [input_channels, hidden_channels, hidden_channels].
-        extra_m0_output_channels (int): If not None, return `out_embedding` (SO3_Embedding) and `extra_m0_features` (Tensor).
-    """
-    def __init__(
-        self,
-        sphere_channels: int,
-        m_output_channels: int,
-        lmax_list: list,
-        mmax_list: list,
-        mappingReduced,
-        edge_channels_list = None,
-        extra_m0_output_channels = None,
-        internal_weights: bool = True,
-        device: str = 'cuda',
-    ):
-        super(SO2_Convolution, self).__init__()
-        self.device = device
-        self.sphere_channels = sphere_channels
-        self.m_output_channels = m_output_channels
-        self.lmax_list = lmax_list
-        self.mmax_list = mmax_list
-        self.mappingReduced = mappingReduced
-        self.num_resolutions = len(lmax_list)
-        self.internal_weights = internal_weights
-        self.edge_channels_list = copy.deepcopy(edge_channels_list)
-        self.extra_m0_output_channels = extra_m0_output_channels
-
-        num_channels_rad = 0  # for radial function
-        num_channels_m0 = 0
-
-        for i in range(self.num_resolutions):
-            num_coefficients = self.lmax_list[i] + 1
-            num_channels_m0 = num_channels_m0 + num_coefficients * self.sphere_channels
-
-        # SO(2) convolution for m = 0
-        m0_output_channels = self.m_output_channels * (num_channels_m0 // self.sphere_channels)
-        if self.extra_m0_output_channels is not None:
-            m0_output_channels = m0_output_channels + self.extra_m0_output_channels
-        self.fc_m0 = Linear(num_channels_m0, m0_output_channels, device=device)
-        num_channels_rad = num_channels_rad + self.fc_m0.in_features
-
-        # SO(2) convolution for non-zero m
-        self.so2_m_conv = nn.ModuleList()
-        for m in range(1, max(self.mmax_list) + 1):
-            self.so2_m_conv.append(
-                SO2_m_Convolution(
-                    m,
-                    self.sphere_channels,
-                    self.m_output_channels,
-                    self.lmax_list,
-                    self.mmax_list,
-                    device=self.device,
-                )
-            )
-            num_channels_rad = num_channels_rad + self.so2_m_conv[-1].fc.in_features
-
-        # Embedding function of distance
-        self.rad_func = None
-        if not self.internal_weights:
-            assert self.edge_channels_list is not None
-            self.edge_channels_list.append(int(num_channels_rad))
-            self.rad_func = RadialFunction(self.edge_channels_list, device=device)
-
-    def forward(self, x, x_edge):
-        num_edges = len(x_edge)
-        out = []
-
-        # Reshape the spherical harmonics based on m (order)
-        x._m_primary(self.mappingReduced)
-
-        # radial function
-        if self.rad_func is not None:
-            x_edge = self.rad_func(x_edge)
-        offset_rad = 0
-
-        # Compute m=0 coefficients separately since they only have real values (no imaginary)
-        x_0 = x.embedding.narrow(1, 0, self.mappingReduced.m_size[0])
-        x_0 = x_0.reshape(num_edges, -1)
-        if self.rad_func is not None:
-            x_edge_0 = x_edge.narrow(1, 0, self.fc_m0.in_features)
-            x_0 = x_0 * x_edge_0
-        x_0 = self.fc_m0(x_0)
-
-        x_0_extra = None
-        # extract extra m0 features
-        if self.extra_m0_output_channels is not None:
-            x_0_extra = x_0.narrow(-1, 0, self.extra_m0_output_channels)
-            x_0 = x_0.narrow(-1, self.extra_m0_output_channels,
-                             (self.fc_m0.out_features - self.extra_m0_output_channels))
-
-        x_0 = x_0.view(num_edges, -1, self.m_output_channels)
-        # x.embedding[:, 0 : self.mappingReduced.m_size[0]] = x_0
-        out.append(x_0)
-        offset_rad = offset_rad + self.fc_m0.in_features
-
-        # Compute the values for the m > 0 coefficients
-        offset = self.mappingReduced.m_size[0]
-        for m in range(1, max(self.mmax_list) + 1):
-            # Get the m order coefficients
-            x_m = x.embedding.narrow(1, offset, 2 * self.mappingReduced.m_size[m])
-            x_m = x_m.reshape(num_edges, 2, -1)
-
-            # Perform SO(2) convolution
-            if self.rad_func is not None:
-                x_edge_m = x_edge.narrow(1, offset_rad, self.so2_m_conv[m - 1].fc.in_features)
-                x_edge_m = x_edge_m.reshape(num_edges, 1, self.so2_m_conv[m - 1].fc.in_features)
-                x_m = x_m * x_edge_m
-            x_m = self.so2_m_conv[m - 1](x_m)
-            x_m = x_m.view(num_edges, -1, self.m_output_channels)
-            # x.embedding[:, offset : offset + 2 * self.mappingReduced.m_size[m]] = x_m
-            out.append(x_m)
-            offset = offset + 2 * self.mappingReduced.m_size[m]
-            offset_rad = offset_rad + self.so2_m_conv[m - 1].fc.in_features
-
-        out = torch.cat(out, dim=1)
-        out_embedding = SO3_Embedding(
-            0,
-            x.lmax_list.copy(),
-            self.m_output_channels,
-            device=self.device,
-            dtype=x.dtype
-        )
-        out_embedding.set_embedding(out)
-        out_embedding.set_lmax_mmax(self.lmax_list.copy(), self.mmax_list.copy())
-
-        # Reshape the spherical harmonics based on l (degree)
-        out_embedding._l_primary(self.mappingReduced)
-
-        if self.extra_m0_output_channels is not None:
-            return out_embedding, x_0_extra
-        else:
-            return out_embedding
-
-
-class SO2EquivariantGraphAttention(nn.Module):
-    """
-    SO2EquivariantGraphAttention: Perform MLP attention + non-linear message passing
-        SO(2) Convolution with radial function -> S2 Activation -> SO(2) Convolution -> attention weights and non-linear messages
-        attention weights * non-linear messages -> Linear
-
-    Args:
-        sphere_channels (int):      Number of spherical channels
-        hidden_channels (int):      Number of hidden channels used during the SO(2) conv
-        num_heads (int):            Number of attention heads
-        attn_alpha_head (int):      Number of channels for alpha vector in each attention head
-        attn_value_head (int):      Number of channels for value vector in each attention head
-        output_channels (int):      Number of output channels
-        lmax_list (list:int):       List of degrees (l) for each resolution
-        mmax_list (list:int):       List of orders (m) for each resolution
-
-        SO3_rotation (list:SO3_Rotation): Class to calculate Wigner-D matrices and rotate embeddings
-        mappingReduced (CoefficientMappingModule): Class to convert l and m indices once node embedding is rotated
-        SO3_grid (SO3_grid):        Class used to convert from grid the spherical harmonic representations
-
-        max_num_elements (int):     Maximum number of atomic numbers
-        edge_channels_list (list:int):  List of sizes of invariant edge embedding. For example, [input_channels, hidden_channels, hidden_channels].
-                                        The last one will be used as hidden size when `use_atom_edge_embedding` is `True`.
-        use_atom_edge_embedding (bool): Whether to use atomic embedding along with relative distance for edge scalar features
-        use_m_share_rad (bool):     Whether all m components within a type-L vector of one channel share radial function weights
-
-        activation (str):           Type of activation function
-        use_s2_act_attn (bool):     Whether to use attention after S2 activation. Otherwise, use the same attention as Equiformer
-        use_attn_renorm (bool):     Whether to re-normalize attention weights
-        use_gate_act (bool):        If `True`, use gate activation. Otherwise, use S2 activation.
-        use_sep_s2_act (bool):      If `True`, use separable S2 activation when `use_gate_act` is False.
-
-        alpha_drop (float):         Dropout rate for attention weights
-    """
-    def __init__(
-        self,
-        sphere_channels,
-        hidden_channels,
-        num_heads: int,
-        attn_alpha_channels,
-        attn_value_channels,
-        output_channels,
-
-        lmax_list: list,
-        mmax_list: list,
-
-        SO3_rotation,
-        mappingReduced,
-        SO3_grid,
-        max_num_elements,
-        edge_channels_list: list,
-
-        use_atom_edge_embedding: bool = True,
-        use_m_share_rad: bool = False,
-        activation: str = 'scaled_silu',
-        use_s2_act_attn: bool = False,
-        use_attn_renorm: bool = True,
-        use_gate_act: bool = False,
-        use_sep_s2_act: bool = True,
-        alpha_drop: float = 0.0,
-        device: str = 'cuda',
-    ):
-        super(SO2EquivariantGraphAttention, self).__init__()
-        self.sphere_channels = sphere_channels
-        self.hidden_channels = hidden_channels
-        self.num_heads = num_heads
-        self.attn_alpha_channels = attn_alpha_channels
-        self.attn_value_channels = attn_value_channels
-        self.output_channels = output_channels
-        self.lmax_list = lmax_list
-        self.mmax_list = mmax_list
-        self.num_resolutions = len(self.lmax_list)
-        self.device = device
-
-        self.SO3_rotation = SO3_rotation
-        self.mappingReduced = mappingReduced
-        self.SO3_grid = SO3_grid
-
-        # Create edge scalar (invariant to rotations) features
-        # Embedding function of the atomic numbers
-        self.max_num_elements = max_num_elements
-        self.edge_channels_list = copy.deepcopy(edge_channels_list)
-        self.use_atom_edge_embedding = use_atom_edge_embedding
-        self.use_m_share_rad = use_m_share_rad
-
-        if self.use_atom_edge_embedding:
-            self.source_embedding = nn.Embedding(self.max_num_elements, self.edge_channels_list[-1], device=device)
-            self.target_embedding = nn.Embedding(self.max_num_elements, self.edge_channels_list[-1], device=device)
-            nn.init.uniform_(self.source_embedding.weight.data, -0.001, 0.001)
-            nn.init.uniform_(self.target_embedding.weight.data, -0.001, 0.001)
-            self.edge_channels_list[0] = self.edge_channels_list[0] + 2 * self.edge_channels_list[-1]
-        else:
-            self.source_embedding, self.target_embedding = None, None
-
-        self.use_s2_act_attn = use_s2_act_attn
-        self.use_attn_renorm = use_attn_renorm
-        self.use_gate_act = use_gate_act
-        self.use_sep_s2_act = use_sep_s2_act
-
-        assert not self.use_s2_act_attn  # since this is not used
-
-        # Create SO(2) convolution blocks
-        extra_m0_output_channels = None
-        if not self.use_s2_act_attn:
-            extra_m0_output_channels = self.num_heads * self.attn_alpha_channels
-            if self.use_gate_act:
-                extra_m0_output_channels = extra_m0_output_channels + max(self.lmax_list) * self.hidden_channels
-            else:
-                if self.use_sep_s2_act:
-                    extra_m0_output_channels = extra_m0_output_channels + self.hidden_channels
-
-        if self.use_m_share_rad:
-            self.edge_channels_list = self.edge_channels_list + [2 * self.sphere_channels * (max(self.lmax_list) + 1)]
-            self.rad_func = RadialFunction(self.edge_channels_list, device=device)
-            expand_index = torch.zeros([(max(self.lmax_list) + 1) ** 2], device=device).long()
-            for l in range(max(self.lmax_list) + 1):
-                start_idx = l ** 2
-                length = 2 * l + 1
-                expand_index[start_idx: (start_idx + length)] = l
-            self.register_buffer('expand_index', expand_index)
-
-        self.so2_conv_1 = SO2_Convolution(
-            2 * self.sphere_channels,
-            self.hidden_channels,
-            self.lmax_list,
-            self.mmax_list,
-            self.mappingReduced,
-            internal_weights=(
-                False if not self.use_m_share_rad
-                else True
-            ),
-            edge_channels_list=(
-                self.edge_channels_list if not self.use_m_share_rad
-                else None
-            ),
-            extra_m0_output_channels=extra_m0_output_channels,  # for attention weights and/or gate activation
-            device=self.device,
-        )
-
-        if self.use_s2_act_attn:
-            self.alpha_norm = None
-            self.alpha_act = None
-            self.alpha_dot = None
-        else:
-            if self.use_attn_renorm:
-                self.alpha_norm = nn.LayerNorm(self.attn_alpha_channels, device=self.device)
-            else:
-                self.alpha_norm = nn.Identity()
-            self.alpha_act = SmoothLeakyReLU()
-            self.alpha_dot = nn.Parameter(torch.randn(self.num_heads, self.attn_alpha_channels))
-            # pyg.nn.inits.glorot(self.alpha_dot) # Following GATv2
-            std = 1.0 / math.sqrt(self.attn_alpha_channels)
-            nn.init.uniform_(self.alpha_dot, -std, std)
-
-        self.alpha_dropout = None
-        if alpha_drop != 0.0:
-            self.alpha_dropout = nn.Dropout(alpha_drop)
-
-        if self.use_gate_act:
-            self.gate_act = GateActivation(
-                lmax=max(self.lmax_list),
-                mmax=max(self.mmax_list),
-                num_channels=self.hidden_channels,
-                device=self.device,
-            )
-        else:
-            if self.use_sep_s2_act:
-                # separable S2 activation
-                self.s2_act = SeparableS2Activation(
-                    lmax=max(self.lmax_list),
-                    mmax=max(self.mmax_list),
-                )
-            else:
-                # S2 activation
-                self.s2_act = S2Activation(
-                    lmax=max(self.lmax_list),
-                    mmax=max(self.mmax_list)
-                )
-
-        self.so2_conv_2 = SO2_Convolution(
-            self.hidden_channels,
-            self.num_heads * self.attn_value_channels,
-            self.lmax_list,
-            self.mmax_list,
-            self.mappingReduced,
-            internal_weights=True,
-            edge_channels_list=None,
-            extra_m0_output_channels=(
-                self.num_heads if self.use_s2_act_attn
-                else None
-            ),  # for attention weights
-            device=self.device,
-        )
-
-        self.proj = SO3_LinearV2(self.num_heads * self.attn_value_channels,
-                                 self.output_channels,
-                                 lmax=self.lmax_list[0],
-                                 device=self.device,
-                                 )
-
-    def forward(
-        self,
-        x,
-        atomic_numbers,
-        edge_distance,
-        edge_index,
-    ):
-        # Compute edge scalar features (invariant to rotations)
-        # Uses atomic numbers and edge distance as inputs
-        if self.use_atom_edge_embedding:
-            source_element = atomic_numbers[edge_index[0]]  # Source atom atomic number
-            target_element = atomic_numbers[edge_index[1]]  # Target atom atomic number
-            source_embedding = self.source_embedding(source_element)
-            target_embedding = self.target_embedding(target_element)
-            x_edge = torch.cat((edge_distance, source_embedding, target_embedding), dim=1)
-        else:
-            x_edge = edge_distance
-
-        x_source = x.clone()
-        x_target = x.clone()
-        x_source._expand_edge(edge_index[0, :])
-        x_target._expand_edge(edge_index[1, :])
-
-        x_message_data = torch.cat((x_source.embedding, x_target.embedding), dim=2)
-        x_message = SO3_Embedding(
-            0,
-            x_target.lmax_list.copy(),
-            x_target.num_channels * 2,
-            device=self.device,
-            dtype=x_target.dtype,
-        )
-        x_message.set_embedding(x_message_data)
-        x_message.set_lmax_mmax(self.lmax_list.copy(), self.mmax_list.copy())
-
-        # radial function (scale all m components within a type-L vector of one channel with the same weight)
-        if self.use_m_share_rad:
-            x_edge_weight = self.rad_func(x_edge)
-            x_edge_weight = x_edge_weight.reshape(-1, (max(self.lmax_list) + 1), 2 * self.sphere_channels)
-            x_edge_weight = torch.index_select(x_edge_weight, dim=1,
-                                               index=self.expand_index)  # [E, (L_max + 1) ** 2, C]
-            x_message.embedding = x_message.embedding * x_edge_weight
-
-        # Rotate the irreps to align with the edge
-        x_message._rotate(self.SO3_rotation, self.lmax_list, self.mmax_list)
-
-        # First SO(2)-convolution
-        if self.use_s2_act_attn:
-            x_message = self.so2_conv_1(x_message, x_edge)
-        else:
-            x_message, x_0_extra = self.so2_conv_1(x_message, x_edge)
-
-        # Activation
-        x_alpha_num_channels = self.num_heads * self.attn_alpha_channels
-        if self.use_gate_act:
-            # Gate activation
-            x_0_gating = x_0_extra.narrow(1, x_alpha_num_channels,
-                                          x_0_extra.shape[1] - x_alpha_num_channels)  # for activation
-            x_0_alpha = x_0_extra.narrow(1, 0, x_alpha_num_channels)  # for attention weights
-            x_message.embedding = self.gate_act(x_0_gating, x_message.embedding)
-        else:
-            if self.use_sep_s2_act:
-                x_0_gating = x_0_extra.narrow(1, x_alpha_num_channels,
-                                              x_0_extra.shape[1] - x_alpha_num_channels)  # for activation
-                x_0_alpha = x_0_extra.narrow(1, 0, x_alpha_num_channels)  # for attention weights
-                x_message.embedding = self.s2_act(x_0_gating, x_message.embedding, self.SO3_grid)
-            else:
-                x_0_alpha = x_0_extra
-                x_message.embedding = self.s2_act(x_message.embedding, self.SO3_grid)
-
-        # Second SO(2)-convolution
-        if self.use_s2_act_attn:
-            x_message, x_0_extra = self.so2_conv_2(x_message, x_edge)
-        else:
-            x_message = self.so2_conv_2(x_message, x_edge)
-
-        # Attention weights
-        if self.use_s2_act_attn:
-            alpha = x_0_extra
-        else:
-            x_0_alpha = x_0_alpha.reshape(-1, self.num_heads, self.attn_alpha_channels)
-            x_0_alpha = self.alpha_norm(x_0_alpha)
-            x_0_alpha = self.alpha_act(x_0_alpha)
-            alpha = torch.einsum('bik, ik -> bi', x_0_alpha, self.alpha_dot)
-
-        alpha = pyg.utils.softmax(alpha, edge_index[1])
-        alpha = alpha.reshape(alpha.shape[0], 1, self.num_heads, 1)
-        if self.alpha_dropout is not None:
-            alpha = self.alpha_dropout(alpha)
-
-        # Attention weights * non-linear messages
-        attn = x_message.embedding
-        attn = attn.reshape(attn.shape[0], attn.shape[1], self.num_heads, self.attn_value_channels)
-        attn = attn * alpha
-        attn = attn.reshape(attn.shape[0], attn.shape[1], self.num_heads * self.attn_value_channels)
-        x_message.embedding = attn
-
-        # Rotate back the irreps
-        x_message._rotate_inv(self.SO3_rotation, self.mappingReduced)
-
-        # Compute the sum of the incoming neighboring messages for each target node
-        x_message._reduce_edge(edge_index[1], len(x.embedding))
-
-        # Project
-        out_embedding = self.proj(x_message)
-
-        return out_embedding
 
 
 class FeedForwardNetwork(nn.Module):
@@ -666,9 +170,9 @@ class FeedForwardNetwork(nn.Module):
     """
     def __init__(
         self,
-        sphere_channels,
-        hidden_channels,
-        output_channels,
+        sphere_channels: int,
+        hidden_channels: int,
+        output_channels: int,
         lmax_list: list,
         mmax_list: list,
         SO3_grid,
@@ -678,7 +182,7 @@ class FeedForwardNetwork(nn.Module):
         use_grid_mlp: bool = False,
         use_sep_s2_act: bool = True,
         device: str = 'cuda',
-    ):
+    ) -> None:
         super(FeedForwardNetwork, self).__init__()
         self.device = device
         self.sphere_channels = sphere_channels
@@ -764,186 +268,6 @@ class FeedForwardNetwork(nn.Module):
         input_embedding = self.so3_linear_2(input_embedding)
 
         return input_embedding
-
-
-class TransBlockV2(nn.Module):
-    """
-    Args:
-        sphere_channels (int):      Number of spherical channels
-        attn_hidden_channels (int): Number of hidden channels used during SO(2) graph attention
-        num_heads (int):            Number of attention heads
-        attn_alpha_head (int):      Number of channels for alpha vector in each attention head
-        attn_value_head (int):      Number of channels for value vector in each attention head
-        ffn_hidden_channels (int):  Number of hidden channels used during feedforward network
-        output_channels (int):      Number of output channels
-
-        lmax_list (list:int):       List of degrees (l) for each resolution
-        mmax_list (list:int):       List of orders (m) for each resolution
-
-        SO3_rotation (list:SO3_Rotation): Class to calculate Wigner-D matrices and rotate embeddings
-        mappingReduced (CoefficientMappingModule): Class to convert l and m indices once node embedding is rotated
-        SO3_grid (SO3_grid):        Class used to convert from grid the spherical harmonic representations
-
-        max_num_elements (int):     Maximum number of atomic numbers
-        edge_channels_list (list:int):  List of sizes of invariant edge embedding. For example, [input_channels, hidden_channels, hidden_channels].
-                                        The last one will be used as hidden size when `use_atom_edge_embedding` is `True`.
-        use_atom_edge_embedding (bool): Whether to use atomic embedding along with relative distance for edge scalar features
-        use_m_share_rad (bool):     Whether all m components within a type-L vector of one channel share radial function weights
-
-        attn_activation (str):      Type of activation function for SO(2) graph attention
-        use_s2_act_attn (bool):     Whether to use attention after S2 activation. Otherwise, use the same attention as Equiformer
-        use_attn_renorm (bool):     Whether to re-normalize attention weights
-        ffn_activation (str):       Type of activation function for feedforward network
-        use_gate_act (bool):        If `True`, use gate activation. Otherwise, use S2 activation
-        use_grid_mlp (bool):        If `True`, use projecting to grids and performing MLPs for FFN.
-        use_sep_s2_act (bool):      If `True`, use separable S2 activation when `use_gate_act` is False.
-
-        norm_type (str):            Type of normalization layer (['layer_norm', 'layer_norm_sh'])
-
-        alpha_drop (float):         Dropout rate for attention weights
-        drop_path_rate (float):     Drop path rate
-        proj_drop (float):          Dropout rate for outputs of attention and FFN
-    """
-    def __init__(
-        self,
-        sphere_channels: int,
-        attn_hidden_channels: int,
-        attn_alpha_channels: int,
-        attn_value_channels: int,
-        ffn_hidden_channels: int,
-        output_channels: int,
-
-        edge_channels_list: list,
-        lmax_list: list,
-        mmax_list: list,
-
-        SO3_rotation,
-        mappingReduced,
-        SO3_grid,
-
-        num_heads: int,
-        max_num_elements: int,
-
-        use_atom_edge_embedding: bool = True,
-        use_m_share_rad: bool = False,
-        use_gate_act: bool = False,
-        use_grid_mlp: bool = False,
-        use_sep_s2_act: bool = True,
-
-        attn_activation: str = 'silu',
-        use_s2_act_attn: bool = False,
-        use_attn_renorm: bool = True,
-        ffn_activation: str = 'silu',
-
-        norm_type: str = 'rms_norm_sh',
-        alpha_drop: float = 0.0,
-        drop_path_rate: float = 0.0,
-        proj_drop: float = 0.0,
-        device: str = 'cuda',
-    ):
-        super(TransBlockV2, self).__init__()
-        self.device = device
-        max_lmax = max(lmax_list)
-        self.norm_1 = get_normalization_layer(norm_type, lmax=max_lmax, num_channels=sphere_channels, device=device)
-        self.norm_2 = get_normalization_layer(norm_type, lmax=max_lmax, num_channels=sphere_channels, device=device)
-
-        self.ga = SO2EquivariantGraphAttention(
-            sphere_channels=sphere_channels,
-            hidden_channels=attn_hidden_channels,
-            num_heads=num_heads,
-            attn_alpha_channels=attn_alpha_channels,
-            attn_value_channels=attn_value_channels,
-            output_channels=sphere_channels,
-            lmax_list=lmax_list,
-            mmax_list=mmax_list,
-            SO3_rotation=SO3_rotation,
-            mappingReduced=mappingReduced,
-            SO3_grid=SO3_grid,
-            max_num_elements=max_num_elements,
-            edge_channels_list=edge_channels_list,
-            use_atom_edge_embedding=use_atom_edge_embedding,
-            use_m_share_rad=use_m_share_rad,
-            activation=attn_activation,
-            use_s2_act_attn=use_s2_act_attn,
-            use_attn_renorm=use_attn_renorm,
-            use_gate_act=use_gate_act,
-            use_sep_s2_act=use_sep_s2_act,
-            alpha_drop=alpha_drop,
-            device=device,
-        )
-
-        self.drop_path = GraphDropPath(drop_path_rate, device=self.device) if drop_path_rate > 0. else None
-        self.proj_drop = EquivariantDropoutArraySphericalHarmonics(proj_drop,
-                                                                   drop_graph=False,
-                                                                   device=self.device) if proj_drop > 0.0 else None
-
-        self.ffn = FeedForwardNetwork(
-            sphere_channels=sphere_channels,
-            hidden_channels=ffn_hidden_channels,
-            output_channels=output_channels,
-            lmax_list=lmax_list,
-            mmax_list=mmax_list,
-            SO3_grid=SO3_grid,
-            activation=ffn_activation,
-            use_gate_act=use_gate_act,
-            use_grid_mlp=use_grid_mlp,
-            use_sep_s2_act=use_sep_s2_act,
-            device=device,
-        )
-
-        if sphere_channels != output_channels:
-            self.ffn_shortcut = SO3_LinearV2(sphere_channels, output_channels, lmax=max_lmax, device=self.device)
-        else:
-            self.ffn_shortcut = None
-
-    def forward(
-        self,
-        x,  # SO3_Embedding
-        atomic_numbers,
-        edge_distance,
-        edge_index,
-        batch  # for GraphDropPath
-    ):
-        output_embedding = x
-        x_res = output_embedding.embedding
-        output_embedding.embedding = self.norm_1(output_embedding.embedding)
-        output_embedding = self.ga(output_embedding,
-                                   atomic_numbers,
-                                   edge_distance,
-                                   edge_index)
-
-        if self.drop_path is not None:
-            output_embedding.embedding = self.drop_path(output_embedding.embedding, batch)
-        if self.proj_drop is not None:
-            output_embedding.embedding = self.proj_drop(output_embedding.embedding, batch)
-
-        output_embedding.embedding = output_embedding.embedding + x_res
-
-        x_res = output_embedding.embedding
-        output_embedding.embedding = self.norm_2(output_embedding.embedding)
-        output_embedding = self.ffn(output_embedding)
-
-        if self.drop_path is not None:
-            output_embedding.embedding = self.drop_path(output_embedding.embedding, batch)
-        if self.proj_drop is not None:
-            output_embedding.embedding = self.proj_drop(output_embedding.embedding, batch)
-
-        if self.ffn_shortcut is not None:
-            shortcut_embedding = SO3_Embedding(
-                0,
-                output_embedding.lmax_list.copy(),
-                self.ffn_shortcut.in_features,
-                device=self.device,
-                dtype=output_embedding.dtype
-            )
-            shortcut_embedding.set_embedding(x_res)
-            shortcut_embedding.set_lmax_mmax(output_embedding.lmax_list.copy(), output_embedding.lmax_list.copy())
-            shortcut_embedding = self.ffn_shortcut(shortcut_embedding)
-            x_res = shortcut_embedding.embedding
-
-        output_embedding.embedding = output_embedding.embedding + x_res
-
-        return output_embedding
 
 
 class SO3_Embedding():
@@ -1348,6 +672,742 @@ class SO3_LinearV2(nn.Module):
 
     def __repr__(self):
         return f"{self.__class__.__name__}(in_features={self.in_features}, out_features={self.out_features}, lmax={self.lmax})"
+
+
+class SO2_m_Convolution(nn.Module):
+    """
+    SO(2) Conv: Perform an SO(2) convolution on features corresponding to +- m
+
+    Args:
+        m (int):                    Order of the spherical harmonic coefficients
+        sphere_channels (int):      Number of spherical channels
+        m_output_channels (int):    Number of output channels used during the SO(2) conv
+        lmax_list (list:int):       List of degrees (l) for each resolution
+        mmax_list (list:int):       List of orders (m) for each resolution
+    """
+
+    def __init__(
+            self,
+            m,
+            sphere_channels,
+            m_output_channels,
+            lmax_list,
+            mmax_list,
+            device: str = 'cuda',
+    ):
+        super(SO2_m_Convolution, self).__init__()
+        self.m = m
+        self.sphere_channels = sphere_channels
+        self.m_output_channels = m_output_channels
+        self.lmax_list = lmax_list
+        self.mmax_list = mmax_list
+        self.num_resolutions = len(self.lmax_list)
+        self.device = device
+
+        num_channels = 0
+        for i in range(self.num_resolutions):
+            num_coefficents = 0
+            if self.mmax_list[i] >= self.m:
+                num_coefficents = self.lmax_list[i] - self.m + 1
+            num_channels = num_channels + num_coefficents * self.sphere_channels
+        assert num_channels > 0
+
+        self.fc = Linear(num_channels,
+                         2 * self.m_output_channels * (num_channels // self.sphere_channels),
+                         bias=False,
+                         device=device)
+        self.fc.weight.data.mul_(1 / math.sqrt(2))
+
+    def forward(self, x_m):
+        x_m = self.fc(x_m)
+        x_r = x_m.narrow(2, 0, self.fc.out_features // 2)
+        x_i = x_m.narrow(2, self.fc.out_features // 2, self.fc.out_features // 2)
+        x_m_r = x_r.narrow(1, 0, 1) - x_i.narrow(1, 1, 1)  # x_r[:, 0] - x_i[:, 1]
+        x_m_i = x_r.narrow(1, 1, 1) + x_i.narrow(1, 0, 1)  # x_r[:, 1] + x_i[:, 0]
+        x_out = torch.cat((x_m_r, x_m_i), dim=1)
+
+        return x_out
+
+
+class SO2_Convolution(nn.Module):
+    """
+    SO(2) Block: Perform SO(2) convolutions for all m (orders)
+
+    Args:
+        sphere_channels (int):      Number of spherical channels
+        m_output_channels (int):    Number of output channels used during the SO(2) conv
+        lmax_list (list:int):       List of degrees (l) for each resolution
+        mmax_list (list:int):       List of orders (m) for each resolution
+        mappingReduced (CoefficientMappingModule): Used to extract a subset of m components
+        internal_weights (bool):    If True, not using radial function to multiply inputs features
+        edge_channels_list (list:int):  List of sizes of invariant edge embedding. For example, [input_channels, hidden_channels, hidden_channels].
+        extra_m0_output_channels (int): If not None, return `out_embedding` (SO3_Embedding) and `extra_m0_features` (Tensor).
+    """
+
+    def __init__(
+        self,
+        sphere_channels: int,
+        m_output_channels: int,
+        lmax_list: list,
+        mmax_list: list,
+        mappingReduced,
+        edge_channels_list=None,
+        extra_m0_output_channels=None,
+        internal_weights: bool = True,
+        device: str = 'cuda',
+    ):
+        super(SO2_Convolution, self).__init__()
+        self.device = device
+        self.sphere_channels = sphere_channels
+        self.m_output_channels = m_output_channels
+        self.lmax_list = lmax_list
+        self.mmax_list = mmax_list
+        self.mappingReduced = mappingReduced
+        self.num_resolutions = len(lmax_list)
+        self.internal_weights = internal_weights
+        self.edge_channels_list = copy.deepcopy(edge_channels_list)
+        self.extra_m0_output_channels = extra_m0_output_channels
+
+        num_channels_rad = 0  # for radial function
+        num_channels_m0 = 0
+
+        for i in range(self.num_resolutions):
+            num_coefficients = self.lmax_list[i] + 1
+            num_channels_m0 = num_channels_m0 + num_coefficients * self.sphere_channels
+
+        # SO(2) convolution for m = 0
+        m0_output_channels = self.m_output_channels * (num_channels_m0 // self.sphere_channels)
+        if self.extra_m0_output_channels is not None:
+            m0_output_channels = m0_output_channels + self.extra_m0_output_channels
+        self.fc_m0 = Linear(num_channels_m0, m0_output_channels, device=device)
+        num_channels_rad = num_channels_rad + self.fc_m0.in_features
+
+        # SO(2) convolution for non-zero m
+        self.so2_m_conv = nn.ModuleList()
+        for m in range(1, max(self.mmax_list) + 1):
+            self.so2_m_conv.append(
+                SO2_m_Convolution(
+                    m,
+                    self.sphere_channels,
+                    self.m_output_channels,
+                    self.lmax_list,
+                    self.mmax_list,
+                    device=self.device,
+                )
+            )
+            num_channels_rad = num_channels_rad + self.so2_m_conv[-1].fc.in_features
+
+        # Embedding function of distance
+        self.rad_func = None
+        if not self.internal_weights:
+            assert self.edge_channels_list is not None
+            self.edge_channels_list.append(int(num_channels_rad))
+            self.rad_func = RadialFunction(self.edge_channels_list, device=device)
+
+    def forward(self, x, x_edge):
+        num_edges = len(x_edge)
+        out = []
+
+        # Reshape the spherical harmonics based on m (order)
+        x._m_primary(self.mappingReduced)
+
+        # radial function
+        if self.rad_func is not None:
+            x_edge = self.rad_func(x_edge)
+        offset_rad = 0
+
+        # Compute m=0 coefficients separately since they only have real values (no imaginary)
+        x_0 = x.embedding.narrow(1, 0, self.mappingReduced.m_size[0])
+        x_0 = x_0.reshape(num_edges, -1)
+        if self.rad_func is not None:
+            x_edge_0 = x_edge.narrow(1, 0, self.fc_m0.in_features)
+            x_0 = x_0 * x_edge_0
+        x_0 = self.fc_m0(x_0)
+
+        x_0_extra = None
+        # extract extra m0 features
+        if self.extra_m0_output_channels is not None:
+            x_0_extra = x_0.narrow(-1, 0, self.extra_m0_output_channels)
+            x_0 = x_0.narrow(-1, self.extra_m0_output_channels,
+                             (self.fc_m0.out_features - self.extra_m0_output_channels))
+
+        x_0 = x_0.view(num_edges, -1, self.m_output_channels)
+        # x.embedding[:, 0 : self.mappingReduced.m_size[0]] = x_0
+        out.append(x_0)
+        offset_rad = offset_rad + self.fc_m0.in_features
+
+        # Compute the values for the m > 0 coefficients
+        offset = self.mappingReduced.m_size[0]
+        for m in range(1, max(self.mmax_list) + 1):
+            # Get the m order coefficients
+            x_m = x.embedding.narrow(1, offset, 2 * self.mappingReduced.m_size[m])
+            x_m = x_m.reshape(num_edges, 2, -1)
+
+            # Perform SO(2) convolution
+            if self.rad_func is not None:
+                x_edge_m = x_edge.narrow(1, offset_rad, self.so2_m_conv[m - 1].fc.in_features)
+                x_edge_m = x_edge_m.reshape(num_edges, 1, self.so2_m_conv[m - 1].fc.in_features)
+                x_m = x_m * x_edge_m
+            x_m = self.so2_m_conv[m - 1](x_m)
+            x_m = x_m.view(num_edges, -1, self.m_output_channels)
+            # x.embedding[:, offset : offset + 2 * self.mappingReduced.m_size[m]] = x_m
+            out.append(x_m)
+            offset = offset + 2 * self.mappingReduced.m_size[m]
+            offset_rad = offset_rad + self.so2_m_conv[m - 1].fc.in_features
+
+        out = torch.cat(out, dim=1)
+        out_embedding = SO3_Embedding(
+            0,
+            x.lmax_list.copy(),
+            self.m_output_channels,
+            device=self.device,
+            dtype=x.dtype
+        )
+        out_embedding.set_embedding(out)
+        out_embedding.set_lmax_mmax(self.lmax_list.copy(), self.mmax_list.copy())
+
+        # Reshape the spherical harmonics based on l (degree)
+        out_embedding._l_primary(self.mappingReduced)
+
+        if self.extra_m0_output_channels is not None:
+            return out_embedding, x_0_extra
+        else:
+            return out_embedding
+
+
+class SO2EquivariantGraphAttention(nn.Module):
+    """
+    SO2EquivariantGraphAttention: Perform MLP attention + non-linear message passing
+        SO(2) Convolution with radial function -> S2 Activation -> SO(2) Convolution -> attention weights and non-linear messages
+        attention weights * non-linear messages -> Linear
+
+    Args:
+        sphere_channels (int):      Number of spherical channels
+        hidden_channels (int):      Number of hidden channels used during the SO(2) conv
+        num_heads (int):            Number of attention heads
+        attn_alpha_head (int):      Number of channels for alpha vector in each attention head
+        attn_value_head (int):      Number of channels for value vector in each attention head
+        output_channels (int):      Number of output channels
+        lmax_list (list:int):       List of degrees (l) for each resolution
+        mmax_list (list:int):       List of orders (m) for each resolution
+
+        SO3_rotation (list:SO3_Rotation): Class to calculate Wigner-D matrices and rotate embeddings
+        mappingReduced (CoefficientMappingModule): Class to convert l and m indices once node embedding is rotated
+        SO3_grid (SO3_grid):        Class used to convert from grid the spherical harmonic representations
+
+        max_num_elements (int):     Maximum number of atomic numbers
+        edge_channels_list (list:int):  List of sizes of invariant edge embedding. For example, [input_channels, hidden_channels, hidden_channels].
+                                        The last one will be used as hidden size when `use_atom_edge_embedding` is `True`.
+        use_atom_edge_embedding (bool): Whether to use atomic embedding along with relative distance for edge scalar features
+        use_m_share_rad (bool):     Whether all m components within a type-L vector of one channel share radial function weights
+
+        activation (str):           Type of activation function
+        use_s2_act_attn (bool):     Whether to use attention after S2 activation. Otherwise, use the same attention as Equiformer
+        use_attn_renorm (bool):     Whether to re-normalize attention weights
+        use_gate_act (bool):        If `True`, use gate activation. Otherwise, use S2 activation.
+        use_sep_s2_act (bool):      If `True`, use separable S2 activation when `use_gate_act` is False.
+
+        alpha_drop (float):         Dropout rate for attention weights
+    """
+
+    def __init__(
+        self,
+        sphere_channels,
+        hidden_channels,
+        num_heads: int,
+        attn_alpha_channels,
+        attn_value_channels,
+        output_channels,
+
+        lmax_list: list,
+        mmax_list: list,
+
+        SO3_rotation,
+        mappingReduced,
+        SO3_grid,
+        max_num_elements,
+        edge_channels_list: list,
+
+        use_atom_edge_embedding: bool = True,
+        use_m_share_rad: bool = False,
+        activation: str = 'scaled_silu',
+        use_s2_act_attn: bool = False,
+        use_attn_renorm: bool = True,
+        use_gate_act: bool = False,
+        use_sep_s2_act: bool = True,
+        alpha_drop: float = 0.0,
+        device: str = 'cuda',
+    ):
+        super(SO2EquivariantGraphAttention, self).__init__()
+        self.sphere_channels = sphere_channels
+        self.hidden_channels = hidden_channels
+        self.num_heads = num_heads
+        self.attn_alpha_channels = attn_alpha_channels
+        self.attn_value_channels = attn_value_channels
+        self.output_channels = output_channels
+        self.lmax_list = lmax_list
+        self.mmax_list = mmax_list
+        self.num_resolutions = len(self.lmax_list)
+        self.device = device
+
+        self.SO3_rotation = SO3_rotation
+        self.mappingReduced = mappingReduced
+        self.SO3_grid = SO3_grid
+
+        # Create edge scalar (invariant to rotations) features
+        # Embedding function of the atomic numbers
+        self.max_num_elements = max_num_elements
+        self.edge_channels_list = copy.deepcopy(edge_channels_list)
+        self.use_atom_edge_embedding = use_atom_edge_embedding
+        self.use_m_share_rad = use_m_share_rad
+
+        if self.use_atom_edge_embedding:
+            self.source_embedding = nn.Embedding(self.max_num_elements, self.edge_channels_list[-1], device=device)
+            self.target_embedding = nn.Embedding(self.max_num_elements, self.edge_channels_list[-1], device=device)
+            nn.init.uniform_(self.source_embedding.weight.data, -0.001, 0.001)
+            nn.init.uniform_(self.target_embedding.weight.data, -0.001, 0.001)
+            self.edge_channels_list[0] = self.edge_channels_list[0] + 2 * self.edge_channels_list[-1]
+        else:
+            self.source_embedding, self.target_embedding = None, None
+
+        self.use_s2_act_attn = use_s2_act_attn
+        self.use_attn_renorm = use_attn_renorm
+        self.use_gate_act = use_gate_act
+        self.use_sep_s2_act = use_sep_s2_act
+
+        assert not self.use_s2_act_attn  # since this is not used
+
+        # Create SO(2) convolution blocks
+        extra_m0_output_channels = None
+        if not self.use_s2_act_attn:
+            extra_m0_output_channels = self.num_heads * self.attn_alpha_channels
+            if self.use_gate_act:
+                extra_m0_output_channels = extra_m0_output_channels + max(self.lmax_list) * self.hidden_channels
+            else:
+                if self.use_sep_s2_act:
+                    extra_m0_output_channels = extra_m0_output_channels + self.hidden_channels
+
+        if self.use_m_share_rad:
+            self.edge_channels_list = self.edge_channels_list + [2 * self.sphere_channels * (max(self.lmax_list) + 1)]
+            self.rad_func = RadialFunction(self.edge_channels_list, device=self.device)
+            expand_index = torch.zeros([(max(self.lmax_list) + 1) ** 2], device=self.device).long()
+            for l in range(max(self.lmax_list) + 1):
+                start_idx = l ** 2
+                length = 2 * l + 1
+                expand_index[start_idx: (start_idx + length)] = l
+            self.register_buffer('expand_index', expand_index)
+
+        self.so2_conv_1 = SO2_Convolution(
+            2 * self.sphere_channels,
+            self.hidden_channels,
+            self.lmax_list,
+            self.mmax_list,
+            self.mappingReduced,
+            internal_weights=(
+                False if not self.use_m_share_rad
+                else True
+            ),
+            edge_channels_list=(
+                self.edge_channels_list if not self.use_m_share_rad
+                else None
+            ),
+            extra_m0_output_channels=extra_m0_output_channels,  # for attention weights and/or gate activation
+            device=self.device,
+        )
+
+        if self.use_s2_act_attn:
+            self.alpha_norm = None
+            self.alpha_act = None
+            self.alpha_dot = None
+        else:
+            if self.use_attn_renorm:
+                self.alpha_norm = nn.LayerNorm(self.attn_alpha_channels, device=self.device)
+            else:
+                self.alpha_norm = nn.Identity()
+            self.alpha_act = SmoothLeakyReLU()
+            self.alpha_dot = nn.Parameter(torch.randn(self.num_heads, self.attn_alpha_channels, device=self.device))
+            # pyg.nn.inits.glorot(self.alpha_dot) # Following GATv2
+            std = 1.0 / math.sqrt(self.attn_alpha_channels)
+            nn.init.uniform_(self.alpha_dot, -std, std)
+
+        self.alpha_dropout = None
+        if alpha_drop != 0.0:
+            self.alpha_dropout = nn.Dropout(alpha_drop)
+
+        if self.use_gate_act:
+            self.gate_act = GateActivation(
+                lmax=max(self.lmax_list),
+                mmax=max(self.mmax_list),
+                num_channels=self.hidden_channels,
+                device=self.device,
+            )
+        else:
+            if self.use_sep_s2_act:
+                # separable S2 activation
+                self.s2_act = SeparableS2Activation(
+                    lmax=max(self.lmax_list),
+                    mmax=max(self.mmax_list),
+                )
+            else:
+                # S2 activation
+                self.s2_act = S2Activation(
+                    lmax=max(self.lmax_list),
+                    mmax=max(self.mmax_list)
+                )
+
+        self.so2_conv_2 = SO2_Convolution(
+            self.hidden_channels,
+            self.num_heads * self.attn_value_channels,
+            self.lmax_list,
+            self.mmax_list,
+            self.mappingReduced,
+            internal_weights=True,
+            edge_channels_list=None,
+            extra_m0_output_channels=(
+                self.num_heads if self.use_s2_act_attn
+                else None
+            ),  # for attention weights
+            device=self.device,
+        )
+
+        self.proj = SO3_LinearV2(self.num_heads * self.attn_value_channels,
+                                 self.output_channels,
+                                 lmax=self.lmax_list[0],
+                                 device=self.device,
+                                 )
+
+    def forward(
+        self,
+        x,  # SO3 embedding
+        atomic_numbers: Union[Tensor, Dict],
+        edge_distance: Tensor,
+        edge_index: Tensor,
+        hetero: bool,
+        source_target: Optional[Tuple[str, str]] = None,
+    ):
+        # Compute edge scalar features (invariant to rotations)
+        # Uses atomic numbers and edge distance as inputs
+        assert hetero is not None, "Please specify args: hetero"
+
+        if self.use_atom_edge_embedding:
+            if hetero:
+                assert source_target is not None, "Please specify source-target tuple when hetero is true"
+                source, target = source_target[0], source_target[1]
+                source_atomic_num, target_atomic_num = atomic_numbers[source], atomic_numbers[target]
+                source_element = source_atomic_num[edge_index[0]]
+                target_element = target_atomic_num[edge_index[1]]
+            else:
+                source_element = atomic_numbers[edge_index[0]]  # Source atom's atomic number
+                target_element = atomic_numbers[edge_index[1]]  # Target atom's atomic number
+            source_embedding = self.source_embedding(source_element)
+            target_embedding = self.target_embedding(target_element)
+            x_edge = torch.cat((edge_distance, source_embedding, target_embedding), dim=1)
+        else:
+            x_edge = edge_distance
+
+        if isinstance(x, Dict):
+            source, target = source_target[0], source_target[1]
+            x_source = x[source].clone()
+            x_target = x[target].clone()
+        else:
+            x_source = x.clone()
+            x_target = x.clone()
+
+        x_source._expand_edge(edge_index[0, :])
+        x_target._expand_edge(edge_index[1, :])
+
+        x_message_data = torch.cat((x_source.embedding, x_target.embedding), dim=2)
+        x_message = SO3_Embedding(
+            0,
+            x_target.lmax_list.copy(),
+            x_target.num_channels * 2,
+            device=self.device,
+            dtype=x_target.dtype,
+        )
+        x_message.set_embedding(x_message_data)
+        x_message.set_lmax_mmax(self.lmax_list.copy(), self.mmax_list.copy())
+
+        # radial function (scale all m components within a type-L vector of one channel with the same weight)
+        if self.use_m_share_rad:
+            x_edge_weight = self.rad_func(x_edge)
+            x_edge_weight = x_edge_weight.reshape(-1, (max(self.lmax_list) + 1), 2 * self.sphere_channels)
+            x_edge_weight = torch.index_select(x_edge_weight, dim=1,
+                                               index=self.expand_index)  # [E, (L_max + 1) ** 2, C]
+            x_message.embedding = x_message.embedding * x_edge_weight
+
+        # Rotate the irreps to align with the edge
+        x_message._rotate(self.SO3_rotation, self.lmax_list, self.mmax_list)
+
+        # First SO(2)-convolution
+        if self.use_s2_act_attn:
+            x_message = self.so2_conv_1(x_message, x_edge)
+        else:
+            x_message, x_0_extra = self.so2_conv_1(x_message, x_edge)
+
+        # Activation
+        x_alpha_num_channels = self.num_heads * self.attn_alpha_channels
+        if self.use_gate_act:
+            # Gate activation
+            x_0_gating = x_0_extra.narrow(1, x_alpha_num_channels,
+                                          x_0_extra.shape[1] - x_alpha_num_channels)  # for activation
+            x_0_alpha = x_0_extra.narrow(1, 0, x_alpha_num_channels)  # for attention weights
+            x_message.embedding = self.gate_act(x_0_gating, x_message.embedding)
+        else:
+            if self.use_sep_s2_act:
+                x_0_gating = x_0_extra.narrow(1, x_alpha_num_channels,
+                                              x_0_extra.shape[1] - x_alpha_num_channels)  # for activation
+                x_0_alpha = x_0_extra.narrow(1, 0, x_alpha_num_channels)  # for attention weights
+                x_message.embedding = self.s2_act(x_0_gating, x_message.embedding, self.SO3_grid)
+            else:
+                x_0_alpha = x_0_extra
+                x_message.embedding = self.s2_act(x_message.embedding, self.SO3_grid)
+
+        # Second SO(2)-convolution
+        if self.use_s2_act_attn:
+            x_message, x_0_extra = self.so2_conv_2(x_message, x_edge)
+        else:
+            x_message = self.so2_conv_2(x_message, x_edge)
+
+        # Attention weights
+        if self.use_s2_act_attn:
+            alpha = x_0_extra
+        else:
+            x_0_alpha = x_0_alpha.reshape(-1, self.num_heads, self.attn_alpha_channels)
+            x_0_alpha = self.alpha_norm(x_0_alpha)
+            x_0_alpha = self.alpha_act(x_0_alpha)
+            alpha = torch.einsum('bik, ik -> bi', x_0_alpha, self.alpha_dot)
+
+        alpha = pyg.utils.softmax(alpha, edge_index[1])
+        alpha = alpha.reshape(alpha.shape[0], 1, self.num_heads, 1)
+        if self.alpha_dropout is not None:
+            alpha = self.alpha_dropout(alpha)
+
+        # Attention weights * non-linear messages
+        attn = x_message.embedding
+        attn = attn.reshape(attn.shape[0], attn.shape[1], self.num_heads, self.attn_value_channels)
+        attn = attn * alpha
+        attn = attn.reshape(attn.shape[0], attn.shape[1], self.num_heads * self.attn_value_channels)
+        x_message.embedding = attn
+
+        # Rotate back the irreps
+        x_message._rotate_inv(self.SO3_rotation, self.mappingReduced)
+
+        # Compute the sum of the incoming neighboring messages for each target node
+        if hetero:
+            x_message._reduce_edge(edge_index[1], len(x[target].embedding))
+        else:
+            x_message._reduce_edge(edge_index[1], len(x.embedding))
+
+        # Project
+        out_embedding = self.proj(x_message)
+
+        return out_embedding
+
+
+class TransBlockV2(nn.Module):
+    """
+    Args:
+        sphere_channels (int):      Number of spherical channels
+        attn_hidden_channels (int): Number of hidden channels used during SO(2) graph attention
+        num_heads (int):            Number of attention heads
+        attn_alpha_head (int):      Number of channels for alpha vector in each attention head
+        attn_value_head (int):      Number of channels for value vector in each attention head
+        ffn_hidden_channels (int):  Number of hidden channels used during feedforward network
+        output_channels (int):      Number of output channels
+
+        lmax_list (list:int):       List of degrees (l) for each resolution
+        mmax_list (list:int):       List of orders (m) for each resolution
+
+        SO3_rotation (list:SO3_Rotation): Class to calculate Wigner-D matrices and rotate embeddings
+        mappingReduced (CoefficientMappingModule): Class to convert l and m indices once node embedding is rotated
+        SO3_grid (SO3_grid):        Class used to convert from grid the spherical harmonic representations
+
+        max_num_elements (int):     Maximum number of atomic numbers
+        edge_channels_list (list:int):  List of sizes of invariant edge embedding. For example, [input_channels, hidden_channels, hidden_channels].
+                                        The last one will be used as hidden size when `use_atom_edge_embedding` is `True`.
+        use_atom_edge_embedding (bool): Whether to use atomic embedding along with relative distance for edge scalar features
+        use_m_share_rad (bool):     Whether all m components within a type-L vector of one channel share radial function weights
+
+        attn_activation (str):      Type of activation function for SO(2) graph attention
+        use_s2_act_attn (bool):     Whether to use attention after S2 activation. Otherwise, use the same attention as Equiformer
+        use_attn_renorm (bool):     Whether to re-normalize attention weights
+        ffn_activation (str):       Type of activation function for feedforward network
+        use_gate_act (bool):        If `True`, use gate activation. Otherwise, use S2 activation
+        use_grid_mlp (bool):        If `True`, use projecting to grids and performing MLPs for FFN.
+        use_sep_s2_act (bool):      If `True`, use separable S2 activation when `use_gate_act` is False.
+
+        norm_type (str):            Type of normalization layer (['layer_norm', 'layer_norm_sh'])
+
+        alpha_drop (float):         Dropout rate for attention weights
+        drop_path_rate (float):     Drop path rate
+        proj_drop (float):          Dropout rate for outputs of attention and FFN
+    """
+
+    def __init__(
+        self,
+        sphere_channels: int,
+        attn_hidden_channels: int,
+        attn_alpha_channels: int,
+        attn_value_channels: int,
+        ffn_hidden_channels: int,
+        output_channels: int,
+
+        edge_channels_list: list,
+        lmax_list: list,
+        mmax_list: list,
+
+        SO3_rotation,
+        mappingReduced,
+        SO3_grid,
+
+        num_heads: int,
+        max_num_elements: int,
+
+        use_atom_edge_embedding: bool = True,
+        use_m_share_rad: bool = False,
+        use_gate_act: bool = False,
+        use_grid_mlp: bool = False,
+        use_sep_s2_act: bool = True,
+
+        attn_activation: str = 'silu',
+        use_s2_act_attn: bool = False,
+        use_attn_renorm: bool = True,
+        ffn_activation: str = 'silu',
+
+        norm_type: str = 'rms_norm_sh',
+        alpha_drop: float = 0.0,
+        drop_path_rate: float = 0.0,
+        proj_drop: float = 0.0,
+        device: str = 'cuda',
+    ):
+        super(TransBlockV2, self).__init__()
+        self.device = device
+        max_lmax = max(lmax_list)
+        self.norm_1 = get_normalization_layer(norm_type, lmax=max_lmax, num_channels=sphere_channels, device=device)
+        self.norm_2 = get_normalization_layer(norm_type, lmax=max_lmax, num_channels=sphere_channels, device=device)
+
+        self.ga = SO2EquivariantGraphAttention(
+            sphere_channels=sphere_channels,
+            hidden_channels=attn_hidden_channels,
+            num_heads=num_heads,
+            attn_alpha_channels=attn_alpha_channels,
+            attn_value_channels=attn_value_channels,
+            output_channels=sphere_channels,
+            lmax_list=lmax_list,
+            mmax_list=mmax_list,
+            SO3_rotation=SO3_rotation,
+            mappingReduced=mappingReduced,
+            SO3_grid=SO3_grid,
+            max_num_elements=max_num_elements,
+            edge_channels_list=edge_channels_list,
+            use_atom_edge_embedding=use_atom_edge_embedding,
+            use_m_share_rad=use_m_share_rad,
+            activation=attn_activation,
+            use_s2_act_attn=use_s2_act_attn,
+            use_attn_renorm=use_attn_renorm,
+            use_gate_act=use_gate_act,
+            use_sep_s2_act=use_sep_s2_act,
+            alpha_drop=alpha_drop,
+            device=device,
+        )
+
+        self.drop_path = GraphDropPath(drop_path_rate, device=self.device) if drop_path_rate > 0. else None
+        self.proj_drop = EquivariantDropoutArraySphericalHarmonics(proj_drop,
+                                                                   drop_graph=False,
+                                                                   device=self.device) if proj_drop > 0.0 else None
+
+        self.ffn = FeedForwardNetwork(
+            sphere_channels=sphere_channels,
+            hidden_channels=ffn_hidden_channels,
+            output_channels=output_channels,
+            lmax_list=lmax_list,
+            mmax_list=mmax_list,
+            SO3_grid=SO3_grid,
+            activation=ffn_activation,
+            use_gate_act=use_gate_act,
+            use_grid_mlp=use_grid_mlp,
+            use_sep_s2_act=use_sep_s2_act,
+            device=device,
+        )
+
+        if sphere_channels != output_channels:
+            self.ffn_shortcut = SO3_LinearV2(sphere_channels, output_channels, lmax=max_lmax, device=self.device)
+        else:
+            self.ffn_shortcut = None
+
+    def forward(
+        self,
+        x: Union[SO3_Embedding, Dict],  # SO3_Embedding
+        atomic_numbers: Union[Tensor, Dict],
+        edge_distance: Tensor,
+        edge_index: Tensor,
+        batch: int,  # for GraphDropPath
+        hetero: bool,
+        source_target: Optional[Tuple[str, str]] = None,
+    ):
+        if hetero:
+            assert isinstance(x, Dict), "Please provide x of type Dict when hetero is true"
+            assert source_target is not None, "Please specify source-target tuple when hetero is true"
+
+        if isinstance(x, Dict):
+            source, target = source_target[0], source_target[1]
+            output_embedding = x[target]
+            x_res = output_embedding.embedding
+            x[source].embedding = self.norm_1(x[source].embedding)
+            x[target].embedding = self.norm_1(x[target].embedding)
+
+            output_embedding = self.ga(
+                x,
+                atomic_numbers,
+                edge_distance,
+                edge_index,
+                hetero,
+                source_target,
+            )
+        else:
+            output_embedding = x
+            x_res = output_embedding.embedding
+            output_embedding.embedding = self.norm_1(output_embedding.embedding)
+
+            output_embedding = self.ga(
+                output_embedding,
+                atomic_numbers,
+                edge_distance,
+                edge_index,
+                hetero,
+            )
+
+        if self.drop_path is not None:
+            output_embedding.embedding = self.drop_path(output_embedding.embedding, batch)
+        if self.proj_drop is not None:
+            output_embedding.embedding = self.proj_drop(output_embedding.embedding, batch)
+
+        output_embedding.embedding = output_embedding.embedding + x_res
+        x_res = output_embedding.embedding
+        output_embedding.embedding = self.norm_2(output_embedding.embedding)
+        output_embedding = self.ffn(output_embedding)
+
+        if self.drop_path is not None:
+            output_embedding.embedding = self.drop_path(output_embedding.embedding, batch)
+        if self.proj_drop is not None:
+            output_embedding.embedding = self.proj_drop(output_embedding.embedding, batch)
+
+        if self.ffn_shortcut is not None:
+            shortcut_embedding = SO3_Embedding(
+                0,
+                output_embedding.lmax_list.copy(),
+                self.ffn_shortcut.in_features,
+                device=self.device,
+                dtype=output_embedding.dtype
+            )
+            shortcut_embedding.set_embedding(x_res)
+            shortcut_embedding.set_lmax_mmax(output_embedding.lmax_list.copy(), output_embedding.lmax_list.copy())
+            shortcut_embedding = self.ffn_shortcut(shortcut_embedding)
+            x_res = shortcut_embedding.embedding
+
+        output_embedding.embedding = output_embedding.embedding + x_res
+
+        return output_embedding
 
 
 class CoefficientMappingModule(nn.Module):

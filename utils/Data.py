@@ -167,7 +167,8 @@ class CrossdockedDataSet(Dataset):
     def __getitem__(self, index) -> Tensor:
         path_to_pt = self.list_IDs[index]
         X = torch.load(path_to_pt)
-        X = X.to(torch.device('cuda:0'))
+        #X = X.to(torch.device('cuda:3'))
+        X = X.to(torch.device('cpu'))
         return X
     
     def __len__(self):
@@ -226,7 +227,7 @@ class CrossdockedDataModule(pl.LightningDataModule):
                 continue
         #self.dt_test = [torch.load(i).to('cuda') for i in lt_test]
         """
-        self.dt_train = CrossdockedDataSet(lt_train[5000:5640])
+        self.dt_train = CrossdockedDataSet(lt_train[5000:5128])
         self.dt_val = CrossdockedDataSet(lt_val)
         
         

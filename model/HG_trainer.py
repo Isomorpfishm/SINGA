@@ -15,8 +15,7 @@ import pytorch_lightning as pl
 
 from model import HG_model
 from model.Masking import LigandMasking
-from model.Layers import GATE_GRUConv_IntraMol
-from model.P2M_invariant import GVPerceptronVN, MessageModule, GaussianSmearing, EdgeExpansion
+from model.Embedding import EquivariantEmbedding
 from utils.Data import CrossdockedDataModule
 from utils.misc import *
 
@@ -42,13 +41,15 @@ if __name__ == '__main__':
 use_cuda = torch.cuda.is_available()
 if use_cuda:
     torch.cuda.empty_cache()
-    device = torch.device("cuda:0")
+    device = torch.device("cuda:3")
     torch.backends.cudnn.benchmark = True
     #torch.multiprocessing.set_sharing_strategy('file_system')
     torch.multiprocessing.set_start_method('spawn') # good solution !!!!
 else:
     device = torch.device('cpu')
 
+
+device = torch.device('cpu')
 
 # Load config file
 config = load_config("./config/train.yml")
@@ -57,12 +58,13 @@ split_dict = torch.load(config.dataset.split)
 # Load data (PASS)
 datamodule = CrossdockedDataModule(root=config.dataset.path,
                                    index=config.dataset.split,
-                                   atomic_distance_cutoff=config.embedding.atomic_distance_cutoff,
-                                   batch_size=config.embedding.batch_size,
-                                   num_workers=1)
+                                   atomic_distance_cutoff=config.dataloader.atomic_distance_cutoff,
+                                   batch_size=config.dataloader.batch_size,
+                                   num_workers=config.dataloader.num_workers)
 datamodule.setup()
 datamodule = datamodule.train_dataloader()
 
+"""
 # Load model (PASS)
 model = HG_model.HG_Model(hidden_channels_pa=config.embedding.hidden_channels_pa,
                           hidden_channels_la=config.embedding.hidden_channels_la,
@@ -80,22 +82,17 @@ if use_cuda:
     model = model.to(torch.device('cuda:0'))
 print(model)
 
-
 # Show model params (PASS)
 nb_param_trainable = model.get_nb_parameters(only_trainable=True)
 nb_param = model.get_nb_parameters(only_trainable=False)
 print(f"Total params: {nb_param}; \t Trainable params: {nb_param_trainable}")
-
 
 # Load some example for testing (PASS)
 for i, X in enumerate(datamodule):
     if i == 0:
       x_batch = X
       y_pred = model(X)
-      assert y_pred.shape == (config.embedding.batch_size, \
-                              config.embedding.mlp_channels[-1], \
-                              (config.embedding.hidden_channels_pa[-1] + config.embedding.hidden_channels_la[-1]) )
-
+"""
 
 # For backup testing (PASS)
 protein = next(oddt.toolkit.readfile('pdb', 'example/7cff_protein.pdb'))
@@ -104,9 +101,9 @@ ligand = next(oddt.toolkit.readfile('sdf', 'example/7cff_ligand.sdf'))
 
 
 # Test subgraph (PASS)
-G_exp_file = ['./dataset/crossdocked_graph10/P53_HUMAN_94_306_0/4agq_B_rec_5a7b_kmn_lig_tt_docked_2_pocket10.pt', 
-              './dataset/crossdocked_graph10/PDE10_HUMAN_439_773_0/3wi2_A_rec_4tpp_35d_lig_tt_docked_1_pocket10.pt', 
-              './dataset/crossdocked_graph10/BRD4_HUMAN_42_168_0/5cp5_A_rec_4nue_nue_lig_tt_min_0_pocket10.pt'] 
+G_exp_file = ['./dataset/crossdocked_graph10_v2/P53_HUMAN_94_306_0/4agq_B_rec_5a7b_kmn_lig_tt_docked_2_pocket10.pt', 
+              './dataset/crossdocked_graph10_v2/PDE10_HUMAN_439_773_0/3wi2_A_rec_4tpp_35d_lig_tt_docked_1_pocket10.pt', 
+              './dataset/crossdocked_graph10_v2/BRD4_HUMAN_42_168_0/5cp5_A_rec_4nue_nue_lig_tt_min_0_pocket10.pt'] 
 G_exp = []
 for i in G_exp_file:
     G_exp.append(torch.load(i).to(device))
@@ -117,8 +114,7 @@ subset_dict = {'ligand_atoms': content_idx}
 G_mod = ligand_masking.subset_subgraph(subset_dict=subset_dict)
 
 
-
-# Test new layers
+# Spare components
 ligand_ei = G_exp[-1][('ligand_atoms', 'linked_to', 'ligand_atoms')]['edge_index'].to(device)
 ligand_ea = G_exp[-1][('ligand_atoms', 'linked_to', 'ligand_atoms')]['edge_attr'].to(device)
 ligand_x = G_exp[-1]['ligand_atoms']['x'].to(device)
@@ -128,20 +124,11 @@ ligand_ed = torch.norm(ligand_ev, dim=-1, p=2)
 
 scalar, vector = ligand_x, ligand_p.view(-1, 1, 3)
 row, col = ligand_ei
-edge_channels, num_edge_types = 64, 6
 
 
-per1 = GVPerceptronVN(59, 1, 32, 1)
-gate1 = GATE_GRUConv_IntraMol(in_channels=59, out_channels=32, dropout=0.0, edge_dim=6, dim_hid=1)
-msg1 = MessageModule(node_sca=59, node_vec=1, edge_sca=6, edge_vec=1, out_sca=59, out_vec=1)
-distance_expansion = GaussianSmearing(stop=10., num_gaussians=6, device=device)
-#distance_expansion = GaussianSmearing(stop=10., num_gaussians=edge_channels-num_edge_types, device=device)
-vector_expansion = EdgeExpansion(edge_channels, device=device)
-
-edge_sca_feat = torch.cat([distance_expansion(ligand_ed), ligand_ea], dim=-1)
-edge_vec_feat = vector_expansion(ligand_ev)
-
-out_per1 = per1(x=ligand_x, pos=ligand_p.view(-1, 1, 3))
-out_gate1 = gate1(x=ligand_x, pos=ligand_p, edge_index=ligand_ei, edge_attr=ligand_ea)
-msg_j_sca, msg_j_vec = msg1(scalar, vector, edge_sca_feat, edge_vec_feat, col, ligand_ed, annealing=True)
-
+# Testing EquiformerV2 equiavriant embedding net
+ebd_graph = []
+embedding = EquivariantEmbedding(config=config.embedding, device=device)
+a = next(iter(datamodule))
+#for i, data in datamodule:
+#    ebd_graph.append(data)

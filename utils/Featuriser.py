@@ -140,8 +140,20 @@ def create_pyg_graph(protein:Molecule,
         ligand_atm_to_protein_atm_edge_attr).float()
     data['protein_atoms', 'interact_with', 'ligand_atoms'].edge_attr = torch.tensor(
         protein_atm_to_ligand_atm_edge_attr).float()
+    
+    atomic_dict = {}
+    
+    atomic_numbers = protein.atom_dict['atomicnum'].tolist()
+    atomic_numbers = torch.tensor(atomic_numbers).long()
+    atomic_dict['protein_atoms'] = atomic_numbers
 
+    atomic_numbers = ligand.atom_dict['atomicnum'].tolist()
+    atomic_numbers = torch.tensor(atomic_numbers).long()
+    atomic_dict['ligand_atoms'] = atomic_numbers
+    
+    
     data.name = name
+    data.atomicnum = atomic_dict
     #data.rmsd = rmsd
     #data.protein_sasa = protein_sasa
     #data.ligand_sasa = ligand_sasa

@@ -1,30 +1,37 @@
 dataset:
-    path: ./dataset/crossdocked_graph10
+    path: ./dataset/crossdocked_graph10_v2
     split: ./dataset/split_by_name.pt
+    atomic_distance_cutoff: 4.0
     
-embedding:
+dataloader:
     atomic_distance_cutoff: 4.0
     batch_size: 64
-    dropout: 0.13
-    heads: 2
-    hetero_aggr: mean
-    hidden_channels_la: 
-    - 48
-    - 76
-    - 121
-    hidden_channels_pa:
-    - 48
-    - 57
-    - 68
-    lr: 0.001
-    mlp_channels:
-    - 1
-    - 189
-    - 256
     molecular_embedding_size: 4
-    num_layers: 3
-    str_for_hparams: 'InterMol length: 4.0A'
-    weight_decay: 0.0001
+    num_workers: 1
 
+embedding:
+    edge_channels: 16
+    sphere_channels: 16
+    attn_hidden_channels: 128
+    attn_alpha_channels: 32
+    attn_value_channels: 16
+    ffn_hidden_channels: 512
+    lmax_list:
+    - 6
+    mmax_list:
+    - 2
+    cutoff: 10.0
+    max_num_elements: 43
+    num_heads: 7
+    num_layers: 3
+    norm_type: 'rms_norm_sh'
+    activation_type: 'scaled_silu'
+    use_atom_edge_embedding: True
+    share_atom_edge_embedding: True
+    grid_resolution: None
+    alpha_drop: 0.0
+    proj_drop: 0.0
+    drop_path_rate: 0.0
+    
 model:
     name: SINGA
