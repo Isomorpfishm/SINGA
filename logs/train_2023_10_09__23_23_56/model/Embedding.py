@@ -206,7 +206,6 @@ class EquivariantEmbedding(nn.Module):
         self,
         g: Union[HeteroData, Batch],
         batch: Optional[int] = None,
-        gen_mode: bool = False,
     ) -> Dict:
         """
         Arguments:
@@ -294,10 +293,6 @@ class EquivariantEmbedding(nn.Module):
         x.embedding = self.norm(x.embedding)
         x_dict['protein_atoms'] = x
 
-        if gen_mode:
-            return x_dict
-
-
         """
         Part 2: Ligand nodes and edges embedding
             hetero: False [Not considering PL edges]
@@ -369,7 +364,6 @@ class EquivariantEmbedding(nn.Module):
         x.embedding = self.norm(x.embedding)
         x_dict['ligand_atoms'] = x
 
-
         """
         Part 3: Ligand-protein edge embedding
             hetero: True [Consider LP edges]
@@ -426,7 +420,6 @@ class EquivariantEmbedding(nn.Module):
         # Final layer norm
         x.embedding = self.norm(x.embedding)
         x_dict['lp_edge'] = x  # x has shape (num_protein_atoms, 49, spherical channels)
-
 
         """
         Part 4: Protein-ligand edge embedding

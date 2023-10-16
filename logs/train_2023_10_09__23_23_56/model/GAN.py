@@ -59,8 +59,8 @@ class SINGA(nn.Module):
         embed = self.embedding(g)
         for i in list(embed.keys()):
             embed[i] = embed[i].embedding
-        embed['protein'] = (embed['protein_atoms']).view(-1, self.config.model.featurizer_feat_dim).to(torch.device(self.device))
-        embed['ligand']  = (embed['ligand_atoms']).view(-1, self.config.model.featurizer_feat_dim).to(torch.device(self.device))
+        embed['protein'] = (embed['protein_atoms'] + embed['lp_edge']).view(-1, self.config.model.featurizer_feat_dim).to(torch.device(self.device))
+        embed['ligand']  = (embed['ligand_atoms']  + embed['pl_edge']).view(-1, self.config.model.featurizer_feat_dim).to(torch.device(self.device))
         
         
         # Pass to CProMG encoder-decoder model

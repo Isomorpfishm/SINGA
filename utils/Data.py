@@ -138,12 +138,23 @@ def get_molecular_properties(mol:Molecule) -> Tuple[List, List, List, List]:
     isaromatic = mol.atom_dict['isaromatic'].reshape(-1, 1)
     isacceptor = mol.atom_dict['isacceptor'].reshape(-1, 1)
     isdonor = mol.atom_dict['isdonor'].reshape(-1, 1)
-    isdonorh = mol.atom_dict['isdonor'].reshape(-1, 1)
+    isdonorh = mol.atom_dict['isdonorh'].reshape(-1, 1)
     isminus = mol.atom_dict['isminus'].reshape(-1, 1)
     isplus = mol.atom_dict['isplus'].reshape(-1, 1)
     
     atom_pos = mol.atom_dict['coords'].tolist()
-    atom_properties_list = np.concatenate((oh_atom_type, oh_hybridisation, partial_charge, hydrophobic, isaromatic, isacceptor, isdonor, isdonorh, isminus, isplus), axis=1).tolist()
+    atom_properties_list = np.concatenate((
+        oh_atom_type, 
+        oh_hybridisation, 
+        partial_charge, 
+        hydrophobic, 
+        isaromatic, 
+        isacceptor, 
+        isdonor, 
+        isdonorh, 
+        isminus,
+        isplus,
+    ), axis=1).tolist()
     
     edge_index, edge_attr = [[], []], []
     
@@ -160,15 +171,14 @@ def get_molecular_properties(mol:Molecule) -> Tuple[List, List, List, List]:
 
 class CrossdockedDataSet(Dataset):
     # PyTorch Geometric Dataset module 
-    def __init__(self, list_IDs:List) -> None:
+    def __init__(self, list_IDs:List, device:str) -> None:
         super().__init__()
         self.list_IDs = list_IDs
+        self.device = device
         
     def __getitem__(self, index) -> Tensor:
         path_to_pt = self.list_IDs[index]
-        X = torch.load(path_to_pt)
-        #X = X.to(torch.device('cuda:3'))
-        X = X.to(torch.device('cpu'))
+        X = torch.load(path_to_pt).to(torch.device(self.device))
         return X
     
     def __len__(self):
@@ -185,6 +195,7 @@ class CrossdockedDataModule(pl.LightningDataModule):
     batch_size:int = field(default=1)                    # batch size
     num_workers:int = field(default=1)                   # number of workers
     persistent_workers:bool = field(default=True)        # use persistant workers in dataloader
+    device:str = field(default='cuda')
 
     def __post_init__(self):
         super().__init__()
@@ -194,8 +205,8 @@ class CrossdockedDataModule(pl.LightningDataModule):
         
     def setup(self):
         split_idx = torch.load(self.index)
-        
         lt_train_ori, lt_test = [], []
+        
         for i in range(len(split_idx['train'])):
             filePth = os.path.join(self.root, str(split_idx['train'][i][0].split(".")[0]) + ".pt")
             fileExist = os.path.isfile(filePth)
@@ -203,6 +214,7 @@ class CrossdockedDataModule(pl.LightningDataModule):
                 lt_train_ori.append(filePth)
             else:
                 continue
+        
         for i in range(len(split_idx['test'])):
             filePth = os.path.join(self.root, str(split_idx['test'][i][0].split(".")[0]) + ".pt")
             fileExist = os.path.isfile(filePth)
@@ -213,23 +225,11 @@ class CrossdockedDataModule(pl.LightningDataModule):
         
         lt_train = lt_train_ori[:int(len(lt_train_ori)*self.split_ratio)]
         lt_val = lt_train_ori[int(len(lt_train_ori)*self.split_ratio):]
-        """
-        for i in lt_train[:5000]:
-            try:
-                self.dt_train.append(torch.load(i).to('cuda'))
-            except FileNotFoundError:
-                continue
+        del(lt_train_ori)
         
-        for i in lt_val:
-            try:
-                self.dt_val.append(torch.load(i).to('cuda'))
-            except FileNotFoundError:
-                continue
-        #self.dt_test = [torch.load(i).to('cuda') for i in lt_test]
-        """
-        self.dt_train = CrossdockedDataSet(lt_train[5000:5128])
-        self.dt_val = CrossdockedDataSet(lt_val)
-        
+        self.dt_train = CrossdockedDataSet(lt_train[5000:5512], device=self.device)
+        self.dt_val   = CrossdockedDataSet(lt_val, device=self.device)
+        self.dt_test  = CrossdockedDataSet(lt_test, device=self.device)
         
     def train_dataloader(self):
         return pyg.loader.DataLoader(dataset=self.dt_train,

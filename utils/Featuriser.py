@@ -72,7 +72,8 @@ def featurise(protein:Molecule,
 
 def create_pyg_graph(protein:Molecule,
                      ligand:Molecule,
-                     list_atom_name: list,
+                     ligand_data:dict,
+                     list_atom_name:list,
                      score:float = 0.0,
                      rmsd:float = 0.0,
                      protein_sasa:float = None,
@@ -142,22 +143,25 @@ def create_pyg_graph(protein:Molecule,
         protein_atm_to_ligand_atm_edge_attr).float()
     
     atomic_dict = {}
-    
     atomic_numbers = protein.atom_dict['atomicnum'].tolist()
     atomic_numbers = torch.tensor(atomic_numbers).long()
     atomic_dict['protein_atoms'] = atomic_numbers
-
     atomic_numbers = ligand.atom_dict['atomicnum'].tolist()
     atomic_numbers = torch.tensor(atomic_numbers).long()
     atomic_dict['ligand_atoms'] = atomic_numbers
     
+    ligand_data['protein_sasa'] = protein_sasa
+    ligand_data['ligand_sasa'] = ligand_sasa
+    ligand_data['vina_score'] = score
+    ligand_data['filename'] = name
     
     data.name = name
     data.atomicnum = atomic_dict
+    data.ligand_data = ligand_data
     #data.rmsd = rmsd
     #data.protein_sasa = protein_sasa
     #data.ligand_sasa = ligand_sasa
-    data.y = [score, rmsd, protein_sasa, ligand_sasa]
+    #data.y = [score, rmsd, protein_sasa, ligand_sasa]
 
     return data
     

@@ -40,10 +40,11 @@ torch.backends.cudnn.benchmark = True
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--config', type=str,
-                        default='./config/config.yml')
+                        default='./config/train.yml')
     parser.add_argument('--outdir', type=str, 
-                        default='./dataset/crossdocked_graph10_v2')
+                        default='./dataset/crossdocked_graph10_v3')
     args = parser.parse_args()
+    
     
     # Logging
     log_dir = args.outdir
@@ -56,6 +57,7 @@ if __name__ == '__main__':
        os.makedirs(args.outdir)
        logger.info("Output directory {args.outdir} is created")
 
+
     # Load config
     outDirExists = os.path.isfile(args.config)
     if not outDirExists:
@@ -66,6 +68,7 @@ if __name__ == '__main__':
         #seed_all(config.featuriser.seed)
         split_dict = torch.load(config.dataset.split)
         logger.info(f"Found {len(split_dict['train'])} samples in the Crossdock dataset for training")
+    
     
     # Docking ligands with Autodock Vina implemented in ODDT
     logger.info("Extracting features...")
@@ -80,13 +83,14 @@ if __name__ == '__main__':
            logger.info(f"Output directory {name.split('/')[0]} is created")
         
         logger.info(f"Now reading {name}")
-        proteinDual = StructureDual(os.path.join(config.dataset.path, split_dict['train'][i][0]), isProtein=True)
-        ligandDual = StructureDual(os.path.join(config.dataset.path, split_dict['train'][i][1]), isProtein=False)
+        proteinDual = StructureDual(os.path.join(config.featuriser.data, split_dict['train'][i][0]), isProtein=True)
+        ligandDual = StructureDual(os.path.join(config.featuriser.data, split_dict['train'][i][1]), isProtein=False)
         
         try:
             protein, _protein = proteinDual.parse_to_oddt(), proteinDual.parse_to_rdkit()
             ligand, _ligand = ligandDual.parse_to_oddt(), ligandDual.parse_to_rdkit()
-            ligand_com = parse_sdf_file(os.path.join(config.dataset.path, split_dict['train'][i][1]))['center_of_mass']
+            ligand_data = parse_sdf_file(os.path.join(config.featuriser.data, split_dict['train'][i][1]))
+            ligand_com = ligand_data['center_of_mass']
         except Exception as e:
             logger.error(traceback.format_exc())
             skippedComplex.append(name)
@@ -101,6 +105,7 @@ if __name__ == '__main__':
                              center=tuple(ligand_com),
                              num_modes=int(config.autodock.num_modes), 
                              executable=config.autodock.executable)
+        
         
         # Extracting vina score of native structure
         vina_score = float(vina.predict_ligand(ligand).data['vina_affinity'])
@@ -126,7 +131,8 @@ if __name__ == '__main__':
             list_atom_name = proteinDual.RetrieveAtomNames()
 
             g = create_pyg_graph(protein=protein, 
-                                 ligand=ligand, 
+                                 ligand=ligand,
+                                 ligand_data=ligand_data,
                                  cutoff=config.featuriser.interaction_cutoff, 
                                  list_atom_name=list_atom_name,
                                  name=name,

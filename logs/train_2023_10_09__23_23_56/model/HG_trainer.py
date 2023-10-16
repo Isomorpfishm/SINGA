@@ -41,7 +41,7 @@ if __name__ == '__main__':
 use_cuda = torch.cuda.is_available()
 if use_cuda:
     torch.cuda.empty_cache()
-    device = torch.device("cuda:3")
+    device = torch.device("cuda:0")
     torch.backends.cudnn.benchmark = True
     #torch.multiprocessing.set_sharing_strategy('file_system')
     torch.multiprocessing.set_start_method('spawn') # good solution !!!!
@@ -60,9 +60,10 @@ datamodule = CrossdockedDataModule(root=config.dataset.path,
                                    index=config.dataset.split,
                                    atomic_distance_cutoff=config.dataloader.atomic_distance_cutoff,
                                    batch_size=config.dataloader.batch_size,
-                                   num_workers=config.dataloader.num_workers)
+                                   num_workers=config.dataloader.num_workers,
+                                   device=device)
 datamodule.setup()
-datamodule = datamodule.train_dataloader()
+# datamodule = datamodule.train_dataloader()
 
 """
 # Load model (PASS)
@@ -101,9 +102,9 @@ ligand = next(oddt.toolkit.readfile('sdf', 'example/7cff_ligand.sdf'))
 
 
 # Test subgraph (PASS)
-G_exp_file = ['./dataset/crossdocked_graph10_v2/P53_HUMAN_94_306_0/4agq_B_rec_5a7b_kmn_lig_tt_docked_2_pocket10.pt', 
-              './dataset/crossdocked_graph10_v2/PDE10_HUMAN_439_773_0/3wi2_A_rec_4tpp_35d_lig_tt_docked_1_pocket10.pt', 
-              './dataset/crossdocked_graph10_v2/BRD4_HUMAN_42_168_0/5cp5_A_rec_4nue_nue_lig_tt_min_0_pocket10.pt'] 
+G_exp_file = ['./dataset/crossdocked_graph10_v3/P53_HUMAN_94_306_0/4agq_B_rec_5a7b_kmn_lig_tt_docked_2_pocket10.pt', 
+              './dataset/crossdocked_graph10_v3/PDE10_HUMAN_439_773_0/3wi2_A_rec_4tpp_35d_lig_tt_docked_1_pocket10.pt', 
+              './dataset/crossdocked_graph10_v3/BRD4_HUMAN_42_168_0/5cp5_A_rec_4nue_nue_lig_tt_min_0_pocket10.pt'] 
 G_exp = []
 for i in G_exp_file:
     G_exp.append(torch.load(i).to(device))
@@ -125,10 +126,20 @@ ligand_ed = torch.norm(ligand_ev, dim=-1, p=2)
 scalar, vector = ligand_x, ligand_p.view(-1, 1, 3)
 row, col = ligand_ei
 
-
+"""
 # Testing EquiformerV2 equiavriant embedding net
-ebd_graph = []
+ebd_graph, batch = [], []
 embedding = EquivariantEmbedding(config=config.embedding, device=device)
-a = next(iter(datamodule))
-#for i, data in datamodule:
-#    ebd_graph.append(data)
+
+for i, data in enumerate(datamodule):
+    if i == 0:
+        batch.append(data)
+        ebd_graph.append(embedding(data))
+    else:
+        continue
+
+ebd_graph[0]['protein_atoms'] = ebd_graph[0]['protein_atoms'].embedding
+ebd_graph[0]['ligand_atoms'] = ebd_graph[0]['ligand_atoms'].embedding
+ebd_graph[0]['pl_edge'] = ebd_graph[0]['pl_edge'].embedding
+ebd_graph[0]['lp_edge'] = ebd_graph[0]['lp_edge'].embedding
+"""

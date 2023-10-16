@@ -23,20 +23,21 @@ Working inside a Conda virtual environment is hightly encouraged, but not necess
 conda env create -f environment.yml
 ```
 
-Otherwise, install the following dependencies sequentially.
+Otherwise, install the following packages and dependencies sequentially:
 
 ```
 conda create -n SINGA python=3.10
 conda activate SINGA
 conda install -c conda-forge openbabel
+conda install mkl-service
 pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
-pip install torch_geometric==2.3.1
-pip install torch-scatter==2.1.1 torch-sparse==0.6.17
+pip install torch_geometric==2.3.1 torch-scatter==2.1.1 torch-sparse==0.6.17 torch-cluster==1.6.3
 pip install biopandas==0.4.1 pytorch-lightning==2.0.6
-pip install rdkit==2023.3.3
-pip install oddt==0.7
-pip install easydict==1.10
-pip install e3nn==0.5.1
+pip install rdkit==2023.3.3 oddt==0.7
+pip install e3nn==0.5.1 dgl==1.1.2
+pip install tensorboard==2.14.1
+pip install pybel==0.15.5
+pip install termcolor==2.3.0 easydict==1.10
 ```
 
 ## Directory tree
@@ -49,35 +50,41 @@ pip install e3nn==0.5.1
   |__ /ckpt
   |__ /config
   |__ /dataset
-      |__ /crossdocked_graph10_v2
+      |__ /crossdocked_graph10_v3
   |__ /example
-  |__ /features
   |__ /img
+  |__ /logs
   |__ /model
-      |__ Discriminator.py
-      |__ EF_embedding.py
+      |__ __init__.py
+      |__ BeamSearch.py
+      |__ CProMG.py
       |__ EF_layers.py
+      |__ Embedding.py
       |__ GAN.py
-      |__ Generator.py
-      |__ Masking.py
+      |__ Jd.pt
   |__ /output
   |__ /utils
       |__ /ledock
       |__ __init__.py
       |__ Data.py
       |__ Featuriser.py 
+      |__ fpscores.pkl.gz
+      |__ gen.py
       |__ misc.py
       |__ PLFeature.py
       |__ PLIExtension.py
       |__ PLInteraction.py
       |__ PLParser.py
       |__ redirect.py
+      |__ SAScorer.py
+      |__ Stopper.py
   |__ .gitignore
   |__ __init__.py
   |__ environment.yml
   |__ LICENSE
   |__ MakeGraph.py
   |__ README.md
+  |__ gen.py
   |__ train.py
 ```
 
@@ -87,4 +94,4 @@ MIT License
 
 ## Acknowledgement
 
-Part of this codebase is adapted from [EquiformerV2](https://github.com/atomicarchitects/equiformer_v2) and [HGScore](https://github.com/KevinCrp/HGScore). Details of the adaptation are stated explicitly in the script.
+Part of this codebase is adapted from [EquiformerV2](https://github.com/atomicarchitects/equiformer_v2) and [CProMG](https://github.com/lijianing0902/CProMG). Details of the adaptation are stated explicitly in the script.
